@@ -1,11 +1,32 @@
-:root{
-
-}
-
-html {
-
+html, body {
+	margin: 0;
 }
 
 body {
-    
+    display: grid;
+    grid-template-areas: "tag main preview"
+}
+
+.col {
+	height: 100vh;
+}
+
+#tag-col {
+	grid-area: tag;
+	background-color: #ccc;
+	width: 18vw;
+	min-width: 230px;
+}
+
+#main-col {
+	grid-area: main;
+}
+
+#preview-col {
+	grid-area: preview;
+	background-color: #ccc;
+	width: 22vw;
+	min-width: 270px;
+	position: absolute;
+	right: 0;
 }
