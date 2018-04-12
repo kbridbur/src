@@ -28,6 +28,15 @@ body {
 	min-width: 230px;
 }
 
+.search {
+	width: 80%;
+	height: 3%;
+}
+
+#classifier_search {
+
+}
+
 #main-col {
 	grid-area: main;
 }
