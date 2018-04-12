@@ -4,7 +4,7 @@ html, body {
 
 body {
     display: grid;
-    grid-template-columns: 18% auto 22%;
+    grid-template-columns: 250px 1fr 270px;
 }
 
 .col {
@@ -28,7 +28,7 @@ body {
 
 .search {
 	width: 80%;
-	height: 3%;
+	height: 1.5em;
 }
 
 #classifier_search {
@@ -37,14 +37,12 @@ body {
 
 #main-col {
 	grid-column: 2;
+	padding: 20px;
 }
 
 #preview-col {
 	grid-column: 3;
 	background-color: #ccc;
-	width: 22vw;
-	position: absolute;
-	right: 0;
 }
 
 #file-preview{
@@ -64,4 +62,14 @@ body {
 
 .main-icon {
 	width: 30px;
+}
+
+#results-headers {
+	display: grid;
+	grid-template-columns: 2fr repeat(2, 1fr);
+}
+
+.result-file {
+	display: grid;
+	grid-template-columns: 2fr repeat(2, 1fr);
 }
