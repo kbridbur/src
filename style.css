@@ -65,3 +65,38 @@ body {
 .main-icon {
 	width: 30px;
 }
+
+/**********************************************************/
+/*		        tag column                        */
+/**********************************************************/
+
+.accordion {
+	background-color: #eee;
+	color #444;
+	cursor: pointer;
+	width:100%;
+	text-align:left;
+	border:none;
+	outline:1px;
+	transition: 0.4s;
+}
+
+.active, .accordion:hover {
+	background-color: #ccc;
+}
+
+.accordion:after {
+	content: '\2228';
+	float: right;
+}
+
+.active:after {
+	content: '\2227';
+}
+
+.panel {
+	padding: 0 18px;
+	background-color: white;
+	display: none;
+	overflow: hidden;
+}
