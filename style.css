@@ -4,7 +4,7 @@ html, body {
 
 body {
     display: grid;
-    grid-template-columns: 18% auto 22%;
+    grid-template-columns: 250px 1fr 270px;
 }
 
 .col {
@@ -18,7 +18,6 @@ body {
 .vert-centered-text{
     position: relative;
     top: 50%;
-    transform: translateY(-50%);
 }
 
 #tag-col {
@@ -28,7 +27,7 @@ body {
 
 .search {
 	width: 80%;
-	height: 3%;
+	height: 1.5em;
 }
 
 #classifier_search {
@@ -37,25 +36,14 @@ body {
 
 #main-col {
 	grid-column: 2;
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+	padding: 20px;
 }
 
 #preview-col {
 	grid-column: 3;
 	background-color: #ccc;
-	width: 22vw;
-	position: absolute;
-	right: 0;
-}
-
-#file-preview{
-    background-color: #ffff00;
-    height: 70%;
-}
-
-#file-drag-drop{
-    background-color: #ff00ff;
-    height: 30%;
-    text-align: center;
 }
 
 /**********************************************************/
@@ -64,6 +52,58 @@ body {
 
 .main-icon {
 	width: 30px;
+}
+
+/**********************************************************/
+/*                  preview column                        */
+/**********************************************************/
+
+#file-preview{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content:center;
+    height: 70%;
+    margin: 2%;
+}
+
+#preview-image{
+    background-image: url("graphics/sadoak.jpg");
+    background-repeat: round;
+    box-sizing: border-box;
+    height: 80%;
+}
+
+#preview-description{
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+    height: 20%;
+    border-top: 5px solid rgba(0,0,0,0);
+}
+
+#file-drag-drop{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: #ff00ff;
+    height: 30%;
+    text-align: center;
+    border-top: 1px solid grey;
+}
+
+#results-headers {
+	display: grid;
+	grid-template-columns: 2fr repeat(2, 1fr);
+}
+
+.result-file {
+	display: grid;
+	grid-template-columns: 2fr repeat(2, 1fr);
 }
 
 /**********************************************************/
