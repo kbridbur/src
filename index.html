@@ -5,15 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" href="style.css">
 <!-- <script src="dragdrop.js"></script> -->
+<script src="accordion.js"></script>
 </head>
 <body>
 	<div class="col" id="tag-col">
 		<input type="text" class="search" id="classifier_search"  placeholder="Search for Classifiers..">
-		<div class="tags">
+		<button class="accordion" id="tags">
+			Tags
+		</button>
+		<div class="panel" id="tag_panel">
 		</div>
-		<div class="projects">
+		<button class="accordion" id="projects">
+			Projects
+		</button>
+		<div class="panel" id="projects_panel">
 		</div>
-		<div class="groups">
+		<button class="accordion" id="groups">
+			Groups
+		</button>
+		<div class="panel" id="groups_panel">
 		</div>
 		<div class="views">
 		</div>
