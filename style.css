@@ -86,6 +86,10 @@ body {
 }
 
 #file-drag-drop{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
     background-color: #ff00ff;
     height: 30%;
     text-align: center;
