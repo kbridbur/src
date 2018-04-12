@@ -11,9 +11,28 @@ body {
 	height: 100vh;
 }
 
+.row {
+
+}
+
+.vert-centered-text{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 #tag-col {
 	grid-column: 1;
 	background-color: #ccc;
+}
+
+.search {
+	width: 80%;
+	height: 3%;
+}
+
+#classifier_search {
+
 }
 
 #main-col {
@@ -34,4 +53,15 @@ body {
 
 .main-icon {
 	width: 30px;
+}
+=======
+#file-preview{
+    background-color: #ffff00;
+    height: 70%;
+}
+
+#file-drag-drop{
+    background-color: #ff00ff;
+    height: 30%;
+    text-align: center;
 }
