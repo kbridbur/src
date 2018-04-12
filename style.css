@@ -11,6 +11,16 @@ body {
 	height: 100vh;
 }
 
+.row {
+
+}
+
+.vert-centered-text{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 #tag-col {
 	grid-area: tag;
 	background-color: #ccc;
@@ -29,4 +39,15 @@ body {
 	min-width: 270px;
 	position: absolute;
 	right: 0;
+}
+
+#file-preview{
+    background-color: #ffff00;
+    height: 70%;
+}
+
+#file-drag-drop{
+    background-color: #ff00ff;
+    height: 30%;
+    text-align: center;
 }
