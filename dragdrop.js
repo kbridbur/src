@@ -10,6 +10,9 @@ function pickItemUp(e){
     if (clicked.classList.contains("file") || clicked.classList.contains("tag")){
         dragItem = clicked;
     }
+    else{
+        return;
+    }
     dragItemOriginX = e.screenX;
     dragItemOriginY = e.screenY;
     dragItemOriginZ = clicked.style.zIndex;
