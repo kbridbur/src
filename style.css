@@ -84,7 +84,7 @@ body {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content:center;
+    justify-content:space-between;
     height: 70%;
     margin: 2%;
 }
@@ -103,7 +103,7 @@ body {
     justify-content: center;
     text-align: center;
     box-sizing: border-box;
-    height: 20%;
+    height: 18%;
     border-top: 5px solid rgba(0,0,0,0);
 }
 
@@ -154,8 +154,9 @@ body {
 }
 
 .panel {
+	-webkit-transition: all 0.5s;
 	padding: 0 18px;
 	background-color: white;
-	display: none;
+	height: 0px;
 	overflow: hidden;
 }
