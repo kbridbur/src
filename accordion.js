@@ -6,11 +6,12 @@ window.onload = function(e) {
 		accordions[i].addEventListener("click", function() {
 			this.classList.toggle("active");
 			var panel = this.nextElementSibling;
-			console.log(panel);
-			if (window.getComputedStyle(panel).getPropertyValue('height') == "0em") {
-				panel.style.height = "2.5em";
+			var tagsInField = panel.childNodes.length;
+			var sizeOfPanel = tagsInField * panel.childNodes[1].clientHeight;
+			if (window.getComputedStyle(panel).getPropertyValue('height') == "0px") {
+				panel.style.height = sizeOfPanel+"px";
 			} else {
-				panel.style.height = "0em";
+				panel.style.height = "0px";
 			}
 		});
 	}

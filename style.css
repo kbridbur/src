@@ -153,9 +153,22 @@ body {
 }
 
 .panel {
-	-webkit-transition: all 0.5s;
+	-webkit-transition: height  0.5s;
 	padding: 0 18px;
 	background-color: white;
-	height: 0em;
+	height: 0px;
 	overflow: hidden;
 }
+
+#tags {
+	background-color: var(--color-red);
+}
+
+#projects {
+	background-color: var(--color-yellow);
+}
+
+#groups {
+	background-color: var(--color-blue);
+}
+
