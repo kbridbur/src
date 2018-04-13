@@ -1,3 +1,5 @@
+dom = {}
+
 var dragItem = null;
 var dragItemOriginX = 0;
 var dragItemOriginY = 0;
@@ -15,7 +17,7 @@ function pickItemUp(e){
     dragItem.style.pointerEvents = "none";
 }
 
-function dragItem(e){
+function moveItem(e){
     if (!dragItem){
         return;
     }
@@ -40,8 +42,8 @@ function setItemDown(e){
 
 Util.events(document, {
     "DOMContentLoaded": function() {
-        document.addEventListener("mousedown", function() {pickItemUp(e);});
-        document.addEventListener("mousemove", function() {dragItem(e);});
-        document.addEventListener("mouseup", function() {setItemDown(e);});
+        document.addEventListener("mousedown", function(event) {pickItemUp(event);});
+        document.addEventListener("mousemove", function(event) {moveItem(event);});
+        document.addEventListener("mouseup", function(event) {setItemDown(event);});
     }
 });
