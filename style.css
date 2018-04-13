@@ -131,8 +131,9 @@ body {
 }
 
 .panel {
+	-webkit-transition: all 0.5s;
 	padding: 0 18px;
 	background-color: white;
-	display: none;
+	height: 0px;
 	overflow: hidden;
 }
