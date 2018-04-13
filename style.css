@@ -1,5 +1,14 @@
+:root {
+	--color-blue: #4ABDAC;
+	--color-red: #FA6B3F;
+	--color-yellow: #F7B226;
+	--color-gray: #54524E;
+
+}
+
 html, body {
 	margin: 0;
+
 }
 
 body {
@@ -49,6 +58,24 @@ body {
 	width: 30px;
 }
 
+.result-file {
+	display: grid;
+	grid-template-columns: 2fr repeat(2, 1fr);
+	height: 30px;
+}
+
+.result-filename {
+
+}
+
+.result-date-uploaded {
+
+}
+
+.result-uploaded-by {
+
+}
+
 /**********************************************************/
 /*                  preview column                        */
 /**********************************************************/
@@ -57,7 +84,7 @@ body {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content:center;
+    justify-content:space-between;
     height: 70%;
     margin: 2%;
 }
@@ -76,7 +103,7 @@ body {
     justify-content: center;
     text-align: center;
     box-sizing: border-box;
-    height: 20%;
+    height: 18%;
     border-top: 5px solid rgba(0,0,0,0);
 }
 
@@ -97,10 +124,6 @@ body {
 	grid-template-columns: 2fr repeat(2, 1fr);
 }
 
-.result-file {
-	display: grid;
-	grid-template-columns: 2fr repeat(2, 1fr);
-}
 
 /**********************************************************/
 /*		        tag column                        */
