@@ -134,6 +134,6 @@ body {
 	-webkit-transition: all 0.5s;
 	padding: 0 18px;
 	background-color: white;
-	height: 0px;
+	height: 0em;
 	overflow: hidden;
 }

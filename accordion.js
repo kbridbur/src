@@ -7,10 +7,10 @@ window.onload = function(e) {
 			this.classList.toggle("active");
 			var panel = this.nextElementSibling;
 			console.log(panel);
-			if (window.getComputedStyle(panel).getPropertyValue('height') == "0px") {
-				panel.style.height = "200px";
+			if (window.getComputedStyle(panel).getPropertyValue('height') == "0em") {
+				panel.style.height = "2.5em";
 			} else {
-				panel.style.height = "0px";
+				panel.style.height = "0em";
 			}
 		});
 	}
