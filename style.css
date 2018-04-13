@@ -1,5 +1,14 @@
+:root {
+	--color-blue: #4ABDAC;
+	--color-red: #FA6B3F;
+	--color-yellow: #F7B226;
+	--color-gray: #54524E;
+
+}
+
 html, body {
 	margin: 0;
+
 }
 
 body {
@@ -54,6 +63,24 @@ body {
 	width: 30px;
 }
 
+.result-file {
+	display: grid;
+	grid-template-columns: 2fr repeat(2, 1fr);
+	height: 30px;
+}
+
+.result-filename {
+
+}
+
+.result-date-uploaded {
+
+}
+
+.result-uploaded-by {
+
+}
+
 /**********************************************************/
 /*                  preview column                        */
 /**********************************************************/
@@ -101,10 +128,6 @@ body {
 	grid-template-columns: 2fr repeat(2, 1fr);
 }
 
-.result-file {
-	display: grid;
-	grid-template-columns: 2fr repeat(2, 1fr);
-}
 
 /**********************************************************/
 /*		        tag column                        */
