@@ -39,7 +39,9 @@ function setItemDown(e){
 }
 
 Util.events(document, {
-    document.addEventListener("mousedown", function() {pickItemUp(e);});
-    document.addEventListener("mousemove", function() {dragItem(e);});
-    document.addEventListener("mouseup", function() {setItemDown(e);});
+    "DOMContentLoaded": function() {
+        document.addEventListener("mousedown", function() {pickItemUp(e);});
+        document.addEventListener("mousemove", function() {dragItem(e);});
+        document.addEventListener("mouseup", function() {setItemDown(e);});
+    }
 });

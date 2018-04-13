@@ -24,11 +24,6 @@ body {
 
 }
 
-.vert-centered-text{
-    position: relative;
-    top: 50%;
-}
-
 #tag-col {
 	grid-column: 1;
 	background-color: #ccc;
@@ -117,10 +112,11 @@ body {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    background-color: #ff00ff;
+    background-color: #ccc;
     height: 30%;
     text-align: center;
     border-top: 1px solid grey;
+    font-size: 4em;
 }
 
 #results-headers {
