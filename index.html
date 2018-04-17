@@ -73,8 +73,18 @@
     		</div>
         </div>
         <div id="upload">
-            Upload files here
-            <button id="submit-file">Submit</button>
+            <input type="text" class="edit-field" id="file-name" placeholder="File Name">
+            <input type="text" class="edit-field" id="file-author" placeholder="Author">
+            <input type="text" class="edit-field" id="publish-date" placeholder="Date Published">
+            <input type="text" class="edit-field" id="add-date" placeholder="Date Added">
+            <div id="form-grid">
+                <div id="form-tags"></div>
+                <div id="form-projects"></div>
+                <div id="form-groups"></div>
+            </div>
+            <input type="text" class="edit-field" id="file-notes" placeholder="Notes">
+            <button class="form-button" id="cancel-file">Cancel</button>
+            <button class="form-button" id="save-file">Save</button>
         </div>
 	</div>
 	<div class="col" id="preview-col">
