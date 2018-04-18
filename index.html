@@ -14,9 +14,12 @@
 <script src="dragdrop.js"></script>
 </head>
 <body>
+
+	<!-- =========== CLASSIFIERS COLUMN ========= -->
+
 	<div class="col" id="tag-col">
 		<input type="text" class="search" id="classifier_search"  placeholder="Search for Classifiers..">
-		<button class="accordion" id="tags">
+		<button class="accordion title-font" id="tags">
 			Tags
 		</button>
 		<div class="panel" id="tag_panel">
@@ -24,14 +27,14 @@
 			<p> bar </p>
 			<p> flkdfj </p>
 		</div>
-		<button class="accordion" id="projects">
+		<button class="accordion title-font" id="projects">
 			Projects
 		</button>
 		<div class="panel" id="projects_panel">
 			<p> foo </p>
 			<p> bar </p>
 		</div>
-		<button class="accordion" id="groups">
+		<button class="accordion title-font" id="groups">
 			Groups
 		</button>
 		<div class="panel" id="groups_panel">
@@ -41,34 +44,42 @@
 		<div class="views">
 		</div>
 	</div>
+
+	<!-- ============ MAIN COLUMN ============= -->
+
 	<div class="col" id="main-col">
         <div id="default">
     		<div id="main-header">
     			<input id="main-search" class="search" type="text">
     		</div>
     		<div id="main-controls">
-    			<img class="main-icon" src="images/star.png"/>
-    			<img class="main-icon" src="images/garbage.png"/>
-    			<img class="main-icon" src="images/clock.png"/>
+    			<button class="icon-buttons"><img class="main-icon" src="images/star.png"/></button>
+    			<button class="icon-buttons"><img class="main-icon" src="images/garbage.png"/></button>
+    			<button class="icon-buttons"><img class="main-icon" src="images/clock.png"/></button>
     		</div>
     		<div id="main-results">
     			<div id="results-headers">
-    				<span>Filename</span>
-    				<span>Date Uploaded</span>
-    				<span>Uploaded By</span>
+    				<span class="title-font">File Name</span>
+    				<span class="title-font">Date Uploaded</span>
+    				<span class="title-font">Uploaded By</span>
     			</div>
     			<hr>
     			<div id="results-files">
     				<div id="sample-result-1" class="result-file">
-    					<span class="result-filename">blockchain and coding, also algorithms</span>
-    					<span class="result-date-uploaded">4/12/18</span>
-    					<span class="result-uploaded-by">ur mom</span>
+    					<span class="result-filename"><input type="checkbox" class="result-file-checkbox">AdoptionOfBlockChain.pdf</span>
+    					<span class="result-date-uploaded">04/12/18</span>
+    					<span class="result-uploaded-by">Sara Tollestrup</span>
     				</div>
     				<div id="sample-result-2" class="result-file">
-    					<span class="result-filename">sad oak jpg</span>
-    					<span class="result-date-uploaded">1/1/99</span>
-    					<span class="result-uploaded-by">my mom</span>
+    					<span class="result-filename"><input type="checkbox" class="result-file-checkbox">sadOak.jpg</span>
+    					<span class="result-date-uploaded">01/01/16</span>
+    					<span class="result-uploaded-by">Me</span>
     				</div>
+						<div id="sample-result-3" class="result-file">
+							<span class="result-filename"><input type="checkbox" class="result-file-checkbox">lecture15Slides.ppt</span>
+							<span class="result-date-uploaded">06/24/17</span>
+							<span class="result-uploaded-by">Me</span>
+						</div>
     			</div>
     		</div>
         </div>
@@ -87,6 +98,9 @@
             <button class="form-button" id="save-file">Save</button>
         </div>
 	</div>
+
+	<!-- =========== PREVIEW UPLOAD COLUMN =========== -->
+
 	<div class="col" id="preview-col">
         <div class="row" id="file-preview">
             <div id="preview-image">
