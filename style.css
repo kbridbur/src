@@ -441,6 +441,7 @@ body {
 	padding: 15px;
 	position: relative;
 	right: 0;
+	outline: none;
 }
 
 .views-btn:hover {
@@ -449,7 +450,7 @@ body {
 }
 
 .active-tab {
-	opacity: 1;
+	opacity: 1 !important;
 }
 .classifier-icon {
 	height: 1em;
