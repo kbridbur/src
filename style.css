@@ -1,7 +1,10 @@
 :root {
 	--color-blue: #4ABDAC;
+	--color-blue-fade: rgba(74, 189, 172, 0.2);
 	--color-red: #FA6B3F;
+	--color-red-fade: rgba(250, 107, 63, 0.2);
 	--color-yellow: #F7B226;
+	--color-yellow-fade: rgba(247, 178, 38, 0.2);
 	--color-gray: #54524E;
 }
 
@@ -275,7 +278,15 @@ body {
 	background-color: white;
 	height: 0px;
 	overflow: hidden;
-	opacity: 0.2;
+}
+
+.panel > * {
+	border-radius: 8px;
+	border: none;
+	width: 90%;
+	margin: 5px;
+	padding: 5px;
+	cursor: pointer;
 }
 
 .search-container {
@@ -302,6 +313,10 @@ body {
 }
 
 #tags-panel {
+	background-color: var(--color-red-fade);
+}
+
+.tags-classifier {
 	background-color: var(--color-red);
 }
 
@@ -310,6 +325,10 @@ body {
 }
 
 #projects-panel {
+	background-color: var(--color-yellow-fade);
+}
+
+.projects-classifier {
 	background-color: var(--color-yellow);
 }
 
@@ -318,6 +337,9 @@ body {
 }
 
 #groups-panel {
-	background-color: var(--color-blue);
+	background-color: var(--color-blue-fade);
 }
 
+.groups-classifier {
+	background-color: var(--color-blue);
+}

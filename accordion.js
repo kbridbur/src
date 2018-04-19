@@ -6,8 +6,16 @@ window.onload = function(e) {
 		accordions[i].addEventListener("click", function() {
 			this.classList.toggle("active");
 			var panel = this.nextElementSibling;
-			var tagsInField = panel.childNodes.length;
-			var sizeOfPanel = tagsInField * panel.childNodes[1].clientHeight;
+			var tagsInField = panel.children.length;
+			var odd;
+			if (tagsInField % 2 == 0) {
+				odd = 0.5;
+			} else {
+				odd = 1;
+			}
+			var margin = 5;
+			var sizeOfPanel = tagsInField * (panel.children[1].clientHeight) + (tagsInField - odd) * (margin * 2);
+			console.log(sizeOfPanel);
 			if (window.getComputedStyle(panel).getPropertyValue('height') == "0px") {
 				panel.style.height = sizeOfPanel+"px";
 			} else {
