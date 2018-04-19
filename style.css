@@ -6,6 +6,19 @@
 	--color-yellow: #F7B226;
 	--color-yellow-fade: rgba(247, 178, 38, 0.2);
 	--color-gray: #54524E;
+
+	--color-maroon: rgba(64, 20, 20, 1);
+	--color-maroon-fade: rgba(64 ,20, 20, .2);
+	--color-purple: rgba(60, 65, 92, 1);
+	--color-purple-fade: rgba(60, 65, 92, .2);
+	--color-violet: rgba(176, 179, 232, 1);
+	--color-violet-fade: rgba(176, 179, 232, 0.2);
+	--color-eggshell: rgba(236, 235, 233, 1);
+	--color-eggshell-fade: rgba(236, 235, 233, 0.2);
+	--color-pale: rgba(231, 246, 255, 1);
+	--color-pale-fade: rgba(231, 246, 255, 0.2);
+	--color-black: rgba(22, 22, 22, 1);
+	--color-black-fade: rgba(22, 22, 22, 0.2);
 }
 
 html, body {
@@ -34,7 +47,7 @@ body {
 #tag-col {
 	grid-column: 1;
 	position: relative;
-	/* background-color: #ccc; */
+	background-color: var(--color-purple);
 }
 
 .search {
@@ -310,39 +323,39 @@ body {
 }
 
 #tags {
-	background-color: var(--color-red);
+	background-color: var(--color-purple);
 }
 
 #tags-panel {
-	background-color: var(--color-red-fade);
+	background-color: var(--color-purple-fade);
 }
 
 .tags-classifier {
-	background-color: var(--color-red);
+	background-color: var(--color-purple);
 }
 
 #projects {
-	background-color: var(--color-yellow);
+	background-color: var(--color-violet);
 }
 
 #projects-panel {
-	background-color: var(--color-yellow-fade);
+	background-color: var(--color-violet-fade);
 }
 
 .projects-classifier {
-	background-color: var(--color-yellow);
+	background-color: var(--color-violet);
 }
 
 #groups {
-	background-color: var(--color-blue);
+	background-color: var(--color-pale);
 }
 
 #groups-panel {
-	background-color: var(--color-blue-fade);
+	background-color: var(--color-pale-fade);
 }
 
 .groups-classifier {
-	background-color: var(--color-blue);
+	background-color: var(--color-pale);
 }
 
 .views {
