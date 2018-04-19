@@ -36,9 +36,9 @@
 	--projects-btn-color: var(--color-bg);
 	--groups-btn-color: var(--color-bg);
 
-	--tags-tag-color: var(--color-light-blue);
+	--tags-tag-color: var(--color-light-green);
 	--projects-tag-color: var(--color-light-blue);
-	--groups-tag-color: var(--color-light-blue);
+	--groups-tag-color: var(--color-light-purple);
 
 	--tags-panel-color: var(--color-bg);
 	--projects-panel-color: var(--color-bg);
@@ -443,15 +443,14 @@ body {
 	right: 0;
 }
 
-#main {
-	opacity: 1;
-}
-
 .views-btn:hover {
 	cursor: pointer;
 	opacity: 0.75;
 }
 
+.active-tab {
+	opacity: 1;
+}
 .classifier-icon {
 	height: 1em;
 	width: 1em;
