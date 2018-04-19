@@ -382,10 +382,13 @@ body {
 	margin: 5px;
 	padding: 5px;
 	cursor: pointer;
+	position: relative;
 }
 
 .classifier-checkbox {
 	margin-right: 10px;
+	border: solid 1px black;
+	border-radius: 0;
 }
 
 .search-container {
@@ -470,10 +473,7 @@ body {
 	padding: 15px;
 	position: relative;
 	right: 0;
-}
-
-#main {
-	opacity: 1;
+	outline: none;
 }
 
 .views-btn:hover {
@@ -481,6 +481,9 @@ body {
 	opacity: 0.75;
 }
 
+.active-tab {
+	opacity: 1 !important;
+}
 .classifier-icon {
 	height: 1em;
 	width: 1em;
