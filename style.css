@@ -7,18 +7,22 @@
 	--color-yellow-fade: rgba(247, 178, 38, 0.2);
 	--color-gray: #54524E;
 
-	--color-maroon: rgba(64, 20, 20, 1);
-	--color-maroon-fade: rgba(64 ,20, 20, .2);
-	--color-purple: rgba(60, 65, 92, 1);
-	--color-purple-fade: rgba(60, 65, 92, .2);
+	--color-maroon: rgb(102,31,31);
+	--color-maroon-fade:rgb(102,47,47);
+	--color-purple: rgb(87,94,135);
+	--color-purple-fade:rgb(104,108,135);
 	--color-violet: rgba(176, 179, 232, 1);
-	--color-violet-fade: rgba(176, 179, 232, 0.2);
+	--color-violet-fade: rgb(206,207,232);
 	--color-eggshell: rgba(236, 235, 233, 1);
 	--color-eggshell-fade: rgba(236, 235, 233, 0.2);
 	--color-pale: rgba(231, 246, 255, 1);
 	--color-pale-fade: rgba(231, 246, 255, 0.2);
 	--color-black: rgba(22, 22, 22, 1);
-	--color-black-fade: rgba(22, 22, 22, 0.2);
+
+	--color-classifiers-bg: var(--color-black);
+	--color-tag-btn: var(--color-maroon);
+	--color-tag-btn-:: 
+
 	--search-font-size: 12pt;
 	--search-font: Lato;
 }
@@ -69,7 +73,8 @@ body {
 #tag-col {
 	grid-column: 1;
 	position: relative;
-	background-color: #ccc; 
+	background-color: var(--color-black); 
+	color: pale;
 }
 
 #main-col {
@@ -326,39 +331,39 @@ body {
 }
 
 #tags {
-	background-color: var(--color-purple);
+	background-color: var(--color-maroon);
 }
 
 #tags-panel {
-	background-color: var(--color-purple-fade);
+	background-color: var(--color-maroon-fade);
 }
 
 .tags-classifier {
-	background-color: var(--color-purple);
+	background-color: var(--color-maroon);
 }
 
 #projects {
-	background-color: var(--color-violet);
+	background-color: var(--color-purple);
 }
 
 #projects-panel {
-	background-color: var(--color-violet-fade);
+	background-color: var(--color-purple-fade);
 }
 
 .projects-classifier {
-	background-color: var(--color-violet);
+	background-color: var(--color-purple);
 }
 
 #groups {
-	background-color: var(--color-pale);
+	background-color: var(--color-violet);
 }
 
 #groups-panel {
-	background-color: var(--color-pale-fade);
+	background-color: var(--color-violet-fade);
 }
 
 .groups-classifier {
-	background-color: var(--color-pale);
+	background-color: var(--color-violet);
 }
 
 .views {
