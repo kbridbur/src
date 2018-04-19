@@ -1,7 +1,7 @@
 :root {
 	--color-blue: #4ABDAC;
 	--color-blue-fade: rgba(74, 189, 172, 0.2);
-	--color-red: #FA6B3F;
+	--color-red: #E6896D;
 	--color-red-fade: rgba(250, 107, 63, 0.2);
 	--color-yellow: #F7B226;
 	--color-yellow-fade: rgba(247, 178, 38, 0.2);
@@ -25,7 +25,19 @@
 
 	--search-font-size: 12pt;
 	--search-font: Lato;
+
+	--tag-col-bg: var(--color-purple);
+	--preview-col-bg: var(--color-purple);
+
+	--tags-tag-color: var(--color-violet);
+	--projects-tag-color: var(--color-violet-fade);
+	--groups-tag-color: var(--color-violet);
+
+	--tags-panel-color: var(--color-violet-fade);
+	--projects-panel-color: var(--color-pale-fade);
+	--groups-panel-color: var(--color-violet-fade);
 }
+
 
 html, body {
 	margin: 0;
@@ -73,20 +85,24 @@ body {
 #tag-col {
 	grid-column: 1;
 	position: relative;
+<<<<<<< HEAD
 	background-color: var(--color-black); 
 	color: pale;
+=======
+	background-color: var(--tag-col-bg); 
+>>>>>>> ebdef0efb4f12c57e9abdcc5e860847307bd12b0
 }
 
 #main-col {
 	grid-column: 2;
-    border-left: 5px solid #ccc;
-    border-right: 5px solid #ccc;
+/*    border-left: 5px solid #ccc;
+    border-right: 5px solid #ccc;*/
 	padding: 20px;
 }
 
 #preview-col {
 	grid-column: 3;
-	background-color: var(--color-light-grey);
+	background-color: var(--preview-col-bg);
 }
 
 /**********************************************************/
@@ -331,39 +347,39 @@ body {
 }
 
 #tags {
-	background-color: var(--color-maroon);
+	background-color: var(--tags-tag-color);
 }
 
 #tags-panel {
-	background-color: var(--color-maroon-fade);
+	background-color: var(--tags-panel-color);
 }
 
 .tags-classifier {
-	background-color: var(--color-maroon);
+	background-color: var(--tags-tag-color);
 }
 
 #projects {
-	background-color: var(--color-purple);
+	background-color: var(--projects-tag-color);
 }
 
 #projects-panel {
-	background-color: var(--color-purple-fade);
+	background-color: var(--projects-panel-color);
 }
 
 .projects-classifier {
-	background-color: var(--color-purple);
+	background-color: var(--projects-tag-color);
 }
 
 #groups {
-	background-color: var(--color-violet);
+	background-color: var(--groups-tag-color);
 }
 
 #groups-panel {
-	background-color: var(--color-violet-fade);
+	background-color: var(--groups-panel-color);
 }
 
 .groups-classifier {
-	background-color: var(--color-violet);
+	background-color: var(--groups-tag-color);
 }
 
 .views {
