@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<title> src </title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" href="style.css">
@@ -18,11 +19,15 @@
 	<!-- =========== CLASSIFIERS COLUMN ========= -->
 
 	<div class="col" id="tag-col">
-		<input type="text" class="search" id="classifier_search"  placeholder="Search for Classifiers..">
+		<div class="search-container">
+			<label for="classifier-search"> Search Classifiers </label>
+			<input type="text" class="search" id="classifier-search"  placeholder="...">
+			<button class="search-btn" id="classifier-search-btn"> &#8981; </button> 
+		</div>
 		<button class="accordion title-font" id="tags">
 			Tags
 		</button>
-		<div class="panel" id="tag_panel">
+		<div class="panel" id="tags-panel">
 			<p> foo </p>
 			<p> bar </p>
 			<p> flkdfj </p>
@@ -30,14 +35,14 @@
 		<button class="accordion title-font" id="projects">
 			Projects
 		</button>
-		<div class="panel" id="projects_panel">
+		<div class="panel" id="projects-panel">
 			<p> foo </p>
 			<p> bar </p>
 		</div>
 		<button class="accordion title-font" id="groups">
 			Groups
 		</button>
-		<div class="panel" id="groups_panel">
+		<div class="panel" id="groups-panel">
 			<p> foo </p>
 			<p> bar </p>
 		</div>
@@ -114,6 +119,5 @@
         </div>
 	</div>
 </body>
-<!-- <script src="accordion.js"></script> -->
 
 </html>
