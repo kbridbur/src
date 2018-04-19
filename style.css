@@ -350,10 +350,13 @@ body {
 	margin: 5px;
 	padding: 5px;
 	cursor: pointer;
+	position: relative;
 }
 
 .classifier-checkbox {
 	margin-right: 10px;
+	border: solid 1px black;
+	border-radius: 0;
 }
 
 .search-container {
