@@ -342,13 +342,18 @@ body {
 	overflow: hidden;
 }
 
-.groups-classifier,.tags-classifier,.projects-classifier {
+.classifier {
+	font-family: Helvetica;
 	border-radius: 8px;
 	border: none;
 	width: 90%;
 	margin: 5px;
 	padding: 5px;
 	cursor: pointer;
+}
+
+.classifier-checkbox {
+	margin-right: 10px;
 }
 
 .search-container {
@@ -428,9 +433,9 @@ body {
 	background-color: white;
 	opacity: 0.5;
 	color: var(--color-bg);
-	margin-bottom: 10px;
+	margin-bottom: 7px;
 	margin-left: auto;
-	padding: 10px;
+	padding: 15px;
 	position: relative;
 	right: 0;
 }
