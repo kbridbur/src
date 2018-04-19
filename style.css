@@ -19,6 +19,8 @@
 	--color-pale-fade: rgba(231, 246, 255, 0.2);
 	--color-black: rgba(22, 22, 22, 1);
 	--color-black-fade: rgba(22, 22, 22, 0.2);
+	--search-font-size: 12pt;
+	--search-font: Lato;
 }
 
 html, body {
@@ -28,7 +30,7 @@ html, body {
 
 body {
     display: grid;
-    grid-template-columns: 250px 1fr 270px;
+    grid-template-columns: 270px 1fr 300px;
 		font-family: Lato;
 }
 
@@ -44,24 +46,36 @@ body {
 
 }
 
-#tag-col {
-	grid-column: 1;
-	position: relative;
-	background-color: var(--color-purple);
-}
-
 .search {
 	width: 80%;
 	height: 1.5em;
+	font-size: var(--search-font-size);
+	font-family: var(--search-font);
+	border-radius: 4px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #54524E;
+	padding-left: 8px;
 }
 
 .search-btn {
 	font-size: .7em;
 }
+
+/**********************************************************/
+/*                general column styles                   */
+/**********************************************************/
+
+#tag-col {
+	grid-column: 1;
+	position: relative;
+	background-color: #ccc; 
+}
+
 #main-col {
 	grid-column: 2;
-    border-left: 1px solid grey;
-    border-right: 1px solid grey;
+    border-left: 5px solid #ccc;
+    border-right: 5px solid #ccc;
 	padding: 20px;
 }
 
@@ -126,18 +140,15 @@ body {
 }
 
 #main-search {
-	width: 85%;
-	font-size: larger;
-	font-family: Lato;
-	border-radius: 4px;
-	border-width: 1px;
-	border-style: solid;
-	border-color: #54524E;
-	padding-left: 8px;
 }
 
 #main-search:focus {
 		outline: none;
+}
+
+#results-headers {
+	display: grid;
+	grid-template-columns: 2fr repeat(2, 1fr);
 }
 
 
@@ -250,11 +261,6 @@ body {
     font-size: 4em;
 }
 
-#results-headers {
-	display: grid;
-	grid-template-columns: 2fr repeat(2, 1fr);
-}
-
 
 /**********************************************************/
 /*		        tag column                        */
@@ -307,13 +313,10 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: space-evenly;
+	margin: 10px;
 }
 #classifier-search {
-	border-radius: 4px;
-	border-width: 1px;
-	border-style: solid;
-	border-color: #54524E;
-	padding-left: 8px;
+
 }
 
 #classifier-search-btn {
