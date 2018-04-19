@@ -440,15 +440,14 @@ body {
 	right: 0;
 }
 
-#main {
-	opacity: 1;
-}
-
 .views-btn:hover {
 	cursor: pointer;
 	opacity: 0.75;
 }
 
+.active-tab {
+	opacity: 1;
+}
 .classifier-icon {
 	height: 1em;
 	width: 1em;
