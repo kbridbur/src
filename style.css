@@ -405,26 +405,32 @@ body {
 
 .views {
 	bottom: 0;
-	position: absolute;
+	position: relative;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
+	justify-content: space-evenly;
 }
 
 .views-btn {
-	margin: auto;
-	width: 80%;
+	margin-left: 10px;
+	width: 100%;
 	font-size: 1em;
 	color: white;
 	background-color: var(--color-views-buttons);
 	border:none;
 	display: flex;
 	justify-content: space-between;
-	border-radius: 10px;
+	align-self: auto;
+	/* border-radius: 10px; */
+	border-top-left-radius: 10px;
+	border-bottom-left-radius:10px;
 	background-color: white;
 	color: var(--color-bg);
 	margin-bottom: 10px;
 	padding: 10px;
+	position: absolute;
+	right: 0;
 }
 
 .views-btn:hover {
