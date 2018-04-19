@@ -16,26 +16,27 @@
 	--color-eggshell: rgba(236, 235, 233, 1);
 	--color-eggshell-fade: rgba(236, 235, 233, 0.2);
 	--color-pale: rgba(231, 246, 255, 1);
-	--color-pale-fade: rgba(231, 246, 255, 0.2);
+	--color-pale-fade: rgb(249,253,255);
 	--color-black: rgba(22, 22, 22, 1);
-
-	--color-classifiers-bg: var(--color-black);
-	--color-tag-btn: var(--color-maroon);
-	--color-tag-btn-:: 
+	--color-pink: rgb(255,228,226);
 
 	--search-font-size: 12pt;
 	--search-font: Lato;
 
-	--tag-col-bg: var(--color-purple);
-	--preview-col-bg: var(--color-purple);
+	--tag-col-bg: var(--color-black);
+	--preview-col-bg: var(--color-eggshell);
 
-	--tags-tag-color: var(--color-violet);
-	--projects-tag-color: var(--color-violet-fade);
-	--groups-tag-color: var(--color-violet);
+	--tags-btn-color: var(--color-black);
+	--projects-btn-color: var(--color-black);
+	--groups-btn-color: var(--color-black);
 
-	--tags-panel-color: var(--color-violet-fade);
-	--projects-panel-color: var(--color-pale-fade);
-	--groups-panel-color: var(--color-violet-fade);
+	--tags-tag-color: var(--color-purple);
+	--projects-tag-color: var(--color-violet);
+	--groups-tag-color: var(--color-pale);
+
+	--tags-panel-color: var(--color-black);
+	--projects-panel-color: var(--color-black);
+	--groups-panel-color: var(--color-black);
 }
 
 
@@ -85,12 +86,7 @@ body {
 #tag-col {
 	grid-column: 1;
 	position: relative;
-<<<<<<< HEAD
-	background-color: var(--color-black); 
-	color: pale;
-=======
 	background-color: var(--tag-col-bg); 
->>>>>>> ebdef0efb4f12c57e9abdcc5e860847307bd12b0
 }
 
 #main-col {
@@ -288,8 +284,6 @@ body {
 /**********************************************************/
 
 .accordion {
-	background-color: #eee;
-	color #444;
 	cursor: pointer;
 	width:100%;
 	text-align:left;
@@ -298,10 +292,14 @@ body {
 	transition: 0.4s;
 	height: 3em;
 	font-size: 1em;
+	color: white;	
+	border-top-style: solid;
+	/* border-bottom-style: solid; */
+	border-top-color: white;
+	/* border-bottom-color: white; */
 }
 
 .active, .accordion:hover {
-	background-color: #ccc;
 }
 
 .accordion:after {
@@ -316,7 +314,6 @@ body {
 .panel {
 	-webkit-transition: height  0.5s;
 	padding: 0 18px;
-	background-color: white;
 	height: 0px;
 	overflow: hidden;
 }
@@ -344,10 +341,11 @@ body {
 	height: 1.9em;
 	width: 13%;
 	background-color: rgba(0,0,0,0);
+	color: white;
 }
 
 #tags {
-	background-color: var(--tags-tag-color);
+	background-color: var(--tags-btn-color);
 }
 
 #tags-panel {
@@ -359,7 +357,7 @@ body {
 }
 
 #projects {
-	background-color: var(--projects-tag-color);
+	background-color: var(--projects-btn-color);
 }
 
 #projects-panel {
@@ -371,7 +369,7 @@ body {
 }
 
 #groups {
-	background-color: var(--groups-tag-color);
+	background-color: var(--groups-btn-color);
 }
 
 #groups-panel {
@@ -385,12 +383,24 @@ body {
 .views {
 	bottom: 0;
 	position: absolute;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
 }
 
 .views-btn {
 	width: 100%;
-	font-size: 2.5em;
+	font-size: 1em;
+	color: white;
+	background-color: var(--color-black);
+	border-top: solid white;
+	border-left: none;
+	border-right: none;
+	display: flex;
+	justify-content: space-between;
 }
 
 .classifier-icon {
+	height: 1em;
+	width: 1em;
 }
