@@ -33,6 +33,7 @@ body {
 
 #tag-col {
 	grid-column: 1;
+	position: relative;
 	/* background-color: #ccc; */
 }
 
@@ -280,7 +281,7 @@ body {
 	overflow: hidden;
 }
 
-.panel > * {
+.groups-classifier,.tags-classifier,.projects-classifier {
 	border-radius: 8px;
 	border: none;
 	width: 90%;
@@ -342,4 +343,17 @@ body {
 
 .groups-classifier {
 	background-color: var(--color-blue);
+}
+
+.views {
+	bottom: 0;
+	position: absolute;
+}
+
+.views-btn {
+	width: 100%;
+	font-size: 2.5em;
+}
+
+.classifier-icon {
 }
