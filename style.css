@@ -49,8 +49,8 @@
 
 hr {
 	border: none;
-	color: white;
-	background-color: white;
+	color: black;
+	background-color: black;
 	height: 1px;
 
 }
@@ -116,6 +116,7 @@ body {
 #main-col {
 	grid-column: 2;
 	margin: 20px;
+	overflow: scroll;
 	/*padding-bottom: 0px;*/
 }
 
@@ -143,6 +144,10 @@ body {
 	cursor: pointer;
 }
 
+/* .results-files{
+	overflow: scroll;
+} */
+
 .result-file {
     position: relative;
 	display: grid;
@@ -161,17 +166,7 @@ body {
 
 }
 
-.result-filename {
 
-}
-
-.result-date-uploaded {
-
-}
-
-.result-uploaded-by {
-
-}
 
 
 
@@ -221,7 +216,8 @@ body {
 		border-color: var(--color-gray);
 		font-size: larger;
 		border-width: 1px;
-		padding-left: 15px;
+		padding-left: 7px;
+		height: 1.5em;
 }
 
 .form-button {
