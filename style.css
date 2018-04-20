@@ -277,6 +277,7 @@ h1 {
 .edit-grid {
 	display: grid;
 	grid-template-columns: 33% 33% 33%;
+	grid-template-rows: 5vh 5vh 5vh 5vh 20vh 15vh;
 }
 
 .edit-field {
@@ -293,17 +294,22 @@ h1 {
 
 .form-button {
     /* border-radius: 5px; */
-		height: 25px;
+/*		height: 25px;
 		padding-top: 2px;
 		margin-right: 10px;
 		background-color: var(--color-light-purple);
 		border-color: var(--color-purple);
-		font-family: Lato;
+		font-family: Lato;*/
+		margin: 5px;
 }
 
 .form-label {
 	font-family: Lato;
 	margin-top: 5px;
+}
+
+#classifiers-form-label {
+	grid-row: 4;
 }
 
 #file-name {
@@ -337,7 +343,8 @@ h1 {
 	border: 1px solid black;
 	border-top-left-radius: 4px;
 	border-bottom-left-radius: 4px;
-	height: 150px;
+	/*height: 150px;*/
+	grid-row: 5;
 }
 
 #form-projects {
@@ -345,7 +352,8 @@ h1 {
 	margin-bottom: 15px;
 	border-top: 1px solid black;
 	border-bottom: 1px solid black;
-	height: 150px;
+	/*height: 150px;*/
+	grid-row: 5;
     /* box-sizing: border-box;
     border-left: 1px solid black;
     border-right: 1px solid black; */
@@ -354,16 +362,22 @@ h1 {
 #form-groups {
 	margin-top: 15px;
 	margin-bottom: 15px;
-	height: 150px;
+	/*height: 150px;*/
 	border: 1px solid black;
 	border-top-right-radius: 4px;
 	border-bottom-right-radius: 4px;
+	grid-row: 5;
+}
+
+#notes-form-label {
+	grid-row: 6;
 }
 
 #file-notes {
 	grid-column: 2 / 4;
 	height: auto;
 	resize: vertical;
+	grid-row: 6;
 }
 
 #save-file {
