@@ -10,10 +10,10 @@ window.onload = function(e) {
 
 		// add function here to display proper stuff in the main col related to the active-tab
 	}
-	
+
 	for (var i = 0; i < tabs.length; i++) {
 		tabs[i].addEventListener("click", function() {
-			switchActiveTab(this);	
+			switchActiveTab(this);
 		});
 	}
 
@@ -42,5 +42,5 @@ window.onload = function(e) {
 			}
 		});
 	}
+	loadFiles()
 }
-
