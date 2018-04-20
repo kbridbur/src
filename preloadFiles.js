@@ -107,7 +107,7 @@ function showSpecialFiles() {
   parent.removeChild(child)
 
   var newChild = document.createElement("div")
-  newChild.setAttribute("class", "results-files")
+  newChild.setAttribute("id", "results-files")
 
 
 
