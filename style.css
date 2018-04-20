@@ -49,8 +49,8 @@
 
 hr {
 	border: none;
-	color: white;
-	background-color: white;
+	color: black;
+	background-color: black;
 	height: 1px;
 
 }
@@ -58,13 +58,13 @@ hr {
 html, body {
 	margin: 0;
 	font-family: Lato;
-
 }
 
 body {
     display: grid;
     grid-template-columns: 18% 60% 22%;
 	/*font-family: Lato;*/
+
 }
 
 .title-font {
@@ -114,8 +114,9 @@ body {
 }
 
 #main-col {
+    box-sizing: border-box;
 	grid-column: 2;
-	margin: 20px;
+	padding: 20px;
 	/*padding-bottom: 0px;*/
 }
 
@@ -143,6 +144,10 @@ body {
 	cursor: pointer;
 }
 
+/* .results-files{
+	overflow: scroll;
+} */
+
 .result-file {
     position: relative;
 	display: grid;
@@ -169,17 +174,7 @@ body {
 
 }
 
-.result-filename {
 
-}
-
-.result-date-uploaded {
-
-}
-
-.result-uploaded-by {
-
-}
 
 #results-headers {
     border-bottom: 1px solid black;
@@ -231,7 +226,8 @@ body {
 		border-color: var(--color-gray);
 		font-size: larger;
 		border-width: 1px;
-		padding-left: 15px;
+		padding-left: 7px;
+		height: 1.5em;
 }
 
 .form-button {
@@ -328,7 +324,8 @@ body {
     flex-wrap: nowrap;
     justify-content:space-between;
     height: 70%;
-    margin: 2%;
+    padding: 2%;
+    box-sizing: border-box;
 }
 
 #preview-image{
@@ -358,6 +355,7 @@ body {
     text-align: center;
     border-top: 1px solid grey;
     font-size: 4em;
+    box-sizing: border-box;
 }
 
 #file-drag-drop:hover {
@@ -439,8 +437,25 @@ body {
 }
 
 .classifier-container {
-	overflow-y: scroll;
+	overflow-y: auto;
     overflow-x: hidden;
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, .5);
+    border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 #classifier-search-btn {

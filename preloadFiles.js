@@ -24,6 +24,16 @@ var titles = [
   "BlockChainAndBitcoin"
 ]
 
+var specialTitles = [
+  "AdoptionOfBlockChain.jpg",
+  "BitcoinAndBanking.pdf",
+  "BitcoinBasics.doc",
+  "CurrencyOnline.jpeg",
+  "BitcoinTrendsGraph.png",
+  "ManagementInTech.pdf",
+  "BlockChainAndBitcoin"
+]
+
 var contributors = [
   "Sara Tollestrup",
   "Kyle Bridburg",
@@ -52,9 +62,7 @@ var dates = [
   "01/15/15",
   "01/10/15",
   "01/09/15",
-  "01/04/15",
-  "01/03/15",
-  "01/01/15"
+  "01/04/15"
 ]
 
 function loadFiles () {
@@ -90,4 +98,51 @@ function loadFiles () {
     var parent = document.getElementById("results-files");
     parent.appendChild(child)
   }
+}
+
+function showSpecialFiles() {
+  // console.log("check")
+  var parent = document.getElementById("main-results");
+  var child = document.getElementById("results-files")
+  parent.removeChild(child)
+
+  var newChild = document.createElement("div")
+  newChild.setAttribute("class", "results-files")
+
+
+
+  for (var i = 0; i < specialTitles.length; i++){
+
+    var randomIndex = Math.floor(Math.random() * 5)
+
+    var checkbox = document.createElement("input")
+    checkbox.setAttribute("type", "checkbox")
+    checkbox.setAttribute("class", "result-file-checkbox")
+
+    var filename = document.createElement("span")
+    filename.setAttribute("class", "result-filename")
+    filename.innerHTML = specialTitles[i]
+    filename.prepend(checkbox)
+
+    var date = document.createElement("span")
+    date.setAttribute("class", "result-date-uploaded")
+    date.innerHTML = dates[i]
+
+    var uploader = document.createElement("span")
+    uploader.setAttribute("class", "result-uploaded-by")
+    uploader.innerHTML = contributors[randomIndex]
+
+    var child = document.createElement("div")
+    child.setAttribute("id", "sample-result-"+i)
+    child.setAttribute("class", "result-file")
+
+    child.appendChild(filename)
+    child.appendChild(date)
+    child.appendChild(uploader)
+
+    newChild.appendChild(child)
+  }
+
+  parent.appendChild(newChild)
+
 }
