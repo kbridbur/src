@@ -319,7 +319,8 @@ body {
     flex-wrap: nowrap;
     justify-content:space-between;
     height: 70%;
-    margin: 2%;
+    padding: 2%;
+    box-sizing: border-box;
 }
 
 #preview-image{
@@ -349,6 +350,7 @@ body {
     text-align: center;
     border-top: 1px solid grey;
     font-size: 4em;
+    box-sizing: border-box;
 }
 
 #file-drag-drop:hover {
