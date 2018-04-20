@@ -19,7 +19,7 @@ function saveFile(e){
 
     var filename = document.createElement("span")
     filename.setAttribute("class", "result-filename")
-    filename.innerHTML = "Banking in a post apocalyptic world"
+    filename.innerHTML = "BankingInAPostApocalypticWorld.pdf"
     filename.prepend(checkbox)
 
     var date = document.createElement("span")
@@ -39,7 +39,7 @@ function saveFile(e){
     child.appendChild(uploader)
 
     var parent = document.getElementById("results-files");
-    parent.appendChild(child)
+    parent.prepend(child)
 
 
 }
