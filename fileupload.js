@@ -13,6 +13,8 @@ function saveFile(e){
     dom.default.style.display="block";
     dom.upload.style.display="none";
 
+    console.log("here")
+
     var checkbox = document.createElement("input")
     checkbox.setAttribute("type", "checkbox")
     checkbox.setAttribute("class", "result-file-checkbox")
@@ -25,6 +27,8 @@ function saveFile(e){
     var date = document.createElement("span")
     date.setAttribute("class", "result-date-uploaded")
     date.innerHTML = "04/20/18"
+
+
 
     var uploader = document.createElement("span")
     uploader.setAttribute("class", "result-uploaded-by")
@@ -40,7 +44,6 @@ function saveFile(e){
 
     var parent = document.getElementById("results-files");
     parent.prepend(child)
-
 
 }
 
