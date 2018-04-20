@@ -20,7 +20,7 @@
 	--color-black: rgba(22, 22, 22, 1);
 	--color-pink: rgb(255,228,226);
 
-	--color-bg: #576AA5;
+	--color-bg: #6e7faf;
 	--color-bg-hover: #485788;
 	--color-light-purple: #C7C9E8;
 	--color-light-green: #E1F4E3;
@@ -483,7 +483,8 @@ h1 {
 }
 
 .classifier-container {
-	overflow-y: auto;
+	max-height: 63vh;
+	overflow-y: scroll;
     overflow-x: hidden;
 }
 ::-webkit-scrollbar{
@@ -548,7 +549,7 @@ h1 {
 }
 
 .views {
-	box-shadow: 0px -30px 20px -13px #576AA5;
+	box-shadow: 0px -30px 20px -13px var(--color-bg);
 	z-index: 1;
 	width: 100%;
 	display: flex;
