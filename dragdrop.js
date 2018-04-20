@@ -7,8 +7,11 @@ var dragItemOriginZ = 0;
 
 function pickItemUp(e){
     var clicked = e.srcElement;
-    if (clicked.parentElement.classList.contains("result-file") || clicked.classList.contains("classifier")){
+    if (clicked.classList.contains("classifier")){
         dragItem = clicked;
+    }
+    else if (clicked.parentElement.classList.contains("result-file")){
+        dragItem = clicked.parentElement;
     }
     else{
         return;
@@ -18,6 +21,7 @@ function pickItemUp(e){
     dragItemOriginZ = clicked.style.zIndex;
     dragItem.style.setProperty("z-index", 2, "important");
     dragItem.style.pointerEvents = "none";
+    dragItem.style.boxShadow = "0px 0px 20px 0px rgba(0,0,0,.5)";
 }
 
 function moveItem(e){
@@ -38,6 +42,7 @@ function setItemDown(e){
     dragItem.style.top = 0;
     dragItem.style.pointerEvents = "auto";
     dragItem.style.zIndex = dragItemOriginZ;
+    dragItem.style.boxShadow = "none";
     dragItem = null;
     dragItemOriginX = 0;
     dragItemOriginY = 0;

@@ -148,12 +148,15 @@ body {
 	display: grid;
 	grid-template-columns: 2fr repeat(2, 1fr);
 	height: 30px;
+    line-height: 30px;
     user-drag: none;
     user-select: none;
     -moz-user-select: none;
     -webkit-user-drag: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+    border-radius: 8px;
+    background-color: white;
 }
 
 .result-file-checkbox{
@@ -173,7 +176,9 @@ body {
 
 }
 
-
+#results-headers {
+    border-bottom: 1px solid black;
+}
 
 #default {
     width: 100%;
@@ -429,7 +434,8 @@ body {
 }
 
 .classifier-container {
-	overflow: scroll;
+	overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 #classifier-search-btn {
