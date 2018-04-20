@@ -19,7 +19,7 @@ function saveFile(e){
 
     var filename = document.createElement("span")
     filename.setAttribute("class", "result-filename")
-    filename.innerHTML = "BankingInAPostApocalypticWorld.pdf"
+    filename.innerHTML = "BankingInATechWorld.pdf"
     filename.prepend(checkbox)
 
     var date = document.createElement("span")
