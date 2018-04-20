@@ -19,159 +19,159 @@
 
 </head>
 <body>
-
-	<!-- =========== CLASSIFIERS COLUMN ========= -->
-
-	<div class="col" id="tag-col">
-		<div class="search-container">
-			<!-- <label for="classifier-search"> Search Classifiers </label> -->
-			<input type="text" class="search" id="classifier-search"  placeholder="Search classifiers...">
-			<button class="search-btn" id="classifier-search-btn"> &#8981; </button>
-		</div>
-        <!-- <hr> -->
-	<div class="classifier-container">
-		<button class="accordion title-font" id="tags">
-			Tags
-		</button>
-		<div class="panel" id="tags-panel">
-			<div class="tags-classifier classifier">
-                <input type="checkbox" class="classifier-checkbox">blockchain
-            </div>
-			<div class="tags-classifier classifier" >
-                <input type="checkbox" class="classifier-checkbox">bitcoin
-            </div>
-			<div class="tags-classifier classifier">
-                <input type="checkbox" class="classifier-checkbox">finance
-            </div>
-            <div class="tags-classifier classifier">
-                <input type="checkbox" class="classifier-checkbox">bees
-            </div>
-            <div class="tags-classifier classifier">
-                <input type="checkbox" class="classifier-checkbox">anatomy
-            </div>
-            <div class="tags-classifier classifier">
-                <input type="checkbox" class="classifier-checkbox">photography
-            </div>
-            <div class="tags-classifier classifier">
-                <input type="checkbox" class="classifier-checkbox">water
-            </div>
-		</div>
-        <!-- <hr> -->
-		<button class="accordion title-font" id="projects">
-			Projects
-		</button>
-		<div class="panel" id="projects-panel">
-			<div class="projects-classifier classifier">
-                <input type="checkbox" class="classifier-checkbox">Personal Photography
-            </div>
-			<div class="projects-classifier classifier">
-                <input type="checkbox" class="classifier-checkbox">6.813 Materials
-            </div>
-            <div class="projects-classifier classifier">
-                <input type="checkbox" class="classifier-checkbox" onclick="showSpecialFiles()">Fintech Project
-            </div>
-						<div class="projects-classifier classifier">
-								<input type="checkbox" class="classifier-checkbox">Bees and Tech
-						</div>
-		</div>
-        <!-- <hr> -->
-		<button class="accordion title-font" id="groups">
-			Groups
-		</button>
-		<div class="panel" id="groups-panel">
-			<div class="groups-classifier classifier">
-                <input type="checkbox" class="classifier-checkbox">Karger Lab
-            </div>
-            <div class="groups-classifier classifier">
-                <input type="checkbox" class="classifier-checkbox">6.813 Staff
-            </div>
-            <div class="groups-classifier classifier">
-                <input type="checkbox" class="classifier-checkbox">Robochain Lab
-            </div>
-            <div class="groups-classifier classifier">
-                <input type="checkbox" class="classifier-checkbox">Photography Club
-            </div>
-		</div>
+	<div class="row" id="header">
+		Test
 	</div>
-        <!-- <hr> -->
-		<div class="views">
-            <button class="views-btn title-font active-tab" id="main">
-                <img class="classifier-icon" src="images/clock.png">
-                Main
-            </button>
-			<button class="views-btn title-font" id="recent">
-				<img class="classifier-icon" src="images/clock.png">
-				Recent
-			</button>
-			<button class="views-btn title-font" id="trash">
-				<img class="classifier-icon" src="images/garbage.png">
-				Trash
-			</button>
-			<button class="views-btn title-font" id="starred">
-				<img class="classifier-icon" src="images/star.png">
-				Starred
-			</button>
-		</div>
-	</div>
+	<div class="row" id="lower">
+		<!-- =========== CLASSIFIERS COLUMN ========= -->
 
-	<!-- ============ MAIN COLUMN ============= -->
-
-	<div class="col" id="main-col">
-  	<div id="default">
-    	<div id="main-header">
-    		<input id="main-search" class="search" type="text">
-    	</div>
-    	<div id="main-controls">
-    		<button class="icon-buttons"><img class="main-icon" src="images/star.png"/></button>
-    		<button class="icon-buttons"><img class="main-icon" src="images/garbage.png"/></button>
-    		<button class="icon-buttons"><img class="main-icon" src="images/clock.png"/></button>
-    	</div>
-    	<div id="main-results">
-    		<div id="results-headers">
-    			<span class="title-font">File Name</span>
-  				<span class="title-font">Date Uploaded</span>
-    			<span class="title-font">Uploaded By</span>
-  			</div>
-  			<hr>
-  			<div id="results-files"></div>
-    	</div>
-		</div>
-    <div id="upload">
-			<div class="edit-grid">
-				<div class="form-label">File Name</div>
-        <input type="text" class="edit-field" id="file-name">
-				<div class="form-label">Author</div>
-        <input type="text" class="edit-field" id="file-author">
-				<div class="form-label">Publish Date</div>
-        <input type="text" class="edit-field" id="publish-date">
-				<div></div>
-				<div class="form-label">Classifers</div>
-				<div></div>
-				<div></div>
-        <div id="form-tags"></div>
-        <div id="form-projects"></div>
-        <div id="form-groups"></div>
-				<div class="form-label">Notes</div>
-        <textarea class="edit-field" id="file-notes" rows="4"></textarea>
+		<div class="col" id="tag-col">
+			<div class="search-container">
+				<!-- <label for="classifier-search"> Search Classifiers </label> -->
+				<input type="text" class="search" id="classifier-search"  placeholder="Search classifiers...">
+				<button class="search-btn" id="classifier-search-btn"> &#8981; </button>
 			</div>
-    	<button class="form-button" id="cancel-file">Cancel</button>
-    	<button class="form-button" id="save-file">Save</button>
+		<div class="classifier-container">
+			<button class="accordion title-font" id="tags">
+				Tags
+			</button>
+			<div class="panel" id="tags-panel">
+				<div class="tags-classifier classifier">
+			<input type="checkbox" class="classifier-checkbox">blockchain
+		    </div>
+				<div class="tags-classifier classifier" >
+			<input type="checkbox" class="classifier-checkbox">bitcoin
+		    </div>
+				<div class="tags-classifier classifier">
+			<input type="checkbox" class="classifier-checkbox">finance
+		    </div>
+		    <div class="tags-classifier classifier">
+			<input type="checkbox" class="classifier-checkbox">bees
+		    </div>
+		    <div class="tags-classifier classifier">
+			<input type="checkbox" class="classifier-checkbox">anatomy
+		    </div>
+		    <div class="tags-classifier classifier">
+			<input type="checkbox" class="classifier-checkbox">photography
+		    </div>
+		    <div class="tags-classifier classifier">
+			<input type="checkbox" class="classifier-checkbox">water
+		    </div>
+			</div>
+			<button class="accordion title-font" id="projects">
+				Projects
+			</button>
+			<div class="panel" id="projects-panel">
+				<div class="projects-classifier classifier">
+			<input type="checkbox" class="classifier-checkbox">Personal Photography
+		    </div>
+				<div class="projects-classifier classifier">
+			<input type="checkbox" class="classifier-checkbox">6.813 Materials
+		    </div>
+		    <div class="projects-classifier classifier">
+			<input type="checkbox" class="classifier-checkbox" onclick="showSpecialFiles()">Fintech Project
+		    </div>
+							<div class="projects-classifier classifier">
+									<input type="checkbox" class="classifier-checkbox">Bees and Tech
+							</div>
+			</div>
+			<button class="accordion title-font" id="groups">
+				Groups
+			</button>
+			<div class="panel" id="groups-panel">
+				<div class="groups-classifier classifier">
+			<input type="checkbox" class="classifier-checkbox">Karger Lab
+		    </div>
+		    <div class="groups-classifier classifier">
+			<input type="checkbox" class="classifier-checkbox">6.813 Staff
+		    </div>
+		    <div class="groups-classifier classifier">
+			<input type="checkbox" class="classifier-checkbox">Robochain Lab
+		    </div>
+		    <div class="groups-classifier classifier">
+			<input type="checkbox" class="classifier-checkbox">Photography Club
+		    </div>
+			</div>
 		</div>
-	</div>
+			<div class="views">
+		    <button class="views-btn title-font active-tab" id="main">
+			<img class="classifier-icon" src="images/clock.png">
+			Main
+		    </button>
+				<button class="views-btn title-font" id="recent">
+					<img class="classifier-icon" src="images/clock.png">
+					Recent
+				</button>
+				<button class="views-btn title-font" id="trash">
+					<img class="classifier-icon" src="images/garbage.png">
+					Trash
+				</button>
+				<button class="views-btn title-font" id="starred">
+					<img class="classifier-icon" src="images/star.png">
+					Starred
+				</button>
+			</div>
+		</div>
 
-	<!-- =========== PREVIEW UPLOAD COLUMN =========== -->
+		<!-- ============ MAIN COLUMN ============= -->
 
-	<div class="col" id="preview-col">
-        <div class="row" id="file-preview">
-            <div id="preview-image">
-            </div>
-            <div id="preview-description">
-                Im a description
-            </div>
-        </div>
-        <div class="row" id="file-drag-drop">
-            <i class="fa fa-upload"></i>
-        </div>
+		<div class="col" id="main-col">
+		<div id="default">
+		<div id="main-header">
+			<input id="main-search" class="search" type="text">
+		</div>
+		<div id="main-controls">
+			<button class="icon-buttons"><img class="main-icon" src="images/star.png"/></button>
+			<button class="icon-buttons"><img class="main-icon" src="images/garbage.png"/></button>
+			<button class="icon-buttons"><img class="main-icon" src="images/clock.png"/></button>
+		</div>
+		<div id="main-results">
+			<div id="results-headers">
+				<span class="title-font">File Name</span>
+					<span class="title-font">Date Uploaded</span>
+				<span class="title-font">Uploaded By</span>
+				</div>
+				<hr>
+				<div id="results-files"></div>
+		</div>
+			</div>
+	    <div id="upload">
+				<div class="edit-grid">
+					<div class="form-label">File Name</div>
+		<input type="text" class="edit-field" id="file-name">
+					<div class="form-label">Author</div>
+		<input type="text" class="edit-field" id="file-author">
+					<div class="form-label">Publish Date</div>
+		<input type="text" class="edit-field" id="publish-date">
+					<div></div>
+					<div class="form-label">Classifers</div>
+					<div></div>
+					<div></div>
+		<div id="form-tags"></div>
+		<div id="form-projects"></div>
+		<div id="form-groups"></div>
+					<div class="form-label">Notes</div>
+		<textarea class="edit-field" id="file-notes" rows="4"></textarea>
+				</div>
+		<button class="form-button" id="cancel-file">Cancel</button>
+		<button class="form-button" id="save-file">Save</button>
+			</div>
+		</div>
+
+		<!-- =========== PREVIEW UPLOAD COLUMN =========== -->
+
+		<div class="col" id="preview-col">
+		<div class="row" id="file-preview">
+		    <div id="preview-image">
+		    </div>
+		    <div id="preview-description">
+			Im a description
+		    </div>
+		</div>
+		<div class="row" id="file-drag-drop">
+		    <i class="fa fa-upload"></i>
+		</div>
+		</div>
 	</div>
 </body>
 

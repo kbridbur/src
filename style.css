@@ -62,9 +62,7 @@ html, body {
 
 body {
     display: grid;
-    grid-template-columns: 18% 60% 22%;
-	/*font-family: Lato;*/
-
+    grid-template-rows: 10% 90%;
 }
 
 .title-font {
@@ -75,8 +73,14 @@ body {
 	height: 100vh;
 }
 
-.row {
-
+#header {
+	grid-row: 1;
+	height: 100%;
+}
+#lower {
+	grid-row: 2;
+	display: grid;
+	grid-template-columns: 18% 60% 22%;
 }
 
 .search {
