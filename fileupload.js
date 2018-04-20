@@ -1,8 +1,10 @@
 dom = {}
 
 function handleDrop(e){
-    e.preventDefault();
-    e.stopPropagation();
+    if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
     dom.default.style.display="none";
     dom.upload.style.display="block";
 }
@@ -66,5 +68,10 @@ Util.events(document, {
         dom.fileUpload.addEventListener("drop", function(event){handleDrop(event);}, false);
         dom.submit.addEventListener("click", function(event){saveFile(event);}, false);
         dom.cancel.addEventListener("click", function(event){cancelFile(event);}, false);
+
+        document.getElementById("file-drag-drop").addEventListener("click", function(){
+            var uploadElt = document.getElementById('hidden-file-upload');
+            uploadElt.click();
+        });
     }
 });
