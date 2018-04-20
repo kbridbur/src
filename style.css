@@ -139,9 +139,16 @@ body {
 }
 
 .result-file {
+    position: relative;
 	display: grid;
 	grid-template-columns: 2fr repeat(2, 1fr);
 	height: 30px;
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 .result-file-checkbox{
@@ -314,7 +321,7 @@ body {
 	transition: 0.4s;
 	height: 3em;
 	font-size: 1em;
-	color: white;	
+	color: white;
 	/*border-top-style: solid;*/
 	/* border-bottom-style: solid; */
 	/*border-top-color: white;*/
@@ -343,6 +350,7 @@ body {
 }
 
 .classifier {
+    position: relative;
 	font-family: Helvetica;
 	border-radius: 8px;
 	border: none;
@@ -350,6 +358,12 @@ body {
 	margin: 5px;
 	padding: 5px;
 	cursor: pointer;
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 .classifier-checkbox {
