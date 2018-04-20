@@ -58,13 +58,13 @@ hr {
 html, body {
 	margin: 0;
 	font-family: Lato;
-
 }
 
 body {
     display: grid;
     grid-template-columns: 18% 60% 22%;
 	/*font-family: Lato;*/
+
 }
 
 .title-font {
@@ -114,8 +114,9 @@ body {
 }
 
 #main-col {
+    box-sizing: border-box;
 	grid-column: 2;
-	margin: 20px;
+	padding: 20px;
 	/*padding-bottom: 0px;*/
 }
 
