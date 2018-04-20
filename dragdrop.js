@@ -16,6 +16,7 @@ function pickItemUp(e){
     else{
         return;
     }
+    dragItem.style.setProperty("-webkit-transition", "none");
     dragItemOriginX = e.screenX;
     dragItemOriginY = e.screenY;
     dragItemOriginZ = clicked.style.zIndex;
@@ -28,7 +29,7 @@ function moveItem(e){
     if (!dragItem){
         return;
     }
-    console.log(dragItem);
+    // console.log(dragItem);
     dragItem.style.left = e.screenX - dragItemOriginX + "px";
     dragItem.style.top = e.screenY - dragItemOriginY + "px";
 }
@@ -38,12 +39,15 @@ function setItemDown(e){
         return;
     }
     //Adding to catergories logic
+    dragItem.style.setProperty("-webkit-transition", "all 0.2s");
     dragItem.style.left = 0;
     dragItem.style.top = 0;
     dragItem.style.pointerEvents = "auto";
-    dragItem.style.zIndex = dragItemOriginZ;
+    setTimeout(function(){
+        dragItem.style.zIndex = dragItemOriginZ; 
+        dragItem = null;
+    }, 200);
     dragItem.style.boxShadow = "none";
-    dragItem = null;
     dragItemOriginX = 0;
     dragItemOriginY = 0;
     dragItemOriginZ = 0;

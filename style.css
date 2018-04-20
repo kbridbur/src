@@ -159,6 +159,11 @@ body {
     background-color: white;
 }
 
+.result-file:hover {
+	background-color: #efefef;
+	cursor:pointer;
+}
+
 .result-file-checkbox{
 	margin-right: 25px;
 
