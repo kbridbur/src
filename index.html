@@ -120,6 +120,8 @@
 
 	<!-- ============ MAIN COLUMN ============= -->
 		<div class="col" id="main-col">
+
+            <!-- default display -->
 			<div id="default">
 				<div id="main-controls">
 					<button class="icon-buttons"><img class="main-icon" src="images/star.png"/></button>
@@ -135,25 +137,27 @@
 					<hr>
 					<div id="results-files"></div>
 				</div>
-			    <div id="upload">
-					<div class="edit-grid">
-						<div class="form-label">File Name</div>
-		        			<input type="text" class="edit-field" id="file-name">
-						<div class="form-label">Author</div>
-		       				 <input type="text" class="edit-field" id="file-author">
-						<div class="form-label">Publish Date</div>
-		        			<input type="text" class="edit-field" id="publish-date">
-						<div class="form-label">Classifers</div>
-				        <div id="form-tags"></div>
-				        <div id="form-projects"></div>
-				        <div id="form-groups"></div>
-						<div class="form-label">Notes</div>
-				        <textarea class="edit-field" id="file-notes" rows="4"></textarea>
-					</div>
-			    	<button class="form-button" id="cancel-file">Cancel</button>
-			    	<button class="form-button" id="save-file">Save</button>
-				</div>
 			</div>
+
+            <!-- file upload display -->
+            <div id="upload">
+                <div class="edit-grid">
+                    <div class="form-label">File Name</div>
+                        <input type="text" class="edit-field" id="file-name">
+                    <div class="form-label">Author</div>
+                         <input type="text" class="edit-field" id="file-author">
+                    <div class="form-label">Publish Date</div>
+                        <input type="text" class="edit-field" id="publish-date">
+                    <div class="form-label">Classifers</div>
+                    <div id="form-tags"></div>
+                    <div id="form-projects"></div>
+                    <div id="form-groups"></div>
+                    <div class="form-label">Notes</div>
+                    <textarea class="edit-field" id="file-notes" rows="4"></textarea>
+                </div>
+                <button class="form-button" id="cancel-file">Cancel</button>
+                <button class="form-button" id="save-file">Save</button>
+            </div>
 		</div>
 
 	<!-- =========== PREVIEW UPLOAD COLUMN =========== -->
