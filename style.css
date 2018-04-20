@@ -20,31 +20,40 @@
 	--color-black: rgba(22, 22, 22, 1);
 	--color-pink: rgb(255,228,226);
 
-	--color-bg: #6e7faf;
 	--color-bg-hover: #485788;
 	--color-light-purple: #C7C9E8;
 	--color-light-green: #E1F4E3;
 	--color-light-blue: #E7F6FF;
 
+	
+	--color-side-bg: #96BA7B;
+	--color-side-bg-hover: #5E9732;
+	
+	--color-side-bg-alt: #BD7D8F;
+	--color-side-bg-alt-hover: #993350;
+
+	--color-header-bg: #337401;
+	--color-main-bg: #DBDDDA;
+
 	--search-font-size: 12pt;
 	--search-font: Helvetica;
 
-	--tag-col-bg: var(--color-bg);
-	--preview-col-bg: var(--color-bg);
+	--tag-col-bg: var(--color-side-bg);
+	--preview-col-bg: var(--color-side-bg);
 
-	--tags-btn-color: var(--color-bg);
-	--projects-btn-color: var(--color-bg);
-	--groups-btn-color: var(--color-bg);
+	--tags-btn-color: var(--color-side-bg);
+	--projects-btn-color: var(--color-side-bg);
+	--groups-btn-color: var(--color-side-bg);
 
-	--tags-tag-color: var(--color-light-green);
-	--projects-tag-color: var(--color-light-blue);
-	--groups-tag-color: var(--color-light-purple);
+	--tags-tag-color: #ffe9fa;
+	--projects-tag-color: #dbffd4;
+	--groups-tag-color: #fffbcf;
 
-	--tags-panel-color: var(--color-bg);
-	--projects-panel-color: var(--color-bg);
-	--groups-panel-color: var(--color-bg);
+	--tags-panel-color: var(--color-side-bg);
+	--projects-panel-color: var(--color-side-bg);
+	--groups-panel-color: var(--color-side-bg);
 
-	--color-views-buttons: var(--color-bg);
+	--color-views-buttons: var(--color-main-bg);
 }
 
 hr {
@@ -76,7 +85,7 @@ body {
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
-	background-color: #0b2166;
+	background-color: var(--color-header-bg);
 }
 #lower {
 	grid-row: 2;
@@ -108,7 +117,6 @@ body {
 
 .search-btn:hover {
 	cursor: pointer;
-	opacity: 0.5;
 }
 /**********************************************************/
 /*		  header style				  */
@@ -401,7 +409,7 @@ h1 {
 }
 
 #file-drag-drop:hover {
-	background-color: var(--color-bg-hover);
+	background-color: var(--color-side-bg-hover);
 	cursor: pointer;
 }
 
@@ -432,7 +440,7 @@ h1 {
 }
 
 .active, .accordion:hover {
-	background-color: var(--color-bg-hover);
+	background-color: var(--color-side-bg-hover);
 }
 
 .accordion:after {
@@ -505,12 +513,19 @@ h1 {
     background: #555;
 }
 
-/*#classifier-search-btn {
-	height: 1.9em;
-	width: 13%;
-	background-color: rgba(0,0,0,0);
-	color: white;
-}*/
+#classifier-search {
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+#classifier-search-btn {
+	border-radius: 1px 8px 8px 1px;
+	height: 1.41em;
+}
+
+#classifier-search-btn:hover {
+	background-color: var(--color-side-bg-hover);
+	color: #fffae5;
+}
 
 /*#tags {
 	background-color: var(--tags-btn-color);
