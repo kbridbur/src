@@ -1,4 +1,3 @@
-console.log('here')
 var titles = [
   "AdoptionOfBlockChain.jpg",
   "BitcoinAndBanking.pdf",

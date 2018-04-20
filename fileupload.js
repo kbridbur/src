@@ -15,8 +15,6 @@ function saveFile(e){
     dom.default.style.display="block";
     dom.upload.style.display="none";
 
-    console.log("here")
-
     var checkbox = document.createElement("input")
     checkbox.setAttribute("type", "checkbox")
     checkbox.setAttribute("class", "result-file-checkbox")
