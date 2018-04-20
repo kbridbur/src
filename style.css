@@ -57,7 +57,7 @@ hr {
 
 html, body {
 	margin: 0;
-	font-family: Helvetica;
+	font-family: Lato;
 
 }
 
@@ -68,7 +68,7 @@ body {
 }
 
 .title-font {
-	font-family: Helvetica;
+	font-family: Lato;
 }
 
 .col {
@@ -134,8 +134,13 @@ body {
 
 .icon-buttons {
 	height: 30px;
-	padding-top: 2px;x
-	/* padding: 15px; */
+	padding-top: 2px;
+	background-color: var(--color-light-purple);
+  border-color: var(--color-purple);
+}
+
+.icon-buttons:hover {
+	cursor: pointer;
 }
 
 .result-file {
@@ -213,11 +218,17 @@ body {
 }
 
 .form-button {
-    border-radius: 5px;
+    /* border-radius: 5px; */
+		height: 25px;
+		padding-top: 2px;
+		margin-right: 10px;
+		background-color: var(--color-light-purple);
+		border-color: var(--color-purple);
+		font-family: Lato;
 }
 
 .form-label {
-	font-family: Helvetica;
+	font-family: Lato;
 	margin-top: 5px;
 }
 
@@ -325,11 +336,15 @@ body {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    background-color: var(--color-light-grey);
+    /* background-color: var(--color-purple-fade); */
     height: 30%;
     text-align: center;
     border-top: 1px solid grey;
     font-size: 4em;
+}
+
+#file-drag-drop:hover {
+	background-color: var(--color-bg-hover);
 }
 
 
@@ -352,6 +367,7 @@ body {
 	/*border-top-color: white;*/
 	/* border-bottom-color: white; */
 	background-color: var(--background-color);
+	padding-left: 14px;
 }
 
 .active, .accordion:hover {
@@ -361,6 +377,7 @@ body {
 .accordion:after {
 	content: '\2228';
 	float: right;
+
 }
 
 .active:after {
@@ -375,7 +392,7 @@ body {
 }
 
 .classifier {
-	font-family: Helvetica;
+	font-family: Lato;
 	border-radius: 8px;
 	border: none;
 	width: 90%;
