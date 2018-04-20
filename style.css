@@ -308,7 +308,7 @@ h1 {
 	margin-top: 5px;
 }
 
-#classifiers-form-label {
+#tags-form-label, #groups-form-label, #projects-form-label {
 	grid-row: 4;
 }
 
