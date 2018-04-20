@@ -20,13 +20,17 @@
 </head>
 <body>
 	<div class="row" id="header">
-		Test
+		<h1> src </h1>
+		<div class="search-container" id="main-search-container">
+			<input id="main-search" class="search" type="text">
+			<button class="search-btn" id="main-search-btn"> &#8981; </button>
+		</div>
 	</div>
 	<div class="row" id="lower">
 		<!-- =========== CLASSIFIERS COLUMN ========= -->
 
 		<div class="col" id="tag-col">
-			<div class="search-container">
+			<div class="search-container" id="classfier-search-container">
 				<!-- <label for="classifier-search"> Search Classifiers </label> -->
 				<input type="text" class="search" id="classifier-search"  placeholder="Search classifiers...">
 				<button class="search-btn" id="classifier-search-btn"> &#8981; </button>
@@ -117,9 +121,6 @@
 
 		<div class="col" id="main-col">
 		<div id="default">
-		<div id="main-header">
-			<input id="main-search" class="search" type="text">
-		</div>
 		<div id="main-controls">
 			<button class="icon-buttons"><img class="main-icon" src="images/star.png"/></button>
 			<button class="icon-buttons"><img class="main-icon" src="images/garbage.png"/></button>

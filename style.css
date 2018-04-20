@@ -62,7 +62,7 @@ html, body {
 
 body {
     display: grid;
-    grid-template-rows: 10% 90%;
+    grid-template-rows: 10vh 90vh;
 }
 
 .title-font {
@@ -76,6 +76,9 @@ body {
 #header {
 	grid-row: 1;
 	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
 }
 #lower {
 	grid-row: 2;
@@ -104,6 +107,30 @@ body {
 .search-btn:hover {
 	cursor: pointer;
 	opacity: 0.5;
+}
+/**********************************************************/
+/*		  header style				  */
+/**********************************************************/
+
+#main-search-container {
+	justify-content: center;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	width: 52%;
+	margin-left: 12.5%;
+}
+
+#main-search {
+	width: 90%;
+}
+	
+h1 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 0.2%;
+	margin-bottom: 0.2%;
+	margin-left: 7%;
 }
 
 /**********************************************************/
@@ -172,8 +199,6 @@ body {
 	margin-right: 25px;
 
 }
-
-
 
 #results-headers {
     border-bottom: 1px solid black;
