@@ -21,8 +21,9 @@ function pickItemUp(e){
     dragItemOriginY = e.screenY;
     dragItemOriginZ = clicked.style.zIndex;
     dragItem.style.setProperty("z-index", 2, "important");
-    dragItem.style.pointerEvents = "none";
-    dragItem.style.boxShadow = "0px 0px 20px 0px rgba(0,0,0,.5)";
+    // dragItem.style.setProperty("background-color", "#efefef")
+    // dragItem.style.pointerEvents = "none";
+    // dragItem.style.boxShadow = "0px 0px 20px 0px rgba(0,0,0,.5)";
 }
 
 function moveItem(e){
