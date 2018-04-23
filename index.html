@@ -16,16 +16,24 @@
 <script src="classifierColumn.js"></script>
 <script src="fileupload.js"></script>
 <script src="dragdrop.js"></script>
-<script src="selectAll.js"></script>
+<script src="selecting.js"></script>
 
 </head>
 <body>
 	<div class="row" id="header">
-		<h1> src </h1>
+		<h1> <a href="" id="src-home-link">src</a> </h1>
 		<div class="search-container" id="main-search-container">
 			<input id="main-search" class="search" type="text" placeholder="Search files...">
 			<button class="search-btn" id="main-search-btn"> &#8981; </button>
 		</div>
+        <div id="views-dropdown">
+            <select>
+              <option value="main">Main</option>
+              <option value="recent">Recent</option>
+              <option value="starred">Starred</option>
+              <option value="trash">Trash</option>
+            </select>
+        </div>
 	</div>
 	<div class="row" id="lower">
 		<!-- =========== CLASSIFIERS COLUMN ========= -->
@@ -90,7 +98,7 @@
 				</div>
 			</div>
 
-			<div class="views">
+<!-- 			<div class="views">
 	            <button class="views-btn title-font active-tab" id="main">
 	                <img class="classifier-icon" src="images/clock.png">
 	                Main
@@ -107,7 +115,7 @@
 					<img class="classifier-icon" src="images/star.png">
 					Starred
 				</button>
-			</div>
+			</div> -->
 		</div>
 
 	<!-- ============ MAIN COLUMN ============= -->
