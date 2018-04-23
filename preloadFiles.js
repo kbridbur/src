@@ -121,7 +121,9 @@ var dates = [
   "01/15/15",
   "01/10/15",
   "01/09/15",
-  "01/04/15"
+  "01/04/15",
+  "12/30/14",
+  "12/25/14"
 ]
 
 function loadFiles () {
@@ -225,6 +227,9 @@ function showSpecialFiles(element, listName) {
 
         parent.appendChild(newChild)
       }
+      else {
+        checkNum += 1
+      }
   }
 
   else {
@@ -278,7 +283,7 @@ function showSpecialFiles(element, listName) {
     }
 
     else if (checkNum == 2) {
-      checkNum -= 1
+      checkNum = 1
       listName = checkName
 
       var parent = document.getElementById("main-results");

@@ -324,6 +324,10 @@ h1 {
 	grid-template-columns: 2fr repeat(2, 1fr);
 }
 
+#control-icons {
+    display: none;
+}
+
 
 /**********************************************************/
 /*                file edit column                        */
