@@ -70,6 +70,9 @@ select {
     font-family: Helvetica;
     border: none;
     font-size: 12pt;
+    height: 30px;
+    margin: 15px;
+    color: #636363;
 }
 
 select:focus {
@@ -168,11 +171,18 @@ h1 {
 
 #main-search-container {
 	justify-content: center;
-    width: 100%;
+    width: 70%;
 }
 
 #main-search {
-	width: 70%;
+	width: 100%;
+}
+
+#header-middle {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 
