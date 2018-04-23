@@ -225,6 +225,9 @@ function showSpecialFiles(element, listName) {
 
         parent.appendChild(newChild)
       }
+      else {
+        checkNum += 1
+      }
   }
 
   else {
@@ -278,7 +281,7 @@ function showSpecialFiles(element, listName) {
     }
 
     else if (checkNum == 2) {
-      checkNum -= 1
+      checkNum = 1
       listName = checkName
 
       var parent = document.getElementById("main-results");
