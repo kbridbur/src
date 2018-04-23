@@ -55,7 +55,7 @@ function fileSelect() {
             var img = document.getElementById("preview-image");
             var description = document.getElementById("preview-description");
             var imgPlacehold = document.getElementById("img-placeholder");
-            if (toggle == true) {
+            if (Object.values(fileToggles).indexOf(true) > -1) {
                 img.src = "graphics/sadoak.jpg";
                 description.innerHTML = "I'm a description";
                 imgPlacehold.innerHTML = "";
