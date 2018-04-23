@@ -1,4 +1,6 @@
 dom = {}
+tagToggles = {}
+fileToggles = {}
 
 Util.events(document, {
     "DOMContentLoaded": function() {
@@ -24,13 +26,15 @@ Util.events(document, {
 
         for (var i = 0; i < dom.classifiers.length; i++) {
             classifier = dom.classifiers[i];
+            tagToggles[classifier.id] = false;
             classifier.addEventListener( 'click', function() {
                 var checkbox = this.children[0];
-                toggle = checkbox.checked == true ? false : true;
+                toggle = !tagToggles[this.id];
                 checkbox.checked = toggle;
+                tagToggles[this.id] = toggle;
                 checkbox.click()
-
             });
+            console.log(tagToggles);
         }
 
         setTimeout(fileSelect, 200);
@@ -42,10 +46,12 @@ function fileSelect() {
     dom.files = Util.all(".result-file");
     for (var i = 0; i < dom.files.length; i++) {
         file = dom.files[i];
+        fileToggles[file.id] = false;
         file.addEventListener( 'click', function() {
             var checkbox = this.children[0].children[0];
-            toggle = checkbox.checked == true ? false : true;
+            toggle = !fileToggles[this.id];
             checkbox.checked = toggle;
+            fileToggles[this.id] = toggle;
         });
     }
 }
