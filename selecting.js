@@ -33,7 +33,6 @@ Util.events(document, {
                 checkbox.checked = toggle;
                 checkbox.click()
                 tagToggles[this.id] = toggle;
-
             });
             console.log(tagToggles);
         }
@@ -53,6 +52,18 @@ function fileSelect() {
             toggle = !fileToggles[this.id];
             checkbox.checked = toggle;
             fileToggles[this.id] = toggle;
+            var img = document.getElementById("preview-image");
+            var description = document.getElementById("preview-description");
+            var imgPlacehold = document.getElementById("img-placeholder");
+            if (toggle == true) {
+                img.src = "graphics/sadoak.jpg";
+                description.innerHTML = "I'm a description";
+                imgPlacehold.innerHTML = "";
+            } else {
+                img.src = "";
+                description.innerHTML = "";
+                imgPlacehold.innerHTML = "No file selected";
+            }
         });
     }
 }

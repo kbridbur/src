@@ -43,7 +43,7 @@
 		<div class="col" id="tag-col">
 			<div class="search-container" id="classfier-search-container">
 				<!-- <label for="classifier-search"> Search Classifiers </label> -->
-				<input type="text" class="search" id="classifier-search"  placeholder="Search classifiers...">
+				<input type="text" class="search" id="classifier-search"  placeholder="Search filters...">
 				<button class="search-btn" id="classifier-search-btn"> &#8981; </button>
 			</div>
 			<div class="classifier-container">
@@ -180,10 +180,13 @@
 	<div class="col" id="preview-col">
         <div class="row" id="file-preview">
             <h3>File Preview</h3>
-            <div id="preview-image">
-            </div>
-            <div id="preview-description">
-                Im a description
+            <div id="preview-content">
+                <div id="preview-image-container">
+                    <span id="img-placeholder">No file selected</span>
+                    <img src="" id="preview-image"/>
+                </div>
+                <div id="preview-description">
+                </div>
             </div>
         </div>
         <div class="row" id="file-drag-drop">

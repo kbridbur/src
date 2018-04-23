@@ -70,7 +70,7 @@ select {
     font-family: Helvetica;
     border: none;
     font-size: 12pt;
-    height: 30px;
+    height: 2.3em;
     margin: 15px;
     color: #636363;
 }
@@ -99,6 +99,24 @@ h1 {
 	font-size: 40pt;
 	font-family: monospace;
 	font-weight: 200;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: gray;
+    border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 #src-home-link {
@@ -176,6 +194,11 @@ h1 {
 
 #main-search {
 	width: 100%;
+    line-height: 2em;
+}
+
+#main-search-btn {
+    line-height: 2em;
 }
 
 #header-middle {
@@ -232,7 +255,7 @@ h1 {
 
 .icon-buttons:hover {
 	cursor: pointer;
-	background-color: var(--color-side-bg);
+	background-color: var(--color-search-btn-hover);
 }
 
 .icon-buttons:focus {
@@ -242,15 +265,16 @@ h1 {
 /*.selectChecks {
 	background-color: var(--color-side-bg);
 }*/
-/* .results-files{
+ #results-files{
+    max-height: 75vh;
 	overflow: scroll;
-} */
+} 
 
 .result-file {
     position: relative;
 	display: grid;
 	grid-template-columns: 2fr repeat(2, 1fr);
-	height: 30px;
+	height: 45px;
     line-height: 30px;
     user-drag: none;
     user-select: none;
@@ -441,21 +465,29 @@ h1 {
     box-sizing: border-box;
 }
 
+#preview-content {
+    height: 100%;
+/*    display: flex;
+    align-content: center;
+    justify-content: center;*/
+}
+
 #preview-image{
-    background-image: url("graphics/sadoak.jpg");
+    /*background-image: url("graphics/sadoak.jpg");*/
+    max-width: 21vw;
     background-repeat: round;
     box-sizing: border-box;
-    height: 80%;
+    display: block;
 }
 
 #preview-description{
-    display: flex;
-    flex-direction: column;
+    display: block;
+/*    flex-direction: column;
     justify-content: center;
     text-align: center;
     box-sizing: border-box;
     height: 18%;
-    border-top: 5px solid rgba(0,0,0,0);
+    border-top: 5px solid rgba(0,0,0,0);*/
 }
 
 #file-drag-drop{
@@ -559,23 +591,6 @@ h1 {
 	max-height: 83.7vh;
 	overflow-y: scroll;
     overflow-x: hidden;
-}
-::-webkit-scrollbar{
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--color-bg);
-}
-
-::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, .5);
-    border-radius: 8px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
 }
 
 #classifier-search {
