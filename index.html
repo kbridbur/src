@@ -22,17 +22,20 @@
 <body>
 	<div class="row" id="header">
 		<h1> <a href="" id="src-home-link">src</a> </h1>
-		<div class="search-container" id="main-search-container">
-			<input id="main-search" class="search" type="text" placeholder="Search files...">
-			<button class="search-btn" id="main-search-btn"> &#8981; </button>
-		</div>
-        <div id="views-dropdown">
-            <select>
-              <option value="main">Main</option>
-              <option value="recent">Recent</option>
-              <option value="starred">Starred</option>
-              <option value="trash">Trash</option>
-            </select>
+        <div id="header-middle">
+            <span>View:</span>
+            <div id="views-dropdown">
+                <select>
+                  <option value="main">Main</option>
+                  <option value="recent">Recent</option>
+                  <option value="starred">Starred</option>
+                  <option value="trash">Trash</option>
+                </select>
+            </div>
+    		<div class="search-container" id="main-search-container">
+    			<input id="main-search" class="search" type="text" placeholder="Search files...">
+    			<button class="search-btn" id="main-search-btn"> &#8981; </button>
+    		</div>
         </div>
 	</div>
 	<div class="row" id="lower">
