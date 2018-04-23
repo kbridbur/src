@@ -159,25 +159,127 @@ function loadFiles () {
   }
 }
 
-function showSpecialFiles(listName) {
+function showSpecialFiles(element, listName) {
   // console.log("check")
 
-  if (checkNum > 0){
-    var parent= document.getElementById("results-files")
-    var children = parent.children
-    if (children.length > 2){
-      console.log(children)
-      for (var i = 0; i < 2; i++){
-        // console.log(children[i].id)
-        parent.removeChild(children[i])
+  if (element.checked == false){
+
+      if (checkNum == 1){
+        checkNum += 1
+        var parent= document.getElementById("results-files")
+        var children = parent.children
+        if (children.length > 2){
+          for (var i = 0; i < 2; i++){
+            // console.log(children[i].id)
+            parent.removeChild(children[i])
+          }
+        }
       }
-    }
+
+      else if (checkNum == 0) {
+        checkNum += 1
+        checkName = listName
+
+
+
+        var parent = document.getElementById("main-results");
+        var child = document.getElementById("results-files")
+        parent.removeChild(child)
+
+        var newChild = document.createElement("div")
+        newChild.setAttribute("id", "results-files")
+
+
+
+        for (var i = 0; i < listName.length; i++){
+
+          var randomIndex = Math.floor(Math.random() * 5)
+
+          var checkbox = document.createElement("input")
+          checkbox.setAttribute("type", "checkbox")
+          checkbox.setAttribute("class", "result-file-checkbox")
+
+          var filename = document.createElement("span")
+          filename.setAttribute("class", "result-filename")
+          filename.innerHTML = listName[i]
+          filename.prepend(checkbox)
+
+          var date = document.createElement("span")
+          date.setAttribute("class", "result-date-uploaded")
+          date.innerHTML = dates[i]
+
+          var uploader = document.createElement("span")
+          uploader.setAttribute("class", "result-uploaded-by")
+          uploader.innerHTML = contributors[randomIndex]
+
+          var child = document.createElement("div")
+          child.setAttribute("id", "sample-result-"+i)
+          child.setAttribute("class", "result-file")
+
+          child.appendChild(filename)
+          child.appendChild(date)
+          child.appendChild(uploader)
+
+          newChild.appendChild(child)
+        }
+
+        parent.appendChild(newChild)
+      }
   }
 
   else {
 
-      checkNum += 1
-      checkName = listName
+    if (checkNum == 1){
+      checkNum = 0
+      checkName = ''
+
+      var parent = document.getElementById("main-results");
+      var child = document.getElementById("results-files")
+      parent.removeChild(child)
+
+      var newChild = document.createElement("div")
+      newChild.setAttribute("id", "results-files")
+
+
+
+      for (var i = 0; i < titles.length; i++){
+
+        var randomIndex = Math.floor(Math.random() * 5)
+
+        var checkbox = document.createElement("input")
+        checkbox.setAttribute("type", "checkbox")
+        checkbox.setAttribute("class", "result-file-checkbox")
+
+        var filename = document.createElement("span")
+        filename.setAttribute("class", "result-filename")
+        filename.innerHTML = titles[i]
+        filename.prepend(checkbox)
+
+        var date = document.createElement("span")
+        date.setAttribute("class", "result-date-uploaded")
+        date.innerHTML = dates[i]
+
+        var uploader = document.createElement("span")
+        uploader.setAttribute("class", "result-uploaded-by")
+        uploader.innerHTML = contributors[randomIndex]
+
+        var child = document.createElement("div")
+        child.setAttribute("id", "sample-result-"+i)
+        child.setAttribute("class", "result-file")
+
+        child.appendChild(filename)
+        child.appendChild(date)
+        child.appendChild(uploader)
+
+        newChild.appendChild(child)
+      }
+
+      parent.appendChild(newChild)
+    }
+
+    else if (checkNum == 2) {
+      checkNum -= 1
+      listName = checkName
 
       var parent = document.getElementById("main-results");
       var child = document.getElementById("results-files")
@@ -221,6 +323,15 @@ function showSpecialFiles(listName) {
       }
 
       parent.appendChild(newChild)
+
+    }
+    else {
+      checkNum -= 1
+    }
+
   }
+
+
+
 
 }

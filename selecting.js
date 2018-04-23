@@ -28,6 +28,8 @@ Util.events(document, {
                 var checkbox = this.children[0];
                 toggle = checkbox.checked == true ? false : true;
                 checkbox.checked = toggle;
+                checkbox.click()
+
             });
         }
 
