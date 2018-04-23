@@ -31,8 +31,9 @@ Util.events(document, {
                 var checkbox = this.children[0];
                 toggle = !tagToggles[this.id];
                 checkbox.checked = toggle;
-                tagToggles[this.id] = toggle;
                 checkbox.click()
+                tagToggles[this.id] = toggle;
+
             });
             console.log(tagToggles);
         }
