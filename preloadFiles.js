@@ -1,3 +1,6 @@
+var checkNum = 0;
+var checkName = '';
+
 var titles = [
   "AdoptionOfBlockChain.jpg",
   "BitcoinAndBanking.pdf",
@@ -23,7 +26,50 @@ var titles = [
   "BlockChainAndBitcoin"
 ]
 
-var specialTitles = [
+var blockchainTitles = [
+  "AdoptionOfBlockChain.jpg",
+  "CurrencyOnline.jpeg",
+  "BlockChainAndBitcoin"
+]
+
+var bitcoinTitles = [
+  "BitcoinAndBanking.pdf",
+  "BitcoinBasics.doc",
+  "CurrencyOnline.jpeg",
+  "BitcoinTrendsGraph.png",
+  "BlockChainAndBitcoin"
+]
+var financeTitles = [
+  "BitcoinAndBanking.pdf",
+  "BitcoinBasics.doc",
+  "CurrencyOnline.jpeg",
+  "BitcoinTrendsGraph.png",
+  "ManagementInTech.pdf",
+  "BlockChainAndBitcoin"
+]
+var beesTitles = [
+  "DamageFromPollutants.docx",
+  "TheDeclineOfBees.mp3",
+  "BeesAndTheHoneyIndustry.mov",
+  "BeeAnatomyDiagram.jpg"
+]
+var photographyTitles = [
+  "SadOak.jpg",
+  "WaterfallGhana.jpg",
+  "RomanRuins.jpg",
+  "SunsetOcean.jpg",
+  "GeeseWater.jpg"
+]
+
+var lectureTitles = [
+  "Lecture15.ppt",
+  "Lecture17.ppt",
+  "Lecture18.ppt",
+  "CourseSyllabus.doc",
+  "MartelDesignPaper.pdf"
+]
+
+var fintechTitles = [
   "AdoptionOfBlockChain.jpg",
   "BitcoinAndBanking.pdf",
   "BitcoinBasics.doc",
@@ -31,6 +77,20 @@ var specialTitles = [
   "BitcoinTrendsGraph.png",
   "ManagementInTech.pdf",
   "BlockChainAndBitcoin"
+]
+
+var kargerTitles = [
+  "AdoptionOfBlockChain.jpg",
+  "BitcoinAndBanking.pdf",
+  "BitcoinBasics.doc",
+  "CurrencyOnline.jpeg",
+  "BitcoinTrendsGraph.png",
+  "ManagementInTech.pdf",
+  "BlockChainAndBitcoin",
+  "DamageFromPollutants.docx",
+  "TheDeclineOfBees.mp3",
+  "BeesAndTheHoneyIndustry.mov",
+  "BeeAnatomyDiagram.jpg"
 ]
 
 var contributors = [
@@ -99,49 +159,68 @@ function loadFiles () {
   }
 }
 
-function showSpecialFiles() {
+function showSpecialFiles(listName) {
   // console.log("check")
-  var parent = document.getElementById("main-results");
-  var child = document.getElementById("results-files")
-  parent.removeChild(child)
 
-  var newChild = document.createElement("div")
-  newChild.setAttribute("id", "results-files")
-
-
-
-  for (var i = 0; i < specialTitles.length; i++){
-
-    var randomIndex = Math.floor(Math.random() * 5)
-
-    var checkbox = document.createElement("input")
-    checkbox.setAttribute("type", "checkbox")
-    checkbox.setAttribute("class", "result-file-checkbox")
-
-    var filename = document.createElement("span")
-    filename.setAttribute("class", "result-filename")
-    filename.innerHTML = specialTitles[i]
-    filename.prepend(checkbox)
-
-    var date = document.createElement("span")
-    date.setAttribute("class", "result-date-uploaded")
-    date.innerHTML = dates[i]
-
-    var uploader = document.createElement("span")
-    uploader.setAttribute("class", "result-uploaded-by")
-    uploader.innerHTML = contributors[randomIndex]
-
-    var child = document.createElement("div")
-    child.setAttribute("id", "sample-result-"+i)
-    child.setAttribute("class", "result-file")
-
-    child.appendChild(filename)
-    child.appendChild(date)
-    child.appendChild(uploader)
-
-    newChild.appendChild(child)
+  if (checkNum > 0){
+    var parent= document.getElementById("results-files")
+    var children = parent.children
+    if (children.length > 2){
+      console.log(children)
+      for (var i = 0; i < 2; i++){
+        // console.log(children[i].id)
+        parent.removeChild(children[i])
+      }
+    }
   }
 
-  parent.appendChild(newChild)
+  else {
+
+      checkNum += 1
+      checkName = listName
+
+      var parent = document.getElementById("main-results");
+      var child = document.getElementById("results-files")
+      parent.removeChild(child)
+
+      var newChild = document.createElement("div")
+      newChild.setAttribute("id", "results-files")
+
+
+
+      for (var i = 0; i < listName.length; i++){
+
+        var randomIndex = Math.floor(Math.random() * 5)
+
+        var checkbox = document.createElement("input")
+        checkbox.setAttribute("type", "checkbox")
+        checkbox.setAttribute("class", "result-file-checkbox")
+
+        var filename = document.createElement("span")
+        filename.setAttribute("class", "result-filename")
+        filename.innerHTML = listName[i]
+        filename.prepend(checkbox)
+
+        var date = document.createElement("span")
+        date.setAttribute("class", "result-date-uploaded")
+        date.innerHTML = dates[i]
+
+        var uploader = document.createElement("span")
+        uploader.setAttribute("class", "result-uploaded-by")
+        uploader.innerHTML = contributors[randomIndex]
+
+        var child = document.createElement("div")
+        child.setAttribute("id", "sample-result-"+i)
+        child.setAttribute("class", "result-file")
+
+        child.appendChild(filename)
+        child.appendChild(date)
+        child.appendChild(uploader)
+
+        newChild.appendChild(child)
+      }
+
+      parent.appendChild(newChild)
+  }
 
 }
