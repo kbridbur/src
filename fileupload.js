@@ -9,6 +9,14 @@ function handleDrop(e){
     dom.upload.style.display="block";
 }
 
+function handleDragenter(e) {
+    dom.fileUpload.style.border = "dashed 5px #B4E58B";
+}
+
+function handleDragleave(e) {
+    dom.fileUpload.style.border = "none";
+}
+
 function saveFile(e){
     e.preventDefault();
     e.stopPropagation();
@@ -65,7 +73,8 @@ Util.events(document, {
         dom.submit = Util.one("#save-file");
         dom.cancel = Util.one("#cancel-file");
 
-        dom.fileUpload.addEventListener("dragover", function(event){event.preventDefault();}, false);
+        document.body.addEventListener("dragenter", handleDragenter);
+        document.body.addEventListener("dragleave", handleDragleave);
         dom.fileUpload.addEventListener("drop", function(event){handleDrop(event);}, false);
         dom.submit.addEventListener("click", function(event){saveFile(event);}, false);
         dom.cancel.addEventListener("click", function(event){cancelFile(event);}, false);

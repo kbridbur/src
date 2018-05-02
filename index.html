@@ -15,7 +15,7 @@
 <script src="util.js"></script>
 <script src="classifierColumn.js"></script>
 <script src="fileupload.js"></script>
-<script src="dragdrop.js"></script>
+<!-- <script src="dragdrop.js"></script> -->
 <script src="selecting.js"></script>
 <script src="singleFileSelect.js"></script>
 
@@ -42,14 +42,14 @@
 	<div class="row" id="lower">
 		<!-- =========== CLASSIFIERS COLUMN ========= -->
 		<div class="col" id="tag-col">
-			<div class="search-container" id="classfier-search-container">
-				<!-- <label for="classifier-search"> Search Classifiers </label> -->
+<!-- 			<div class="search-container" id="classfier-search-container">
 				<input type="text" class="search" id="classifier-search"  placeholder="Search filters...">
 				<button class="search-btn" id="classifier-search-btn"> &#8981; </button>
-			</div>
+			</div> -->
 			<div class="classifier-container">
 				<button class="accordion title-font" id="tags">
-					Tags
+					<span class="classifier-button-span" id="Tags-button-span">Tags</span> 
+                    <input class="classifier-search" id="tag-search" type="text" placeholder="search...">
 				</button>
 				<div class="panel" id="tags-panel">
 					<div class="tags-classifier classifier" id="classifier1">
@@ -70,7 +70,8 @@
 				</div>
 		        <!-- <hr> -->
 				<button class="accordion title-font" id="projects">
-					Projects
+					<span class="classifier-button-span" id="Projects-button-span">Projects</span> 
+                    <input class="classifier-search" id="projects-search" type="text" placeholder="search...">
 				</button>
 				<div class="panel" id="projects-panel">
 					<div class="projects-classifier classifier" id="classifer6">
@@ -87,7 +88,8 @@
 					</div>
 				</div>
 				<button class="accordion title-font" id="groups">
-					Groups
+					<span class="classifier-button-span" id="Groups-button-span">Groups</span> 
+                    <input class="classifier-search" id="groups-search" type="text" placeholder="search...">
 				</button>
 				<div class="panel" id="groups-panel">
 					<div class="groups-classifier classifier" id="classifier10">
