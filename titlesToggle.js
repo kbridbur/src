@@ -22,10 +22,10 @@ Util.events(document, {
                 bDateParts = bDateString.split("/");
                 aDateParts = aDateString.split("/");
 
-                console.log(aDateParts);
+                
 
-                aDate = Date(parseInt(aDateParts[2]), parseInt(aDateParts[0]-1), parseInt(aDateParts[1]));
-                bDate = Date(parseInt(bDateParts[2]), parseInt(bDateParts[0]-1), parseInt(bDateParts[1]));
+                aDate = new Date(parseInt(aDateParts[2]), parseInt(aDateParts[0]-1), parseInt(aDateParts[1]));
+                bDate = new Date(parseInt(bDateParts[2]), parseInt(bDateParts[0]-1), parseInt(bDateParts[1]));
 
                 return bDate - aDate;
                
