@@ -81,10 +81,16 @@ function fileSelect() {
                 img.src = "graphics/sadoak.jpg";
                 description.innerHTML = "I'm a description";
                 imgPlacehold.innerHTML = "";
+                var lower = Util.one("#lower");
+                lower.style.gridTemplateColumns = "18vw 60vw 22vw";
+                console.log(lower);
             } else {
                 img.src = "";
                 description.innerHTML = "";
                 imgPlacehold.innerHTML = "No file selected";
+                var lower = Util.one("#lower");
+                lower.style.gridTemplateColumns = "18vw 82vw"; 
+                console.log(lower);
             }
         });
 
