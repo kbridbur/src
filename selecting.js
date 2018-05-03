@@ -30,9 +30,15 @@ Util.events(document, {
                 } else {
                     allFiles[i].children[0].src = emptyCheck;
                     fileToggles[allFiles[i].id] = false;
-                    
+
                 }
 		    }
+            if (fileToggles[allFiles[0].id]){
+                    btn.src = filledCheck;
+            }
+            else{
+                btn.src = emptyCheck;
+            }
             toggler = !toggler;
 		});
 
