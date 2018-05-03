@@ -294,9 +294,10 @@ h1 {
 	outline: none;
 }
 
-/*.selectChecks {
-	background-color: var(--color-side-bg);
-}*/
+.selectChecks {
+	width: 100%;
+	height: 100%;
+}
  #results-files{
     max-height: 75vh;
 	overflow: scroll;
@@ -360,7 +361,7 @@ h1 {
 #results-headers {
     line-height: 2em;
 	display: grid;
-	grid-template-columns: 2fr repeat(2, 1fr);
+	grid-template-columns:  1fr repeat(3, 7fr);
 }
 
 #control-icons {
