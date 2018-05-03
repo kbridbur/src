@@ -98,7 +98,7 @@ var contributors = [
   "Kyle Bridburg",
   "Santiago Munoz",
   "Rebecca Weinberger",
-  "Me"
+  "Ben Bitdiddle (Me)"
 ]
 
 var dates = [

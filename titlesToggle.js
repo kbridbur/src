@@ -5,13 +5,12 @@ Util.events(document, {
         var dateTitle    = document.getElementById("date-title");
         var uploadTitle  = document.getElementById("upload-title");
         var allTitles    = [fileTitle, dateTitle, uploadTitle];
-        
-        
+
+        var flipDirection = {"up":"down", "down":"up"};
 
        	var active = dateTitle;
-       	var down = '\2228';
-       	var up   = '\2227';
-       	var afterDisplay = down;
+       	var afterDisplay = "down";
+        addDirection(dateTitle, "down");
 
         function sortDates(filesHolder, direction) {
             filesHolder.sort(function(a, b){
@@ -30,7 +29,7 @@ Util.events(document, {
                 return bDate - aDate;
                
             });
-            if (direction == down) {
+            if (direction == "down") {
                 return filesHolder;
             } else {
                 return filesHolder.reverse()
@@ -41,7 +40,7 @@ Util.events(document, {
             filesHolder.sort(function(a, b){
                 return a.children[1].textContent.localeCompare(b.children[1].textContent);
             });
-            if (direction == down) {
+            if (direction == "down") {
                 return filesHolder;
             } else {
                 return filesHolder.reverse();
@@ -52,7 +51,7 @@ Util.events(document, {
             filesHolder.sort(function(a, b){
                 return a.children[3].textContent.localeCompare(b.children[3].textContent);
             });
-            if (direction == down) {
+            if (direction == "down") {
                 return filesHolder;
             } else {
                 return filesHolder.reverse()
@@ -78,7 +77,7 @@ Util.events(document, {
                 var parent = filesHolder[i].parentNode;
                 // detach it from wherever it is in the DOM
                 var detatchedItem = parent.removeChild(filesHolder[i]);
-                // reatach it.  This works because we are itterating
+                // reattach it.  This works because we are itterating
                 // over the items in the same order as they were re-
                 // turned from being sorted.
                 parent.appendChild(detatchedItem);
@@ -105,11 +104,7 @@ Util.events(document, {
         }
 
         function addDirection(o, direction) {
-        	if (direction == down) {
-        		o.classList.add("down");
-        	} else {
-        		o.classList.add("up");
-        	}
+            o.classList.add(direction);
         }
 		
 		for (var i = 0; i < allTitles.length; i++) {
@@ -117,14 +112,14 @@ Util.events(document, {
 				removeDirection();
 				if (active == this) {
 	        		//filter by flipped direction
-	        		afterDisplay = flipDirection(afterDisplay);
+	        		afterDisplay = flipDirection[afterDisplay];
 	        		addDirection(this, afterDisplay);
 	        		filterByMe(this, afterDisplay);
 	        	} else {
 	        		active = this;
 	        		//filter by default direction
-	        		addDirection(this, down);
-	        		filterByMe(this, down);
+	        		addDirection(this, "down");
+	        		filterByMe(this, "down");
 	        	}
 	        });
 	    }

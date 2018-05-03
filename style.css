@@ -405,9 +405,9 @@ h1 {
     content: '\2228';
 }
 
-#date-title:after {
+/*#date-title:after {
     content: '\2228';
-}
+}*/
 
 #default {
     width: 100%;
