@@ -2,11 +2,24 @@ dom = {}
 
 function handleDrop(e){
     if (e) {
+        // console.log(e);
         e.preventDefault();
         e.stopPropagation();
     }
     dom.default.style.display="none";
     dom.upload.style.display="block";
+
+    var file = e.target.files[0];
+    autofill(file.name, "Ben Bitdiddle", new Date(Date.now()))
+}
+
+function autofill(name, author, date) {
+    dom.fileName.value = name;
+    dom.fileAuthor.value = author;
+    var month = date.getUTCMonth() + 1;
+    var day = date.getUTCDate();
+    var year = date.getUTCFullYear();
+    dom.fileDate.value = month + "/" + day + "/" + year;
 }
 
 function handleDragenter(e) {
@@ -65,7 +78,9 @@ function cancelFile(e){
 Util.events(document, {
     "DOMContentLoaded": function() {
         dom.fileUpload = Util.one("#file-drag-drop");
-
+        dom.fileName = Util.one("#file-name");
+        dom.fileAuthor = Util.one("#file-author");
+        dom.fileDate = Util.one("#publish-date");
 
         dom.default = Util.one("#default");
         dom.upload = Util.one("#upload");
