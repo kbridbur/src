@@ -8,7 +8,7 @@ Util.events(document, {
         
         
 
-       	var active = null;
+       	var active = dateTitle;
        	var down = '\2228';
        	var up   = '\2227';
        	var afterDisplay = down;
