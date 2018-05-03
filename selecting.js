@@ -24,11 +24,11 @@ Util.events(document, {
             }
 		    for (var i = 0; i < allFiles.length; i++) {
                 if (toggler) {
-                    allFiles[i].children[0].children[0].src = filledCheck;
+                    allFiles[i].children[0].src = filledCheck;
                     fileToggles[allFiles[i].id] = true;
 
                 } else {
-                    allFiles[i].children[0].children[0].src = emptyCheck;
+                    allFiles[i].children[0].src = emptyCheck;
                     fileToggles[allFiles[i].id] = false;
                     
                 }
@@ -70,7 +70,7 @@ function fileSelect() {
         fileToggles[file.id] = false;
 
         file.addEventListener( 'click', function() {
-            var checkbox = this.children[0].children[0];
+            var checkbox = this.children[0];
             toggle = !fileToggles[this.id];
             checkbox.src = toggle ? filledCheck : emptyCheck;
             fileToggles[this.id] = toggle;
@@ -91,11 +91,11 @@ function fileSelect() {
         });
 
         file.addEventListener( 'mouseenter', function() {
-            if (!fileToggles[this.id]) {this.children[0].children[0].src = hoverCheck};
+            if (!fileToggles[this.id]) {this.children[0].src = hoverCheck};
         })
 
         file.addEventListener( 'mouseleave', function() {
-            if (!fileToggles[this.id]) {this.children[0].children[0].src = emptyCheck};
+            if (!fileToggles[this.id]) {this.children[0].src = emptyCheck};
         })
     }
 }

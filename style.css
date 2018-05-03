@@ -306,7 +306,8 @@ h1 {
 .result-file {
     position: relative;
 	display: grid;
-	grid-template-columns: 2fr repeat(2, 1fr);
+	/*grid-template-columns: 2fr repeat(2, 1fr);*/
+    grid-template-columns: 1fr repeat(3, 7fr);
 	height: 45px;
     line-height: 30px;
     align-content: center;

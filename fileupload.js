@@ -64,7 +64,6 @@ function cancelFile(e){
 
 Util.events(document, {
     "DOMContentLoaded": function() {
-        console.log("working");
         dom.fileUpload = Util.one("#file-drag-drop");
 
 

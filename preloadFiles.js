@@ -138,7 +138,7 @@ function loadFiles () {
     var filename = document.createElement("span")
     filename.setAttribute("class", "result-filename")
     filename.innerHTML = titles[i]
-    filename.prepend(checkbox)
+    // filename.prepend(checkbox)
 
     var date = document.createElement("span")
     date.setAttribute("class", "result-date-uploaded")
@@ -152,6 +152,7 @@ function loadFiles () {
     child.setAttribute("id", "sample-result-"+i)
     child.setAttribute("class", "result-file")
 
+    child.appendChild(checkbox)
     child.appendChild(filename)
     child.appendChild(date)
     child.appendChild(uploader)
