@@ -131,8 +131,8 @@ function loadFiles () {
 
     var randomIndex = Math.floor(Math.random() * 5)
 
-    var checkbox = document.createElement("input")
-    checkbox.setAttribute("type", "checkbox")
+    var checkbox = document.createElement("img")
+    checkbox.setAttribute("src", "images/checkbox.png")
     checkbox.setAttribute("class", "result-file-checkbox")
 
     var filename = document.createElement("span")
