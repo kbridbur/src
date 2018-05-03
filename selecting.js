@@ -10,27 +10,30 @@ var filledCheck = "images/checked.png";
 Util.events(document, {
     "DOMContentLoaded": function() {
         dom.selectAll = Util.one("#selectAll");
-        dom.deselectAll = Util.one("#deselectAll");
         dom.classifiers = Util.all(".classifier");
+        var toggler = true;
 
         // select all files
         dom.selectAll.addEventListener( 'click', function() {
         	var allFiles = Util.all(".result-file");
-        	// console.log(allFileCheckboxes);
+            var btn = Util.one("#selectAll");
+            if (toggler) {
+                btn.innerText="Deselect All";
+            } else {
+                btn.innerText="Select All";
+            }
 		    for (var i = 0; i < allFiles.length; i++) {
-		    	allFiles[i].children[0].children[0].src = filledCheck;
-                fileToggles[allFiles[i].id] = true;
-		    }
-		});
+                if (toggler) {
+                    allFiles[i].children[0].children[0].src = filledCheck;
+                    fileToggles[allFiles[i].id] = true;
 
-        // deselect all files
-        dom.deselectAll.addEventListener( 'click', function() {
-        	var allFiles = Util.all(".result-file");
-        	// console.log(allFileCheckboxes);
-		    for (var i = 0; i < allFiles.length; i++) {
-		    	allFiles[i].children[0].children[0].src = emptyCheck;
-                fileToggles[allFiles[i].id] = false;
+                } else {
+                    allFiles[i].children[0].children[0].src = emptyCheck;
+                    fileToggles[allFiles[i].id] = false;
+                    
+                }
 		    }
+            toggler = !toggler;
 		});
 
         // listeners for classifiers
