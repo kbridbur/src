@@ -5,7 +5,7 @@ Util.events(document, {
         var dateTitle    = document.getElementById("date-title");
         var uploadTitle  = document.getElementById("upload-title");
         var allTitles    = [fileTitle, dateTitle, uploadTitle];
-        var resultsFiles = document.getElementById("results-files");
+        
         
 
        	var active = null;
@@ -61,6 +61,7 @@ Util.events(document, {
 
         function filterByMe(o, direction) {
             //from http://jsfiddle.net/jmarikle/vxju87nv/
+            var resultsFiles = document.getElementById("results-files");
 
             var filesHolder  = Array.prototype.slice.call(resultsFiles.children); 
 
