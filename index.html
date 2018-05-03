@@ -39,6 +39,14 @@
     			<button class="search-btn" id="main-search-btn"> &#8981; </button>
     		</div>
         </div>
+        <div id="header-right">
+        	 <div id="file-drag-drop">
+            	<!-- <img id="upload-icon" src="images/upload-icon.png"/> -->
+            	<span id="upload-label"> Upload Files Here </span>
+            	<input type="file" id="hidden-file-upload" onchange="handleDrop()"/>
+        	</div>
+
+        </div>
 	</div>
 	<div class="row" id="lower">
 		<!-- =========== CLASSIFIERS COLUMN ========= -->
@@ -195,11 +203,11 @@
                 </div>
             </div>
         </div>
-        <div class="row" id="file-drag-drop">
+       <!--  <div class="row" id="file-drag-drop">
             <img id="upload-icon" src="images/upload-icon.png"/>
             <span>Click or drag and drop to upload a file</span>
             <input type="file" id="hidden-file-upload" onchange="handleDrop()"/>
-        </div>
+        </div> -->
 	</div>
 </body>
 
