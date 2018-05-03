@@ -296,8 +296,12 @@ h1 {
 
 }
 
-#results-headers {
-    /*border-bottom: 1px solid black;*/
+.results-header:hover {
+    cursor: pointer;
+}
+
+.results-header:hover:after {
+    content: '\2228';
 }
 
 #default {
@@ -329,11 +333,11 @@ h1 {
 }
 
 .down:after {
-	content: '\2228';
+	content: '\2228' !important;
 }
 
 .up:after {
-	content: '\2227';
+	content: '\2227' !important;
 }
 
 /**********************************************************/
