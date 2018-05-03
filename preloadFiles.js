@@ -140,6 +140,10 @@ function createMenu() {
     trashButton.innerHTML = "Trash";
     trashButton.classList.add("file-menu-item");
 
+    var arrow = document.createElement("div");
+    arrow.classList.add("file-menu-arrow");
+
+    menu.appendChild(arrow);
     menu.appendChild(editButton);
     menu.appendChild(starButton);
     menu.appendChild(trashButton);

@@ -333,7 +333,7 @@ h1 {
 }
 
 .file-dots {
-    justify-self: center;
+    justify-self: left;
     width: 15px;
     color: #adadad;
 }
@@ -342,11 +342,35 @@ h1 {
     color: black;
 }
 
+
+.file-menu-arrow {
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #ccc;
+    position: relative;
+    top: -11px;
+    right: -70px;
+}
+
+.file-menu-arrow:after {
+    content:'';
+    width: 0; 
+    height: 0; 
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    border-bottom: 11px solid white;  
+    position:absolute;
+    top:1px;
+    left:-11px;
+}
+
 .file-menu {
     display: none;
     position: absolute;
-    right: 10px;
-    top: 40px;
+    right: 7px;
+    top: 45px;
     background-color: #fff;
     border: solid 1px #ccc;
     z-index: 2;
@@ -359,6 +383,7 @@ h1 {
     border-radius: none;
     text-align: left;
     font-size: 11pt;
+    padding: 10px;
 }
 
 .file-menu-item:hover {

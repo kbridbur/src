@@ -16,8 +16,8 @@ Util.events(document, {
         function sortDates(filesHolder, direction) {
             filesHolder.sort(function(a, b){
                 //update this
-                bDateString = b.children[1].textContent;
-                aDateString = a.children[1].textContent;
+                bDateString = b.children[2].textContent;
+                aDateString = a.children[2].textContent;
 
                 bDateParts = bDateString.split("/");
                 aDateParts = aDateString.split("/");
@@ -39,7 +39,7 @@ Util.events(document, {
 
         function sortNames(filesHolder, direction) {
             filesHolder.sort(function(a, b){
-                return a.children[0].textContent.localeCompare(b.children[0].textContent);
+                return a.children[1].textContent.localeCompare(b.children[1].textContent);
             });
             if (direction == down) {
                 return filesHolder;
@@ -50,7 +50,7 @@ Util.events(document, {
 
         function sortUploaded(filesHolder, direction) {
             filesHolder.sort(function(a, b){
-                return a.children[2].textContent.localeCompare(b.children[2].textContent);
+                return a.children[3].textContent.localeCompare(b.children[3].textContent);
             });
             if (direction == down) {
                 return filesHolder;
