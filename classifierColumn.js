@@ -35,9 +35,10 @@ window.onload = function(e) {
 			var animationTime = 400;
 			var panel = this.nextElementSibling;
 			var tagsInField = panel.children.length;
-			var buttonSpan = this.children[0];
-			var searchBar = this.children[1];
+			var colonSpan = this.children[1];
+			var searchBar = this.children[2];
 			var odd;
+			console.log(colonSpan);
 			if (tagsInField % 2 == 0) {
 				odd = 0.5;
 			} else {
@@ -49,20 +50,31 @@ window.onload = function(e) {
 
 			if (window.getComputedStyle(panel).getPropertyValue('height') == "0px") {
 				panel.style.height = sizeOfPanel+"px";
-				buttonSpan.innerText = buttonSpan.innerText + " :";
+				// buttonSpan.innerText = buttonSpan.innerText + " :";
 				searchBar.style.display = "inline-block";
+				colonSpan.style.display = "inline-block";
 				searchBar.classList.add("fade-in");
-				setTimeout(function(){searchBar.classList.remove("fade-in")}, animationTime);
+				colonSpan.classList.add("fade-in");
+				setTimeout(
+					function(){
+						searchBar.classList.remove("fade-in");
+						colonSpan.classList.remove("fade-in");
+					}, 
+				animationTime);
 				searchBar.focus();
 			} else {
 				searchBar.classList.add("fade-out");
+				colonSpan.classList.add("fade-out");
 				panel.style.height = "0px";
 				setTimeout(
-				function(){
-					searchBar.classList.remove("fade-out"); 
-					searchBar.style.display="none";
-					buttonSpan.innerText = buttonSpan.id.substring(0, buttonSpan.id.length - 12);
-				}, animationTime);
+					function(){
+						searchBar.classList.remove("fade-out");
+						colonSpan.classList.remove("fade-out"); 
+						searchBar.style.display="none";
+						colonSpan.style.display="none";
+						// buttonSpan.innerText = buttonSpan.id.substring(0, buttonSpan.id.length - 12);
+					}, 
+				animationTime);
 			}
 		});
 	}
