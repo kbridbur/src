@@ -307,10 +307,10 @@ h1 {
     position: relative;
 	display: grid;
 	/*grid-template-columns: 2fr repeat(2, 1fr);*/
-    grid-template-columns: 1fr repeat(3, 7fr);
+    grid-template-columns: 1fr repeat(3, 7fr) 1fr;
 	height: 45px;
     line-height: 30px;
-    align-content: center;
+    align-items: center;
     user-drag: none;
     user-select: none;
     -moz-user-select: none;
@@ -330,6 +330,40 @@ h1 {
 	margin-right: 25px;
     width: 20px;
 
+}
+
+.file-dots {
+    justify-self: center;
+    width: 15px;
+    color: #adadad;
+}
+
+.file-dots:hover {
+    color: black;
+}
+
+.file-menu {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 40px;
+    background-color: #fff;
+    border: solid 1px #ccc;
+    z-index: 2;
+}
+
+.file-menu-item {
+    display: block;
+    width: 100px;
+    border: none;
+    border-radius: none;
+    text-align: left;
+    font-size: 11pt;
+}
+
+.file-menu-item:hover {
+    cursor: pointer;
+    background-color: #c3e4aa;
 }
 
 .results-header:hover {

@@ -126,6 +126,26 @@ var dates = [
   "12/25/2014"
 ]
 
+function createMenu() {
+    var menu = document.createElement("div");
+    menu.className = "file-menu";
+
+    var editButton = document.createElement("button");
+    editButton.innerHTML = "Edit";
+    editButton.classList.add("file-menu-item");
+    var starButton = document.createElement("button");
+    starButton.innerHTML = "Star";
+    starButton.classList.add("file-menu-item");
+    var trashButton = document.createElement("button");
+    trashButton.innerHTML = "Trash";
+    trashButton.classList.add("file-menu-item");
+
+    menu.appendChild(editButton);
+    menu.appendChild(starButton);
+    menu.appendChild(trashButton);
+    return menu;
+}
+
 function loadFiles () {
   for (var i = 0; i < dates.length; i++){
 
@@ -138,7 +158,6 @@ function loadFiles () {
     var filename = document.createElement("span")
     filename.setAttribute("class", "result-filename")
     filename.innerHTML = titles[i]
-    // filename.prepend(checkbox)
 
     var date = document.createElement("span")
     date.setAttribute("class", "result-date-uploaded")
@@ -148,6 +167,11 @@ function loadFiles () {
     uploader.setAttribute("class", "result-uploaded-by")
     uploader.innerHTML = contributors[randomIndex]
 
+    var dots = document.createElement("i");
+    dots.className = "fas fa-ellipsis-v file-dots";
+
+    var menu = createMenu();
+
     var child = document.createElement("div")
     child.setAttribute("id", "sample-result-"+i)
     child.setAttribute("class", "result-file")
@@ -156,9 +180,13 @@ function loadFiles () {
     child.appendChild(filename)
     child.appendChild(date)
     child.appendChild(uploader)
+    child.appendChild(dots)
+    child.appendChild(menu)
+
+    dots.addEventListener('click', openFileMenu)
 
     var parent = document.getElementById("results-files");
-    parent.appendChild(child)
+    parent.appendChild(child);
   }
 }
 
