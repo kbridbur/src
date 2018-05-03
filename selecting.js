@@ -13,6 +13,14 @@ Util.events(document, {
         dom.classifiers = Util.all(".classifier");
         var toggler = true;
 
+        //Add hover to select all
+        dom.selectAll.addEventListener( 'mouseenter', function() {
+            if (toggler) {this.src = hoverCheck};
+        });
+
+        dom.selectAll.addEventListener( 'mouseleave', function() {
+            if (toggler) {this.src = emptyCheck};
+        });
         // select all files
         dom.selectAll.addEventListener( 'click', function() {
         	var allFiles = Util.all(".result-file");
@@ -80,6 +88,14 @@ function fileSelect() {
             toggle = !fileToggles[this.id];
             checkbox.src = toggle ? filledCheck : emptyCheck;
             fileToggles[this.id] = toggle;
+
+            var check = Object.keys(fileToggles).filter(i => fileToggles[i] == false);
+            if (check.length > 0){
+                dom.selectAll.src = emptyCheck;
+            }
+            else {
+                dom.selectAll.src = filledCheck;
+            }
 
             var img = document.getElementById("preview-image");
             var description = document.getElementById("preview-description");
