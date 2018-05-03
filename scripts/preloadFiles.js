@@ -196,9 +196,9 @@ function loadFiles () {
 
 function showSpecialFiles(element, listName) {
   // console.log("check")
-
-  if (element.checked == false){
-
+  console.log(tagToggles);
+  if (!tagToggles[element.parentNode.id]){
+      console.log("hi reb")
       if (checkNum == 1){
         checkNum += 1
         var parent= document.getElementById("results-files")
@@ -266,7 +266,7 @@ function showSpecialFiles(element, listName) {
   }
 
   else {
-
+    console.log("bye reb")
     if (checkNum == 1){
       checkNum = 0
       checkName = ''
@@ -368,8 +368,5 @@ function showSpecialFiles(element, listName) {
     }
 
   }
-
-
-
 
 }

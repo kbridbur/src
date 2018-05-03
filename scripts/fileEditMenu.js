@@ -24,9 +24,3 @@ function closeMenu() {
         openMenu.style.display = "none";
     }
 }
-
-Util.events(document, {
-    "DOMContentLoaded": function() {
-        window.addEventListener('click', windowClick)
-    }
-});
