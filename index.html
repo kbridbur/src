@@ -19,6 +19,7 @@
 <script src="selecting.js"></script>
 <script src="singleFileSelect.js"></script>
 <script src="titlesToggle.js"></script>
+<script src="addClassifiers.js"></script>
 
 </head>
 <body>
@@ -169,18 +170,27 @@
             <div id="upload">
                 <div class="edit-grid">
                     <div class="form-label">File Name</div>
-                        <input type="text" class="edit-field" id="file-name">
+                    <input type="text" class="edit-field" id="file-name">
                     <div class="form-label">Author</div>
-                         <input type="text" class="edit-field" id="file-author">
+                    <input type="text" class="edit-field" id="file-author">
                     <div class="form-label">Publish Date</div>
-                        <input type="text" class="edit-field" id="publish-date">
-										<div></div>
+                    <input type="text" class="edit-field" id="publish-date">
+					<div></div>
                     <div class="form-label" id="tags-form-label">Tags</div>
                     <div class="form-label" id="projects-form-label">Projects</div>
                     <div class="form-label" id="groups-form-label">Groups</div>
-                    <div id="form-tags"></div>
-                    <div id="form-projects"></div>
-                    <div id="form-groups"></div>
+                    <div id="form-tags">
+                        <input type="text" class="form-classifier-input" id="tags-form-input" placeholder="Enter tags...">
+                        <div class="classifier-form-box" id="tags-form-box"></div>
+                    </div>
+                    <div id="form-projects">
+                        <input type="text" class="form-classifier-input" id="projects-form-input" placeholder="Enter projects...">
+                        <div class="classifier-form-box" id="projects-form-box"></div>
+                    </div>
+                    <div id="form-groups">
+                        <input type="text" class="form-classifier-input" id="groups-form-input" placeholder="Enter groups...">
+                        <div class="classifier-form-box" id="groups-form-box"></div>
+                    </div>
                     <div class="form-label" id="notes-form-label">Notes</div>
                     <textarea class="edit-field" id="file-notes" rows="4"></textarea>
                 </div>
