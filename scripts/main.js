@@ -4,6 +4,8 @@ dom = {};
 
 tagToggles = {};
 fileToggles = {};
+fileRecentClick = {};
+numRecentClicks = {}
 var toggler = true;
 
 Util.events(document, {
@@ -33,6 +35,8 @@ Util.events(document, {
 
         // preloadFiles.js
         loadFiles();
+        dom.files               = Util.all(".result-file");
+        dom.optionBoxes.style.display = "none";
 
         // classifierColumn.js
         addAccordionListeners();
@@ -77,4 +81,5 @@ function populateDom() {
     dom.fileTitle           = Util.one("#file-title");
     dom.dateTitle           = Util.one("#date-title");
     dom.uploadTitle         = Util.one("#upload-title");
+    dom.optionBoxes         = Util.one("#control-icons");
 }

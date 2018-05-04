@@ -2,14 +2,19 @@ var emptyCheck = "images/checkbox.png";
 var hoverCheck = "images/checkbox-quarter-filled.png";
 var filledCheck = "images/checked.png";
 
+function checkForToggles(){
+    for (var i=0; i<Object.keys(fileToggles).length; i++){
+        if (fileToggles[dom.files[i].id]){
+            dom.optionBoxes.style.display = "block";
+            return;
+        }
+    }
+    dom.optionBoxes.style.display = "none";
+}
+
 function selectAllHandler() {
     var allFiles = Util.all(".result-file");
     var btn = Util.one("#selectAll");
-    if (toggler) {
-        btn.innerText="Deselect All";
-    } else {
-        btn.innerText="Select All";
-    }
     for (var i = 0; i < allFiles.length; i++) {
         if (toggler) {
             allFiles[i].children[0].src = filledCheck;
@@ -28,6 +33,7 @@ function selectAllHandler() {
         btn.src = emptyCheck;
     }
     toggler = !toggler;
+    checkForToggles();
 }
 
 function addClassifierListeners() {
@@ -40,7 +46,7 @@ function addClassifierListeners() {
             toggle = !tagToggles[this.id];
             checkbox.src = toggle ? filledCheck : emptyCheck;
             tagToggles[this.id] = toggle;
-            
+
             showSpecialFiles(this, this.id.split("-")[0])
 
         });
@@ -57,52 +63,67 @@ function addClassifierListeners() {
 
 // listeners for files
 function fileSelect() {
-    dom.files = Util.all(".result-file");
+    console.log(dom.files.length);
     for (var i = 0; i < dom.files.length; i++) {
         file = dom.files[i];
         fileToggles[file.id] = false;
-
+        fileRecentClick[file.id] = false;
+        numRecentClicks[file.id] = 0;
         file.addEventListener( 'click', function() {
-            var checkbox = this.children[0];
-            toggle = !fileToggles[this.id];
-            checkbox.src = toggle ? filledCheck : emptyCheck;
-            fileToggles[this.id] = toggle;
+            var a = this;
+            numRecentClicks[file.id]++;
+            console.log(numRecentClicks[file.id]);
+            if (numRecentClicks[file.id] == 1){
+                singleClickTimer = setTimeout(function(){
+                    numRecentClicks[file.id] = 0;
+                    var checkbox = a.children[0];
+                    toggle = !fileToggles[a.id];
+                    checkbox.src = toggle ? filledCheck : emptyCheck;
+                    fileToggles[a.id] = toggle;
 
-            var check = Object.keys(fileToggles).filter(i => fileToggles[i] == false);
-            if (check.length > 0){
-                dom.selectAll.src = emptyCheck;
+                    var check = Object.keys(fileToggles).filter(i => fileToggles[i] == false);
+                    if (check.length > 0){
+                        dom.selectAll.src = emptyCheck;
+                    }
+                    else {
+                        dom.selectAll.src = filledCheck;
+                    }
+
+                    var img = document.getElementById("preview-image");
+                    var description = document.getElementById("preview-description");
+                    var imgPlacehold = document.getElementById("img-placeholder");
+
+                    if (Object.values(fileToggles).indexOf(true) > -1) {
+                        img.src = "graphics/sadoak.jpg";
+                        description.innerHTML = "I'm a description";
+                        imgPlacehold.innerHTML = "";
+                        var lower = Util.one("#lower");
+                        lower.style.gridTemplateColumns = "18vw 60vw 22vw";
+                        console.log(lower);
+                    } else {
+                        img.src = "";
+                        description.innerHTML = "";
+                        imgPlacehold.innerHTML = "No file selected";
+                        var lower = Util.one("#lower");
+                        lower.style.gridTemplateColumns = "18vw 82vw";
+                        console.log(lower);
+                    }
+                    checkForToggles();
+                }, 120, a);
             }
-            else {
-                dom.selectAll.src = filledCheck;
-            }
-
-            var img = document.getElementById("preview-image");
-            var description = document.getElementById("preview-description");
-            var imgPlacehold = document.getElementById("img-placeholder");
-
-            if (Object.values(fileToggles).indexOf(true) > -1) {
-                img.src = "graphics/sadoak.jpg";
-                description.innerHTML = "I'm a description";
-                imgPlacehold.innerHTML = "";
-                var lower = Util.one("#lower");
-                lower.style.gridTemplateColumns = "18vw 60vw 22vw";
-                console.log(lower);
-            } else {
-                img.src = "";
-                description.innerHTML = "";
-                imgPlacehold.innerHTML = "No file selected";
-                var lower = Util.one("#lower");
-                lower.style.gridTemplateColumns = "18vw 82vw";
-                console.log(lower);
+            if (numRecentClicks[file.id] == 2){
+                clearTimeout(singleClickTimer);
+                numRecentClicks[file.id] = 0;
+                window.open('resources/chicken.pdf');
             }
         });
 
         file.addEventListener( 'mouseenter', function() {
             if (!fileToggles[this.id]) {this.children[0].src = hoverCheck};
-        })
+        });
 
         file.addEventListener( 'mouseleave', function() {
             if (!fileToggles[this.id]) {this.children[0].src = emptyCheck};
-        })
+        });
     }
 }
