@@ -126,6 +126,17 @@ var dates = [
   "12/25/2014"
 ]
 
+var titleDict = {
+  "blockchain": blockchainTitles,
+  "bitcoin": bitcoinTitles,
+  "finance": financeTitles,
+  "bees": beesTitles,
+  "photography": photographyTitles,
+  "lecture": lectureTitles,
+  "fintech": fintechTitles,
+  "karger": kargerTitles
+}
+
 function createMenu() {
     var menu = document.createElement("div");
     menu.className = "file-menu";
@@ -195,10 +206,9 @@ function loadFiles () {
 }
 
 function showSpecialFiles(element, listName) {
-  // console.log("check")
-  console.log(tagToggles);
-  if (!tagToggles[element.parentNode.id]){
-      console.log("hi reb")
+  var list = titleDict[listName]
+
+  if (tagToggles[element.id]){
       if (checkNum == 1){
         checkNum += 1
         var parent= document.getElementById("results-files")
@@ -213,7 +223,7 @@ function showSpecialFiles(element, listName) {
 
       else if (checkNum == 0) {
         checkNum += 1
-        checkName = listName
+        checkName = list
 
 
 
@@ -226,7 +236,7 @@ function showSpecialFiles(element, listName) {
 
 
 
-        for (var i = 0; i < listName.length; i++){
+        for (var i = 0; i < list.length; i++){
 
           var randomIndex = Math.floor(Math.random() * 5)
 
@@ -236,7 +246,7 @@ function showSpecialFiles(element, listName) {
 
           var filename = document.createElement("span")
           filename.setAttribute("class", "result-filename")
-          filename.innerHTML = listName[i]
+          filename.innerHTML = list[i]
           filename.prepend(checkbox)
 
           var date = document.createElement("span")
@@ -266,7 +276,6 @@ function showSpecialFiles(element, listName) {
   }
 
   else {
-    console.log("bye reb")
     if (checkNum == 1){
       checkNum = 0
       checkName = ''
@@ -317,7 +326,7 @@ function showSpecialFiles(element, listName) {
 
     else if (checkNum == 2) {
       checkNum = 1
-      listName = checkName
+      list = checkName
 
       var parent = document.getElementById("main-results");
       var child = document.getElementById("results-files")
@@ -328,7 +337,7 @@ function showSpecialFiles(element, listName) {
 
 
 
-      for (var i = 0; i < listName.length; i++){
+      for (var i = 0; i < list.length; i++){
 
         var randomIndex = Math.floor(Math.random() * 5)
 
@@ -338,7 +347,7 @@ function showSpecialFiles(element, listName) {
 
         var filename = document.createElement("span")
         filename.setAttribute("class", "result-filename")
-        filename.innerHTML = listName[i]
+        filename.innerHTML = list[i]
         filename.prepend(checkbox)
 
         var date = document.createElement("span")

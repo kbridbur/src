@@ -40,6 +40,9 @@ function addClassifierListeners() {
             toggle = !tagToggles[this.id];
             checkbox.src = toggle ? filledCheck : emptyCheck;
             tagToggles[this.id] = toggle;
+            
+            showSpecialFiles(this, this.id.split("-")[0])
+
         });
 
         classifier.addEventListener( 'mouseenter', function() {
@@ -89,7 +92,7 @@ function fileSelect() {
                 description.innerHTML = "";
                 imgPlacehold.innerHTML = "No file selected";
                 var lower = Util.one("#lower");
-                lower.style.gridTemplateColumns = "18vw 82vw"; 
+                lower.style.gridTemplateColumns = "18vw 82vw";
                 console.log(lower);
             }
         });
