@@ -4,14 +4,12 @@ function addAccordionListeners() {
 	var accordionSearches = document.getElementsByClassName("classifier-search");
 	for (i = 0; i < accordionSearches.length; i++ ) {
 		accordionSearches[i].addEventListener("click", function(e) {
-			console.log("Search clicked");
 			e.stopPropagation();
 		});
 	}
 
 	for (i = 0; i < accordions.length; i++ ) {
 		accordions[i].addEventListener("click", function(e) {
-			console.log(e);
 			this.classList.toggle("active");
 			var animationTime = 400;
 			var panel = this.nextElementSibling;
@@ -19,7 +17,6 @@ function addAccordionListeners() {
 			var colonSpan = this.children[1];
 			var searchBar = this.children[2];
 			var odd;
-			console.log(colonSpan);
 			if (tagsInField % 2 == 0) {
 				odd = 0.5;
 			} else {
