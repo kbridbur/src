@@ -46,6 +46,9 @@ function addClassifierListeners() {
             toggle = !tagToggles[this.id];
             checkbox.src = toggle ? filledCheck : emptyCheck;
             tagToggles[this.id] = toggle;
+
+            showSpecialFiles(this, this.id.split("-")[0])
+
         });
 
         classifier.addEventListener( 'mouseenter', function() {
