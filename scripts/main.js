@@ -36,7 +36,9 @@ Util.events(document, {
         // preloadFiles.js
         loadFiles();
         dom.files               = Util.all(".result-file");
-        dom.optionBoxes.style.display = "none";
+        for (var i=0; i<dom.optionBoxes.children.length; i++){
+            dom.optionBoxes.children[i].disabled = true;
+        }
 
         // classifierColumn.js
         addAccordionListeners();
@@ -53,6 +55,9 @@ Util.events(document, {
 
         // titlesToggle.js
         addSortListeners();
+
+        // classifierSearch.js
+        addClassifierSearchListeners();
     }
 });
 
@@ -81,5 +86,15 @@ function populateDom() {
     dom.fileTitle           = Util.one("#file-title");
     dom.dateTitle           = Util.one("#date-title");
     dom.uploadTitle         = Util.one("#upload-title");
+
+    dom.tagPanel            = Util.one("#tags-panel");
+    dom.projectPanel        = Util.one("#projects-panel");
+    dom.groupPanel          = Util.one("#groups-panel");
+    dom.classifierSearchers = Util.all(".classifier-search");
+
+    dom.tagPanelClassifiers     = Array.prototype.slice.call(dom.tagPanel.children);
+    dom.projectPanelClassifiers = Array.prototype.slice.call(dom.projectPanel.children);
+    dom.groupPanelClassifiers   = Array.prototype.slice.call(dom.groupPanel.children);
+
     dom.optionBoxes         = Util.one("#control-icons");
 }

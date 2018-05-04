@@ -5,11 +5,15 @@ var filledCheck = "images/checked.png";
 function checkForToggles(){
     for (var i=0; i<Object.keys(fileToggles).length; i++){
         if (fileToggles[dom.files[i].id]){
-            dom.optionBoxes.style.display = "block";
+            for (var i=0; i<dom.optionBoxes.children.length; i++){
+                dom.optionBoxes.children[i].disabled = false;
+            }
             return;
         }
     }
-    dom.optionBoxes.style.display = "none";
+    for (var i=0; i<dom.optionBoxes.children.length; i++){
+        dom.optionBoxes.children[i].disabled = true;
+    }
 }
 
 function selectAllHandler() {
@@ -115,7 +119,7 @@ function fileSelect() {
                         console.log(lower);
                     }
                     checkForToggles();
-                }, 120, a);
+                }, 150, a);
             }
             if (numRecentClicks[file.id] == 2){
                 clearTimeout(singleClickTimer);
