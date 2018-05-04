@@ -299,7 +299,7 @@ h1 {
 
 .icon-buttons:disabled{
     background-color: var(--color-disabled-gray);
-    cursor: default;
+    cursor: not-allowed;
     color: var(--color-disabled-text-gray);
 }
 
