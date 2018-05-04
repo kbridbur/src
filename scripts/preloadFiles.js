@@ -1,5 +1,6 @@
 var checkNum = 0;
 var checkName = '';
+var checkSpecial = false;
 
 var titles = [
   "AdoptionOfBlockChain.jpg",
@@ -41,11 +42,14 @@ var bitcoinTitles = [
 ]
 var financeTitles = [
   "BitcoinAndBanking.pdf",
-  "BitcoinBasics.doc",
   "CurrencyOnline.jpeg",
   "BitcoinTrendsGraph.png",
-  "ManagementInTech.pdf",
-  "BlockChainAndBitcoin"
+  "ManagementInTech.pdf"
+]
+var financeBitcoinTitles = [
+  "BitcoinAndBanking.pdf",
+  "CurrencyOnline.jpeg",
+  "BitcoinTrendsGraph.png"
 ]
 var beesTitles = [
   "DamageFromPollutants.docx",
@@ -210,7 +214,7 @@ function showSpecialFiles(element, listName) {
 
   // if classifier being selected
   if (tagToggles[element.id]){
-      if (checkNum == 1){
+      if (checkNum == 1 && !checkSpecial){
         checkNum += 1
         var parent= document.getElementById("results-files")
         var children = parent.children
@@ -220,6 +224,18 @@ function showSpecialFiles(element, listName) {
             parent.removeChild(children[i])
           }
         }
+      }
+
+      else if ((checkNum == 1 && checkSpecial) && (element.id == "finance" || element.id == "bitcoin")){
+        checkNum += 1
+        var parent = document.getElementById("main-results");
+        var child = document.getElementById("results-files")
+        parent.removeChild(child)
+
+        var newChild = renderSpecialFiles(financeBitcoinTitles)
+
+        parent.appendChild(newChild)
+
       }
 
       else if (checkNum == 0) {

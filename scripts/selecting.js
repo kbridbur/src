@@ -47,6 +47,12 @@ function addClassifierListeners() {
             checkbox.src = toggle ? filledCheck : emptyCheck;
             tagToggles[this.id] = toggle;
 
+            if (this.id == "bitcoin" || this.id == "finance"){
+              checkSpecial = true
+            }
+            else {
+              checkSpecial = false
+            }
             showSpecialFiles(this, this.id.split("-")[0])
 
         });
