@@ -76,46 +76,40 @@ function fileSelect() {
             if (numRecentClicks[file.id] == 1){
                 singleClickTimer = setTimeout(function(){
                     numRecentClicks[file.id] = 0;
-                    if (!fileRecentClick[file.id]){
-                        var checkbox = a.children[0];
-                        toggle = !fileToggles[a.id];
-                        checkbox.src = toggle ? filledCheck : emptyCheck;
-                        fileToggles[a.id] = toggle;
+                    var checkbox = a.children[0];
+                    toggle = !fileToggles[a.id];
+                    checkbox.src = toggle ? filledCheck : emptyCheck;
+                    fileToggles[a.id] = toggle;
 
-                        var check = Object.keys(fileToggles).filter(i => fileToggles[i] == false);
-                        if (check.length > 0){
-                            dom.selectAll.src = emptyCheck;
-                        }
-                        else {
-                            dom.selectAll.src = filledCheck;
-                        }
-
-                        var img = document.getElementById("preview-image");
-                        var description = document.getElementById("preview-description");
-                        var imgPlacehold = document.getElementById("img-placeholder");
-
-                        if (Object.values(fileToggles).indexOf(true) > -1) {
-                            img.src = "graphics/sadoak.jpg";
-                            description.innerHTML = "I'm a description";
-                            imgPlacehold.innerHTML = "";
-                            var lower = Util.one("#lower");
-                            lower.style.gridTemplateColumns = "18vw 60vw 22vw";
-                            console.log(lower);
-                        } else {
-                            img.src = "";
-                            description.innerHTML = "";
-                            imgPlacehold.innerHTML = "No file selected";
-                            var lower = Util.one("#lower");
-                            lower.style.gridTemplateColumns = "18vw 82vw";
-                            console.log(lower);
-                        }
-                        checkForToggles();
-                        fileRecentClick[file.id] = true;
-                        setTimeout(function(){
-                            fileRecentClick[file.id] = false;
-                        }, 200);
+                    var check = Object.keys(fileToggles).filter(i => fileToggles[i] == false);
+                    if (check.length > 0){
+                        dom.selectAll.src = emptyCheck;
                     }
-                }, 200, a);
+                    else {
+                        dom.selectAll.src = filledCheck;
+                    }
+
+                    var img = document.getElementById("preview-image");
+                    var description = document.getElementById("preview-description");
+                    var imgPlacehold = document.getElementById("img-placeholder");
+
+                    if (Object.values(fileToggles).indexOf(true) > -1) {
+                        img.src = "graphics/sadoak.jpg";
+                        description.innerHTML = "I'm a description";
+                        imgPlacehold.innerHTML = "";
+                        var lower = Util.one("#lower");
+                        lower.style.gridTemplateColumns = "18vw 60vw 22vw";
+                        console.log(lower);
+                    } else {
+                        img.src = "";
+                        description.innerHTML = "";
+                        imgPlacehold.innerHTML = "No file selected";
+                        var lower = Util.one("#lower");
+                        lower.style.gridTemplateColumns = "18vw 82vw";
+                        console.log(lower);
+                    }
+                    checkForToggles();
+                }, 120, a);
             }
             if (numRecentClicks[file.id] == 2){
                 clearTimeout(singleClickTimer);
