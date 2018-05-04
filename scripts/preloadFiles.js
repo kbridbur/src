@@ -133,12 +133,15 @@ function createMenu() {
     var editButton = document.createElement("button");
     editButton.innerHTML = "Edit";
     editButton.classList.add("file-menu-item");
+    editButton.setAttribute("button-type", "edit");
     var starButton = document.createElement("button");
     starButton.innerHTML = "Star";
     starButton.classList.add("file-menu-item");
+    starButton.setAttribute("button-type", "star");
     var trashButton = document.createElement("button");
     trashButton.innerHTML = "Trash";
     trashButton.classList.add("file-menu-item");
+    trashButton.setAttribute("button-type", "trash");
 
     var arrow = document.createElement("div");
     arrow.classList.add("file-menu-arrow");

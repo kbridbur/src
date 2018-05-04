@@ -24,3 +24,47 @@ function closeMenu() {
         openMenu.style.display = "none";
     }
 }
+
+function menuItemClickHandler(e) {
+    var buttonType = this.getAttribute("button-type");
+    var file = this.parentNode.parentNode;
+    var fileName = file.children[1].innerText;
+    var fileDate = file.children[2].innerText;
+    var fileUploader = file.children[3].innerText;
+
+    console.log(fileName + " uploaded on " + fileDate + " by "+fileUploader);
+
+    switch (buttonType) {
+        case "edit":
+            var info = {name: fileName, author: fileUploader, date: fileDate};
+            handleDrop(null, info);
+            break;
+        case "star":
+            if (!starredFiles.has(file)) {
+                var star = document.createElement("img");
+                star.src = "images/yellow-star.png";
+                star.className = "file-star";
+                file.children[1].appendChild(star);
+                starredFiles.add(file);
+                this.innerText = "Unstar";
+            } else {
+                starredFiles.delete(file);
+                file.children[1].removeChild(file.children[1].childNodes[1]);
+                this.innerText = "Star";
+            }
+            break;
+        case "trash":
+            var fileParent = file.parentNode;
+            fileParent.removeChild(file);
+            break;
+    }
+    e.stopPropagation();
+}
+
+function addMenuItemListeners() {
+    dom.menuButtons = Util.all(".file-menu-item");
+    for (var i = 0; i < dom.menuButtons.length; i++) {
+        var b = dom.menuButtons[i];
+        b.addEventListener("click", menuItemClickHandler);
+    }
+}

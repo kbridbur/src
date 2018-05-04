@@ -4,6 +4,7 @@ dom = {};
 
 tagToggles = {};
 fileToggles = {};
+var starredFiles = new Set();
 var toggler = true;
 
 Util.events(document, {
@@ -12,9 +13,6 @@ Util.events(document, {
         populateDom();
 
         //------attach all handlers-------//
-
-        // fileEditMenu.js
-        window.addEventListener('click', windowClick)
 
         // selecting.js
         dom.selectAll.addEventListener( 'mouseenter', function() {
@@ -49,6 +47,10 @@ Util.events(document, {
 
         // titlesToggle.js
         addSortListeners();
+
+        // fileEditMenu.js
+        window.addEventListener('click', windowClick);
+        setTimeout(addMenuItemListeners, 200);
     }
 });
 

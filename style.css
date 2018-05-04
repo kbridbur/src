@@ -376,6 +376,12 @@ h1 {
     left:-11px;
 }
 
+.file-star {
+    width: 15px;
+    vertical-align: middle;
+    margin-left: 15px;
+}
+
 .file-menu {
     display: none;
     position: absolute;
@@ -399,6 +405,10 @@ h1 {
 .file-menu-item:hover {
     cursor: pointer;
     background-color: #c3e4aa;
+}
+
+.file-menu-item:focus {
+    outline: none;
 }
 
 .results-header:hover {

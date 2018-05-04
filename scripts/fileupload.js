@@ -1,23 +1,30 @@
-function handleDrop(e){
+function handleDrop(e, info){
     if (e) {
-        // console.log(e);
         e.preventDefault();
         e.stopPropagation();
     }
     dom.default.style.display="none";
     dom.upload.style.display="block";
 
-    var file = e.target.files[0];
-    autofill(file.name, "Ben Bitdiddle", new Date(Date.now()))
+    if (!info) {
+        var file = e.target.files[0];
+        autofill(file.name, "Ben Bitdiddle", new Date(Date.now()));
+    } else {
+        autofill(info.name, info.author, info.date);
+    }
 }
 
 function autofill(name, author, date) {
     dom.fileName.value = name;
     dom.fileAuthor.value = author;
-    var month = date.getUTCMonth() + 1;
-    var day = date.getUTCDate();
-    var year = date.getUTCFullYear();
-    dom.fileDate.value = month + "/" + day + "/" + year;
+    if (date instanceof Date) {
+        var month = date.getUTCMonth() + 1;
+        var day = date.getUTCDate();
+        var year = date.getUTCFullYear();
+        dom.fileDate.value = month + "/" + day + "/" + year;
+    } else {
+        dom.fileDate.value = date;
+    }
 }
 
 function handleDragenter(e) {
