@@ -36,7 +36,9 @@ Util.events(document, {
         // preloadFiles.js
         loadFiles();
         dom.files               = Util.all(".result-file");
-        dom.optionBoxes.style.display = "none";
+        for (var i=0; i<dom.optionBoxes.children.length; i++){
+            dom.optionBoxes.children[i].disabled = true;
+        }
 
         // classifierColumn.js
         addAccordionListeners();
