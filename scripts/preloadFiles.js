@@ -208,6 +208,7 @@ function loadFiles () {
 function showSpecialFiles(element, listName) {
   var list = titleDict[listName]
 
+  // if classifier being selected
   if (tagToggles[element.id]){
       if (checkNum == 1){
         checkNum += 1
@@ -225,48 +226,11 @@ function showSpecialFiles(element, listName) {
         checkNum += 1
         checkName = list
 
-
-
         var parent = document.getElementById("main-results");
         var child = document.getElementById("results-files")
         parent.removeChild(child)
 
-        var newChild = document.createElement("div")
-        newChild.setAttribute("id", "results-files")
-
-
-
-        for (var i = 0; i < list.length; i++){
-
-          var randomIndex = Math.floor(Math.random() * 5)
-
-          var checkbox = document.createElement("input")
-          checkbox.setAttribute("type", "checkbox")
-          checkbox.setAttribute("class", "result-file-checkbox")
-
-          var filename = document.createElement("span")
-          filename.setAttribute("class", "result-filename")
-          filename.innerHTML = list[i]
-          filename.prepend(checkbox)
-
-          var date = document.createElement("span")
-          date.setAttribute("class", "result-date-uploaded")
-          date.innerHTML = dates[i]
-
-          var uploader = document.createElement("span")
-          uploader.setAttribute("class", "result-uploaded-by")
-          uploader.innerHTML = contributors[randomIndex]
-
-          var child = document.createElement("div")
-          child.setAttribute("id", "sample-result-"+i)
-          child.setAttribute("class", "result-file")
-
-          child.appendChild(filename)
-          child.appendChild(date)
-          child.appendChild(uploader)
-
-          newChild.appendChild(child)
-        }
+        var newChild = renderSpecialFiles(list)
 
         parent.appendChild(newChild)
       }
@@ -275,6 +239,8 @@ function showSpecialFiles(element, listName) {
       }
   }
 
+
+  // if classifier is being deselected
   else {
     if (checkNum == 1){
       checkNum = 0
@@ -284,42 +250,7 @@ function showSpecialFiles(element, listName) {
       var child = document.getElementById("results-files")
       parent.removeChild(child)
 
-      var newChild = document.createElement("div")
-      newChild.setAttribute("id", "results-files")
-
-
-
-      for (var i = 0; i < titles.length; i++){
-
-        var randomIndex = Math.floor(Math.random() * 5)
-
-        var checkbox = document.createElement("input")
-        checkbox.setAttribute("type", "checkbox")
-        checkbox.setAttribute("class", "result-file-checkbox")
-
-        var filename = document.createElement("span")
-        filename.setAttribute("class", "result-filename")
-        filename.innerHTML = titles[i]
-        filename.prepend(checkbox)
-
-        var date = document.createElement("span")
-        date.setAttribute("class", "result-date-uploaded")
-        date.innerHTML = dates[i]
-
-        var uploader = document.createElement("span")
-        uploader.setAttribute("class", "result-uploaded-by")
-        uploader.innerHTML = contributors[randomIndex]
-
-        var child = document.createElement("div")
-        child.setAttribute("id", "sample-result-"+i)
-        child.setAttribute("class", "result-file")
-
-        child.appendChild(filename)
-        child.appendChild(date)
-        child.appendChild(uploader)
-
-        newChild.appendChild(child)
-      }
+      var newChild = renderSpecialFiles(titles)
 
       parent.appendChild(newChild)
     }
@@ -332,42 +263,7 @@ function showSpecialFiles(element, listName) {
       var child = document.getElementById("results-files")
       parent.removeChild(child)
 
-      var newChild = document.createElement("div")
-      newChild.setAttribute("id", "results-files")
-
-
-
-      for (var i = 0; i < list.length; i++){
-
-        var randomIndex = Math.floor(Math.random() * 5)
-
-        var checkbox = document.createElement("input")
-        checkbox.setAttribute("type", "checkbox")
-        checkbox.setAttribute("class", "result-file-checkbox")
-
-        var filename = document.createElement("span")
-        filename.setAttribute("class", "result-filename")
-        filename.innerHTML = list[i]
-        filename.prepend(checkbox)
-
-        var date = document.createElement("span")
-        date.setAttribute("class", "result-date-uploaded")
-        date.innerHTML = dates[i]
-
-        var uploader = document.createElement("span")
-        uploader.setAttribute("class", "result-uploaded-by")
-        uploader.innerHTML = contributors[randomIndex]
-
-        var child = document.createElement("div")
-        child.setAttribute("id", "sample-result-"+i)
-        child.setAttribute("class", "result-file")
-
-        child.appendChild(filename)
-        child.appendChild(date)
-        child.appendChild(uploader)
-
-        newChild.appendChild(child)
-      }
+      var newChild = renderSpecialFiles(list)
 
       parent.appendChild(newChild)
 
@@ -375,7 +271,54 @@ function showSpecialFiles(element, listName) {
     else {
       checkNum -= 1
     }
+  }
+}
+
+function renderSpecialFiles(titleArray){
+
+  var newChild = document.createElement("div")
+  newChild.setAttribute("id", "results-files")
+
+  for (var i = 0; i < titleArray.length; i++){
+
+    var randomIndex = Math.floor(Math.random() * 5)
+
+    var checkbox = document.createElement("img")
+    checkbox.setAttribute("src", "images/checkbox.png")
+    checkbox.setAttribute("class", "result-file-checkbox")
+
+    var filename = document.createElement("span")
+    filename.setAttribute("class", "result-filename")
+    filename.innerHTML = titleArray[i]
+
+    var date = document.createElement("span")
+    date.setAttribute("class", "result-date-uploaded")
+    date.innerHTML = dates[i]
+
+    var uploader = document.createElement("span")
+    uploader.setAttribute("class", "result-uploaded-by")
+    uploader.innerHTML = contributors[randomIndex]
+
+    var dots = document.createElement("i");
+    dots.className = "fas fa-ellipsis-v file-dots";
+
+    var menu = createMenu();
+
+    var child = document.createElement("div")
+    child.setAttribute("id", "sample-result-"+i)
+    child.setAttribute("class", "result-file")
+
+    child.appendChild(checkbox)
+    child.appendChild(filename)
+    child.appendChild(date)
+    child.appendChild(uploader)
+    child.appendChild(dots)
+    child.appendChild(menu)
+
+    newChild.appendChild(child)
 
   }
+
+  return newChild
 
 }
