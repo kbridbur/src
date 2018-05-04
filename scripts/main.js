@@ -55,7 +55,11 @@ Util.events(document, {
 
         // titlesToggle.js
         addSortListeners();
+
         Util.one("#dropdown").style.borderRadius = "8px";
+
+        // classifierSearch.js
+        addClassifierSearchListeners();
     }
 });
 
@@ -84,5 +88,15 @@ function populateDom() {
     dom.fileTitle           = Util.one("#file-title");
     dom.dateTitle           = Util.one("#date-title");
     dom.uploadTitle         = Util.one("#upload-title");
+
+    dom.tagPanel            = Util.one("#tags-panel");
+    dom.projectPanel        = Util.one("#projects-panel");
+    dom.groupPanel          = Util.one("#groups-panel");
+    dom.classifierSearchers = Util.all(".classifier-search");
+
+    dom.tagPanelClassifiers     = Array.prototype.slice.call(dom.tagPanel.children);
+    dom.projectPanelClassifiers = Array.prototype.slice.call(dom.projectPanel.children);
+    dom.groupPanelClassifiers   = Array.prototype.slice.call(dom.groupPanel.children);
+
     dom.optionBoxes         = Util.one("#control-icons");
 }
