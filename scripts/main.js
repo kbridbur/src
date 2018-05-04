@@ -55,6 +55,7 @@ Util.events(document, {
 
         // titlesToggle.js
         addSortListeners();
+        Util.one("#dropdown").style.borderRadius = "8px";
     }
 });
 
