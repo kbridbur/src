@@ -4,6 +4,8 @@ dom = {};
 
 tagToggles = {};
 fileToggles = {};
+fileRecentClick = {};
+numRecentClicks = {}
 var toggler = true;
 
 Util.events(document, {
@@ -33,6 +35,10 @@ Util.events(document, {
 
         // preloadFiles.js
         loadFiles();
+        dom.files               = Util.all(".result-file");
+        for (var i=0; i<dom.optionBoxes.children.length; i++){
+            dom.optionBoxes.children[i].disabled = true;
+        }
 
         // classifierColumn.js
         addAccordionListeners();
@@ -89,4 +95,6 @@ function populateDom() {
     dom.tagPanelClassifiers     = Array.prototype.slice.call(dom.tagPanel.children);
     dom.projectPanelClassifiers = Array.prototype.slice.call(dom.projectPanel.children);
     dom.groupPanelClassifiers   = Array.prototype.slice.call(dom.groupPanel.children);
+
+    dom.optionBoxes         = Util.one("#control-icons");
 }

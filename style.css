@@ -6,6 +6,8 @@
 	--color-yellow: #F7B226;
 	--color-yellow-fade: rgba(247, 178, 38, 0.2);
 	--color-gray: #54524E;
+    --color-disabled-gray: #D1D1D1;
+    --color-disabled-text-gray: #ADADAD;
 
 	--color-maroon: rgb(102,31,31);
 	--color-maroon-fade:rgb(102,47,47);
@@ -295,6 +297,12 @@ h1 {
 	outline: none;
 }
 
+.icon-buttons:disabled{
+    background-color: var(--color-disabled-gray);
+    cursor: default;
+    color: var(--color-disabled-text-gray);
+}
+
 #selectAll {
     margin: 0px;
     align-self: center;
@@ -309,7 +317,7 @@ h1 {
 	height: 100%;
 }
  #results-files{
-    max-height: 75vh;
+    max-height: 82vh;
 	overflow: scroll;
 }
 
@@ -439,7 +447,7 @@ h1 {
 }
 
 #control-icons {
-    /*display: none;*/
+    float: right;
 }
 
 .down:after {
