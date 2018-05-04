@@ -16,14 +16,8 @@ function addAccordionListeners() {
 			var tagsInField = panel.children.length;
 			var colonSpan = this.children[1];
 			var searchBar = this.children[2];
-			var odd;
-			if (tagsInField % 2 == 0) {
-				odd = 0.5;
-			} else {
-				odd = 1;
-			}
 			var margin = 5;
-			var sizeOfPanel = tagsInField * (panel.children[1].clientHeight) + (tagsInField - odd) * (margin * 2);
+			var sizeOfPanel = tagsInField * (panel.children[0].clientHeight) + (tagsInField + 1) * margin;
 			// console.log(sizeOfPanel);
 
 			if (window.getComputedStyle(panel).getPropertyValue('height') == "0px") {

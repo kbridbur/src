@@ -61,4 +61,8 @@ function addClassifiersToParent(parent, classifiers) {
     for(var i = 0; i < classifiers.length; i++) {
         parent.appendChild(classifiers[i]);
     }
+    var tagsInField = parent.children.length;
+    var margin = 5;
+    var sizeOfPanel = tagsInField * (parent.children[0].clientHeight) + (tagsInField + 1) * margin;
+    parent.style.height = sizeOfPanel+"px";
 }

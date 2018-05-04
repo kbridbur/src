@@ -351,7 +351,7 @@ h1 {
 }
 
 .file-dots {
-    justify-self: left;
+    justify-self: center;
     width: 15px;
     color: #adadad;
 }

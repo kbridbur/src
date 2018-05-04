@@ -80,6 +80,11 @@ function fileSelect() {
         fileRecentClick[file.id] = false;
         numRecentClicks[file.id] = 0;
         file.addEventListener( 'click', function() {
+            console.log(openMenu);
+            if (!(openMenu == null)) {
+                console.log("ther is menu open");
+                return;
+            }
             var a = this;
             numRecentClicks[file.id]++;
             console.log(numRecentClicks[file.id]);

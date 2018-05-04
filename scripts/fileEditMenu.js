@@ -15,6 +15,7 @@ function openFileMenu(e) {
 
 function windowClick(e) {
     if (e.target.className != "fas fa-ellipsis-v file-dots") {
+        // setTimeout(function(){closeMenu();}, 100);
         closeMenu();
     }
 }
@@ -22,6 +23,7 @@ function windowClick(e) {
 function closeMenu() {
     if (openMenu != null) {
         openMenu.style.display = "none";
+        openMenu = null;
     }
 }
 
