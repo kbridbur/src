@@ -16,7 +16,7 @@ function checkForToggles(){
     }
 }
 
-function checkForChecks(){
+function checkForChecks() {
     var img = document.getElementById("preview-image");
     var filename = document.getElementById("preview-filename");
     var uploader = document.getElementById("preview-author");
@@ -49,13 +49,15 @@ function checkForChecks(){
         // var lower = Util.one("#lower");
         // lower.style.gridTemplateColumns = "18vw 60vw 22vw";
     } else {
-        img.src = "";
-        description.innerHTML = "";
-        filename.innerHTML = "";
-        uploader.innerHTML = "";
-        date.innerHTML = "";
         mainCol.style.width = "82vw";
-        setTimeout(function() {prevCol.style.backgroundColor = "white";} , 300)
+        setTimeout(function() {
+            prevCol.style.backgroundColor = "white";
+            img.src = "";
+            description.innerHTML = "";
+            filename.innerHTML = "";
+            uploader.innerHTML = "";
+            date.innerHTML = "";
+        } , 300)
         // var lower = Util.one("#lower");
         // lower.style.gridTemplateColumns = "18vw 82vw";
     }
@@ -84,6 +86,7 @@ function selectAllHandler() {
     }
     toggler = !toggler;
     checkForToggles();
+    checkForChecks();
 }
 
 function addClassifierListeners() {
