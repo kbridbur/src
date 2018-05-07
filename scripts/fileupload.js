@@ -1,13 +1,17 @@
 function handleDrop(e, info){
-    if (e) {
-        e.preventDefault();
-        e.stopPropagation();
-    }
+    console.log(e);
+    handleDragleave();
+    e.preventDefault();
+    e.stopPropagation();
     dom.default.style.display="none";
     dom.upload.style.display="block";
 
     if (!info) {
-        var file = e.target.files[0];
+        if (e.dataTransfer != undefined) {
+            var file = e.dataTransfer.files[0];
+        } else {
+            var file = e.target.files[0];
+        }
         autofill(file.name, "Ben Bitdiddle", new Date(Date.now()));
     } else {
         autofill(info.name, info.author, info.date);
@@ -27,8 +31,9 @@ function autofill(name, author, date) {
     }
 }
 
-function handleDragenter(e) {
-    dom.fileUpload.style.border = "dashed 5px #B4E58B";
+function handleDragover(e) {
+    e.preventDefault();
+    dom.fileUpload.style.border = "dashed white thin";
 }
 
 function handleDragleave(e) {

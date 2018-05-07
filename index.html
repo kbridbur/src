@@ -43,9 +43,9 @@
     		</div>
         </div>
         <div id="header-right">
-        	 <div id="file-drag-drop">
+        	 <div id="file-drag-drop" ondrop="handleDrop(event)">
             	<!-- <img id="upload-icon" src="images/upload-icon.png"/> -->
-            	<span id="upload-label"> Upload Files Here </span>
+            	<button id="upload-button"> + </button>
             	<input type="file" id="hidden-file-upload" onchange="handleDrop(event)"/>
         	</div>
 
@@ -55,8 +55,7 @@
 		<!-- =========== CLASSIFIERS COLUMN ========= -->
 		<div class="col" id="tag-col">
 <!-- 			<div class="search-container" id="classfier-search-container">
-				<input type="text" class="search" id="classifier-search"  placeholder="Search filters...">
-				<button class="search-btn" id="classifier-search-btn"> &#8981; </button>
+                <button class="classifier-control" id="classifier-control-clear"> Clear filters </button>
 			</div> -->
 			<div class="classifier-container">
 				<button class="accordion title-font" id="tags">

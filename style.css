@@ -212,9 +212,9 @@ h1 {
 }
 
 #header-right {
-	outline: dashed white thin;
-	width: 95%;
-	height: 95%;
+	/*outline: dashed white thin;*/
+	width: 98%;
+	height: 94%;
 }
 
 #header-right:hover {
@@ -237,11 +237,33 @@ h1 {
     box-sizing: border-box;
 }
 
+#upload-button {
+    color: var(--color-side-bg);
+    border:none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    align-self: flex-end;
+    margin-right: 30px;
+    font-size: 1.5em;
+    /*padding: 15px;*/
+    /*line-height: 50px;*/
+}
 
-#file-drag-drop:hover {
+#upload-button:hover{
+    cursor: pointer;
+    background-color: var(--color-search-btn-hover);
+}
+
+#upload-button:focus {
+    outline: none;
+}
+
+/*#file-drag-drop:hover {
 	background-color: var(--color-purple-fade);
 	cursor: pointer;
-}
+}*/
 
 
 /**********************************************************/
@@ -252,7 +274,7 @@ h1 {
 	grid-column: 1;
 	background-color: var(--tag-col-bg);
 	display: grid;
-	/*grid-template-rows: 7% 93%;*/
+	grid-template-rows: 7% 93%;
 }
 
 #main-col {
@@ -714,6 +736,19 @@ h1 {
 	overflow: hidden;
 }
 
+.classifier-control {
+    background-color: var(--color-search-btn);
+    border:none;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: .8em;
+}
+
+.classifier-control:hover {
+    cursor: pointer;
+    background-color: var(--color-search-btn-hover);
+}
+
 .classifier {
 	font-family: Lato;
 	border-radius: 8px;
@@ -748,6 +783,7 @@ h1 {
 }
 
 .classifier-container {
+    height: 82vh;
 	overflow-y: scroll;
     padding-top: 10px;
     overflow-x: hidden;

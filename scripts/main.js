@@ -44,12 +44,12 @@ Util.events(document, {
         addAccordionListeners();
 
         // fileupload.js
-        document.body.addEventListener("dragenter", handleDragenter);
-        document.body.addEventListener("dragleave", handleDragleave);
-        dom.fileUpload.addEventListener("drop", function(event){handleDrop(event);}, false);
+        document.body.addEventListener("dragover", handleDragover, false);
+        document.body.addEventListener("dragleave", handleDragleave, false);
+        dom.fileUpload.addEventListener("drop", handleDrop, false);
         dom.submit.addEventListener("click", function(event){saveFile(event);}, false);
         dom.cancel.addEventListener("click", function(event){cancelFile(event);}, false);
-        document.getElementById("file-drag-drop").addEventListener("click", function(){
+        dom.uploadButton.addEventListener("click", function(){
             dom.uploadElt.click();
         });
 
@@ -84,6 +84,7 @@ function populateDom() {
 
     dom.default             = Util.one("#default");
     dom.upload              = Util.one("#upload");
+    dom.uploadButton        = Util.one("#upload-button");
     dom.submit              = Util.one("#save-file");
     dom.cancel              = Util.one("#cancel-file");
     dom.uploadElt           = Util.one("#hidden-file-upload");
