@@ -9,7 +9,7 @@ function addSearchListeners() {
         var desiredFiles;
 
         
-        parent = dom.filesContainer;
+        parent = Util.one("#results-files");
         desiredFiles = dom.files;
        
         if (cText.trim().length > 0) { 

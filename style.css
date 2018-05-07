@@ -155,37 +155,19 @@ h1 {
 .search {
 	width: 100%;
 	line-height: 1.5em;
-	border-radius: 8px 0px 0px 8px;
+	border-radius: 8px 8px 8px 8px;
 	border: none;
 	padding: 3px;
 	font-size: var(--search-font-size);
 	font-family: var(--search-font);
 	padding-left: 8px;
+	margin-left: 5%;
 }
 
 .search:focus {
 		outline: none;
 }
 
-.search-btn {
-	font-size: var(--search-font-size);
-	border:none;
-	font-weight: bold;
-	padding: 3px;
-	line-height: 1.5em;
-	background-color: var(--color-search-btn);
-	color: white;
-	border-radius: 0px 8px 8px 0px;
-	margin-left: -10px;
-	padding-left: 10px;
-	padding-right: 10px;
-}
-
-.search-btn:hover {
-	cursor: pointer;
-    background-color: var(--color-search-btn-hover);
-
-}
 /**********************************************************/
 /*		  header style				  */
 /**********************************************************/
