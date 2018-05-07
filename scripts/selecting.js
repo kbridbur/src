@@ -16,10 +16,31 @@ function checkForToggles(){
     }
 }
 
+function checkForChecks(){
+    var img = document.getElementById("preview-image");
+    var description = document.getElementById("preview-description");
+    var imgPlacehold = document.getElementById("img-placeholder");
+
+    if (Object.values(fileToggles).indexOf(true) > -1) {
+        img.src = "graphics/sadoak.jpg";
+        description.innerHTML = "I'm a description";
+        imgPlacehold.innerHTML = "";
+        var lower = Util.one("#lower");
+        lower.style.gridTemplateColumns = "18vw 60vw 22vw";
+    } else {
+        img.src = "";
+        description.innerHTML = "";
+        imgPlacehold.innerHTML = "No file selected";
+        var lower = Util.one("#lower");
+        lower.style.gridTemplateColumns = "18vw 82vw";
+    }
+}
+
 function selectAllHandler() {
     var allFiles = Util.all(".result-file");
     var btn = Util.one("#selectAll");
     for (var i = 0; i < allFiles.length; i++) {
+        selectedFiles.add(allFiles[i]);
         if (toggler) {
             allFiles[i].children[0].src = filledCheck;
             fileToggles[allFiles[i].id] = true;
@@ -80,21 +101,19 @@ function fileSelect() {
         fileRecentClick[file.id] = false;
         numRecentClicks[file.id] = 0;
         file.addEventListener( 'click', function() {
-            console.log(openMenu);
+            // console.log(openMenu);
             if (!(openMenu == null)) {
                 console.log("ther is menu open");
                 return;
             }
             var a = this;
             numRecentClicks[file.id]++;
-            console.log(numRecentClicks[file.id]);
+            // console.log(numRecentClicks[file.id]);
             if (numRecentClicks[file.id] == 1){
                 singleClickTimer = setTimeout(function(){
                     numRecentClicks[file.id] = 0;
-                    var checkbox = a.children[0];
-                    toggle = !fileToggles[a.id];
-                    checkbox.src = toggle ? filledCheck : emptyCheck;
-                    fileToggles[a.id] = toggle;
+
+                    toggleCheck(a);
 
                     var check = Object.keys(fileToggles).filter(i => fileToggles[i] == false);
                     if (check.length > 0){
@@ -103,23 +122,7 @@ function fileSelect() {
                     else {
                         dom.selectAll.src = filledCheck;
                     }
-                    var img = document.getElementById("preview-image");
-                    var description = document.getElementById("preview-description");
-                    var imgPlacehold = document.getElementById("img-placeholder");
-
-                    if (Object.values(fileToggles).indexOf(true) > -1) {
-                        img.src = "graphics/sadoak.jpg";
-                        description.innerHTML = "I'm a description";
-                        imgPlacehold.innerHTML = "";
-                        var lower = Util.one("#lower");
-                        lower.style.gridTemplateColumns = "18vw 60vw 22vw";
-                    } else {
-                        img.src = "";
-                        description.innerHTML = "";
-                        imgPlacehold.innerHTML = "No file selected";
-                        var lower = Util.one("#lower");
-                        lower.style.gridTemplateColumns = "18vw 82vw";
-                    }
+                    checkForChecks();
                     checkForToggles();
                 }, 150, a);
             }
@@ -139,3 +142,17 @@ function fileSelect() {
         });
     }
 }
+
+function toggleCheck(obj) {
+    var checkbox = obj.children[0];
+    toggle = !fileToggles[obj.id];
+    checkbox.src = toggle ? filledCheck : emptyCheck;
+    fileToggles[obj.id] = toggle;
+    // console.log("true");
+    if (toggle) {
+        selectedFiles.add(obj);
+    } else {
+        selectedFiles.delete(obj);
+    }
+}
+

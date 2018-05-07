@@ -35,6 +35,7 @@ function menuItemClickHandler(e) {
     var fileUploader = file.children[3].innerText;
 
     console.log(fileName + " uploaded on " + fileDate + " by "+fileUploader);
+    closeMenu();
 
     switch (buttonType) {
         case "edit":
@@ -42,22 +43,10 @@ function menuItemClickHandler(e) {
             handleDrop(null, info);
             break;
         case "star":
-            if (!starredFiles.has(file)) {
-                var star = document.createElement("img");
-                star.src = "images/yellow-star.png";
-                star.className = "file-star";
-                file.children[1].appendChild(star);
-                starredFiles.add(file);
-                this.innerText = "Unstar";
-            } else {
-                starredFiles.delete(file);
-                file.children[1].removeChild(file.children[1].childNodes[1]);
-                this.innerText = "Star";
-            }
+            starItem(this, file);
             break;
         case "trash":
-            var fileParent = file.parentNode;
-            fileParent.removeChild(file);
+            trashItem(file);
             break;
     }
     e.stopPropagation();
@@ -68,5 +57,40 @@ function addMenuItemListeners() {
     for (var i = 0; i < dom.menuButtons.length; i++) {
         var b = dom.menuButtons[i];
         b.addEventListener("click", menuItemClickHandler);
+    }
+}
+
+function trashItemsHandler() {
+    console.log("trashing");
+    console.log(selectedFiles);
+    selectedFiles.forEach(trashItem);
+}
+
+function starItemsHandler() {
+    
+}
+
+function trashItem(file) {
+    console.log(file);
+    var fileParent = file.parentNode;
+    fileParent.removeChild(file);
+    fileToggles[file.id] = false;
+    selectedFiles.delete(file);
+    trashedFiles.add(file);
+    checkForChecks();
+}
+
+function starItem(obj, file) {
+    if (!starredFiles.has(file)) {
+        var star = document.createElement("img");
+        star.src = "images/yellow-star.png";
+        star.className = "file-star";
+        file.children[1].appendChild(star);
+        starredFiles.add(file);
+        obj.innerText = "Unstar";
+    } else {
+        starredFiles.delete(file);
+        file.children[1].removeChild(file.children[1].childNodes[1]);
+        obj.innerText = "Star";
     }
 }

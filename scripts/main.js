@@ -5,7 +5,9 @@ dom = {};
 tagToggles = {};
 fileToggles = {};
 
+var selectedFiles = new Set();
 var starredFiles = new Set();
+var trashedFiles = new Set();
 
 fileRecentClick = {};
 numRecentClicks = {};
@@ -60,6 +62,8 @@ Util.events(document, {
         window.addEventListener('click', windowClick);
         setTimeout(addMenuItemListeners, 200);
         Util.one("#dropdown").style.borderRadius = "8px";
+        dom.starItemsButton.addEventListener('click', starItemsHandler);
+        dom.trashItemsButton.addEventListener('click', trashItemsHandler);
 
         // classifierSearch.js
         addClassifierSearchListeners();
@@ -88,6 +92,9 @@ function populateDom() {
     dom.submit              = Util.one("#save-file");
     dom.cancel              = Util.one("#cancel-file");
     dom.uploadElt           = Util.one("#hidden-file-upload");
+
+    dom.starItemsButton     = Util.one("#star-items");
+    dom.trashItemsButton    = Util.one("#trash-items");
 
     dom.fileTitle           = Util.one("#file-title");
     dom.dateTitle           = Util.one("#date-title");

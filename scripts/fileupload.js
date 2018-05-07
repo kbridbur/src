@@ -1,8 +1,10 @@
 function handleDrop(e, info){
-    console.log(e);
     handleDragleave();
-    e.preventDefault();
-    e.stopPropagation();
+    if (e != null) {
+        console.log(e);
+        e.preventDefault();
+        e.stopPropagation();
+    }
     dom.default.style.display="none";
     dom.upload.style.display="block";
 
