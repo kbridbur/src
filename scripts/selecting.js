@@ -18,12 +18,27 @@ function checkForToggles(){
 
 function checkForChecks(){
     var img = document.getElementById("preview-image");
+    var filename = document.getElementById("preview-filename");
+    var uploader = document.getElementById("preview-author");
+    var date = document.getElementById("preview-date");
     var description = document.getElementById("preview-description");
     var imgPlacehold = document.getElementById("img-placeholder");
 
-    if (Object.values(fileToggles).indexOf(true) > -1) {
+    if (Object.values(fileToggles).filter(item => item == true).length > 1) {
+        img.src = "";
+        description.innerHTML = "Multiple files selected";
+        imgPlacehold.innerHTML = "";
+        filename.innerHTML = "";
+        uploader.innerHTML = "";
+        date.innerHTML = "";
+        var lower = Util.one("#lower");
+        lower.style.gridTemplateColumns = "18vw 60vw 22vw";
+    } else if (Object.values(fileToggles).indexOf(true) > -1) {
         img.src = "graphics/sadoak.jpg";
-        description.innerHTML = "I'm a description";
+        description.innerHTML = "A sad oak tree I found in my backyard. Reminds me of myself";
+        filename.innerHTML = "SadOak.jpg";
+        uploader.innerHTML = "Uploaded by Ben Bitdiddle (Me)";
+        date.innerHTML = " on 04/20/18";
         imgPlacehold.innerHTML = "";
         var lower = Util.one("#lower");
         lower.style.gridTemplateColumns = "18vw 60vw 22vw";

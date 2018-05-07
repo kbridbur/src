@@ -43,7 +43,7 @@ function menuItemClickHandler(e) {
             handleDrop(null, info);
             break;
         case "star":
-            starItem(this, file);
+            starItem(file);
             break;
         case "trash":
             trashItem(file);
@@ -61,13 +61,11 @@ function addMenuItemListeners() {
 }
 
 function trashItemsHandler() {
-    console.log("trashing");
-    console.log(selectedFiles);
     selectedFiles.forEach(trashItem);
 }
 
 function starItemsHandler() {
-    
+    selectedFiles.forEach(starItem);
 }
 
 function trashItem(file) {
@@ -75,22 +73,25 @@ function trashItem(file) {
     var fileParent = file.parentNode;
     fileParent.removeChild(file);
     fileToggles[file.id] = false;
+    starredFiles.delete(file);
     selectedFiles.delete(file);
     trashedFiles.add(file);
     checkForChecks();
 }
 
-function starItem(obj, file) {
+function starItem(file) {
+    console.log(file);
+    var menu = file.children[5];
     if (!starredFiles.has(file)) {
         var star = document.createElement("img");
         star.src = "images/yellow-star.png";
         star.className = "file-star";
         file.children[1].appendChild(star);
         starredFiles.add(file);
-        obj.innerText = "Unstar";
+        menu.innerText = "Unstar";
     } else {
         starredFiles.delete(file);
         file.children[1].removeChild(file.children[1].childNodes[1]);
-        obj.innerText = "Star";
+        menu.innerText = "Star";
     }
 }
