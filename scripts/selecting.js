@@ -67,14 +67,15 @@ function selectAllHandler() {
     var allFiles = Util.all(".result-file");
     var btn = Util.one("#selectAll");
     for (var i = 0; i < allFiles.length; i++) {
-        selectedFiles.add(allFiles[i]);
         if (toggler) {
             allFiles[i].children[0].src = filledCheck;
             fileToggles[allFiles[i].id] = true;
+            selectedFiles.add(allFiles[i]);
 
         } else {
             allFiles[i].children[0].src = emptyCheck;
             fileToggles[allFiles[i].id] = false;
+            selectedFiles.delete(allFiles[i]);
 
         }
     }
