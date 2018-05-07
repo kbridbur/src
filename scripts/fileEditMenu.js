@@ -81,7 +81,7 @@ function trashItem(file) {
 
 function starItem(file) {
     console.log(file);
-    var menu = file.children[5];
+    var menu = file.children[5].children[2];
     if (!starredFiles.has(file)) {
         var star = document.createElement("img");
         star.src = "images/yellow-star.png";
