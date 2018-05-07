@@ -67,6 +67,9 @@ Util.events(document, {
 
         // classifierSearch.js
         addClassifierSearchListeners();
+
+        //search.js
+        addSearchListeners();
     }
 });
 
@@ -110,4 +113,8 @@ function populateDom() {
     dom.groupPanelClassifiers   = Array.prototype.slice.call(dom.groupPanel.children);
 
     dom.optionBoxes         = Util.one("#control-icons");
+
+    dom.search              = Util.one("#main-search");
+    dom.filesContainer      = Util.one("#results-files");
+    dom.files               = Array.prototype.slice.call(dom.filesContainer.children);
 }
