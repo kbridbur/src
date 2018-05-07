@@ -23,6 +23,8 @@ function checkForChecks(){
     var date = document.getElementById("preview-date");
     var description = document.getElementById("preview-description");
     var imgPlacehold = document.getElementById("img-placeholder");
+    var mainCol = document.getElementById("main-col");
+    var prevCol = document.getElementById("preview-col");
 
     if (Object.values(fileToggles).filter(item => item == true).length > 1) {
         img.src = "";
@@ -31,8 +33,10 @@ function checkForChecks(){
         filename.innerHTML = "";
         uploader.innerHTML = "";
         date.innerHTML = "";
-        var lower = Util.one("#lower");
-        lower.style.gridTemplateColumns = "18vw 60vw 22vw";
+        mainCol.style.width = "60vw";
+        prevCol.style.backgroundColor = "#585858";
+        // var lower = Util.one("#lower");
+        // lower.style.gridTemplateColumns = "18vw 60vw 22vw";
     } else if (Object.values(fileToggles).indexOf(true) > -1) {
         img.src = "graphics/sadoak.jpg";
         description.innerHTML = "A sad oak tree I found in my backyard. Reminds me of myself";
@@ -40,14 +44,20 @@ function checkForChecks(){
         uploader.innerHTML = "Uploaded by Ben Bitdiddle (Me)";
         date.innerHTML = " on 04/20/18";
         imgPlacehold.innerHTML = "";
-        var lower = Util.one("#lower");
-        lower.style.gridTemplateColumns = "18vw 60vw 22vw";
+        mainCol.style.width = "60vw";
+        prevCol.style.backgroundColor = "#585858";
+        // var lower = Util.one("#lower");
+        // lower.style.gridTemplateColumns = "18vw 60vw 22vw";
     } else {
         img.src = "";
         description.innerHTML = "";
-        imgPlacehold.innerHTML = "No file selected";
-        var lower = Util.one("#lower");
-        lower.style.gridTemplateColumns = "18vw 82vw";
+        filename.innerHTML = "";
+        uploader.innerHTML = "";
+        date.innerHTML = "";
+        mainCol.style.width = "82vw";
+        setTimeout(function() {prevCol.style.backgroundColor = "white";} , 300)
+        // var lower = Util.one("#lower");
+        // lower.style.gridTemplateColumns = "18vw 82vw";
     }
 }
 

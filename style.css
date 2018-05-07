@@ -148,7 +148,7 @@ h1 {
 #lower {
 	grid-row: 2;
 	display: grid;
-    grid-template-columns: 18vw 82vw;
+    grid-template-columns: 18vw 60vw 22vw;
     grid-column: 1/4;
 }
 
@@ -278,9 +278,13 @@ h1 {
 }
 
 #main-col {
+    width: 82vw;
+    -webkit-transition: all 0.3s;
     box-sizing: border-box;
 	grid-column: 2;
 	padding: 20px;
+    z-index:1;
+    background-color: white;
 	/*padding-bottom: 0px;*/
 }
 
