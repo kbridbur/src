@@ -208,6 +208,7 @@ function loadFiles () {
     dots.addEventListener('click', openFileMenu)
 
     var parent = document.getElementById("results-files");
+    mainFiles.add(child);
     parent.appendChild(child);
   }
 }

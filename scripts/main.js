@@ -6,8 +6,9 @@ tagToggles = {};
 fileToggles = {};
 
 var selectedFiles = new Set();
-var starredFiles = new Set();
-var trashedFiles = new Set();
+var starredFiles  = new Set();
+var trashedFiles  = new Set();
+var mainFiles     = new Set()
 
 fileRecentClick = {};
 numRecentClicks = {};
@@ -70,6 +71,9 @@ Util.events(document, {
 
         //search.js
         addSearchListeners();
+
+        //views.js
+        addViewsListener();
     }
 });
 
@@ -117,4 +121,6 @@ function populateDom() {
     dom.search              = Util.one("#main-search");
     dom.filesContainer      = Util.one("#results-files");
     dom.files               = Array.prototype.slice.call(dom.filesContainer.children);
+
+    dom.views               = Util.one("#dropdown");
 }

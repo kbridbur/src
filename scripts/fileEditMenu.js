@@ -69,6 +69,7 @@ function starItemsHandler() {
 }
 
 function trashItem(file) {
+    mainFiles.delete(file);
     console.log(file);
     var fileParent = file.parentNode;
     fileParent.removeChild(file);

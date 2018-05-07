@@ -123,7 +123,6 @@ function addClassifierListeners() {
 
 // listeners for files
 function fileSelect() {
-    console.log(dom.files.length);
     for (var i = 0; i < dom.files.length; i++) {
         file = dom.files[i];
         fileToggles[file.id] = false;
