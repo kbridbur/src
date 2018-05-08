@@ -467,6 +467,7 @@ h1 {
 
 #control-icons {
     float: right;
+    justify-self: right;
 }
 
 .down:after {
