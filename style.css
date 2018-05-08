@@ -148,7 +148,7 @@ h1 {
 #lower {
 	grid-row: 2;
 	display: grid;
-    grid-template-columns: 18vw 60vw 22vw;
+    grid-template-columns: 18vw 82vw;
     grid-column: 1/4;
 }
 

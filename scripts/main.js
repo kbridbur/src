@@ -129,4 +129,7 @@ function populateDom() {
     dom.files               = Array.prototype.slice.call(dom.filesContainer.children);
 
     dom.views               = Util.one("#dropdown");
+
+    dom.upper               = Util.one("#header");
+    dom.lower               = Util.one("#lower");
 }
