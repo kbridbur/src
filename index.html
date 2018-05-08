@@ -24,6 +24,7 @@
 <script src="scripts/classifierSearch.js"></script>
 <script src="scripts/search.js"></script>
 <script src="scripts/views.js"></script>
+<script src="scripts/realClassifierFiltering.js"></script>
 
 </head>
 <body>
@@ -44,7 +45,6 @@
         </div>
         <div id="header-right">
         	 <div id="file-drag-drop" ondrop="handleDrop(event)">
-            	<!-- <img id="upload-icon" src="images/upload-icon.png"/> -->
             	<button id="upload-button"> + </button>
             	<input type="file" id="hidden-file-upload" onchange="handleDrop(event)"/>
         	</div>
@@ -54,9 +54,6 @@
 	<div class="row" id="lower">
 		<!-- =========== CLASSIFIERS COLUMN ========= -->
 		<div class="col" id="tag-col">
-<!-- 			<div class="search-container" id="classfier-search-container">
-                <button class="classifier-control" id="classifier-control-clear"> Clear filters </button>
-			</div> -->
 			<div class="classifier-container">
 				<button class="accordion title-font" id="tags">
 					<span class="classifier-button-span" id="Tags-button-span">Tags</span>
@@ -80,7 +77,6 @@
 		                <img src="images/checkbox.png" class="classifier-checkbox">photography
 		            </div>
 				</div>
-		        <!-- <hr> -->
 				<button class="accordion title-font" id="projects">
 					<span class="classifier-button-span" id="Projects-button-span">Projects</span>
                     <span class="classifier-colon-span"> :</span>
@@ -117,25 +113,6 @@
 		            </div>
 				</div>
 			</div>
-
-<!-- 			<div class="views">
-	            <button class="views-btn title-font active-tab" id="main">
-	                <img class="classifier-icon" src="images/clock.png">
-	                Main
-	            </button>
-				<button class="views-btn title-font" id="recent">
-					<img class="classifier-icon" src="images/clock.png">
-					Recent
-				</button>
-				<button class="views-btn title-font" id="trash">
-					<img class="classifier-icon" src="images/garbage.png">
-					Trash
-				</button>
-				<button class="views-btn title-font" id="starred">
-					<img class="classifier-icon" src="images/star.png">
-					Starred
-				</button>
-			</div> -->
 		</div>
 
 	<!-- ============ MAIN COLUMN ============= -->
@@ -211,11 +188,6 @@
                 </div>
             </div>
         </div>
-       <!--  <div class="row" id="file-drag-drop">
-            <img id="upload-icon" src="images/upload-icon.png"/>
-            <span>Click or drag and drop to upload a file</span>
-            <input type="file" id="hidden-file-upload" onchange="handleDrop()"/>
-        </div> -->
 	</div>
 </body>
 

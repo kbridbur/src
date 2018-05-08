@@ -34,3 +34,43 @@ function addFormClassifierKeydownListeners() {
         });
     }
 }
+
+function extractFormboxText(box) {
+    var n = [];
+    for (var i = 0; i < box.children.length; i ++) {
+        n.push(box.children[i].innerText);
+    }
+    return n
+}
+
+function getFileEltFromName(fname) {
+    var fs = Util.all(".result-filename");
+    var match;
+    for (var i = 0; i < fs.length; i++) {
+        if (fs[i].innerText == fname) {
+            match = fs[i].parentNode;
+        }
+    }
+    return match;
+}
+
+function addNewFileFormSubmitListener() {
+    var btn = Util.one("#save-file");
+
+    btn.addEventListener('click', function(e) {
+        var allFilters = [];
+        allFilters.concat(extractFormboxText(dom.tags));
+        allFilters.concat(extractFormboxText(dom.projects));
+        allFilters.concat(extractFormboxText(dom.children));
+
+        var filename = Util.one("#file-name").value;
+
+        //TODO: fugure out how to get this shit
+        var elt      = getFileEltFromName(filename);
+
+        for (var i = 0; i < allFilters.length; i++) {
+            updateFilterMap(allFilters[i], elt);
+        }
+
+    });
+}

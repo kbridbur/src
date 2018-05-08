@@ -27,6 +27,21 @@ var titles = [
   "BlockChainAndBitcoin"
 ]
 
+var classifiersToTitles = {
+  "blockchain" : ["AdoptionOfBlockChain.jpg", "BlockChainAndBitcoin"],
+  "bitcoin"    : ["BitcoinTrendsGraph.png","BitcoinAndBanking.pdf", "BitcoinBasics.doc", "BlockChainAndBitcoin"],
+  "finance"    : ["CurrencyOnline.jpeg","ManagementInTech.pdf"],
+  "bees"       : ["TheDeclineOfBees.mp3", "DamageFromPollutants.docx", "BeesAndTheHoneyIndustry.mov", "BeeAnatomyDiagram.jpg", "LifecyleOfTheBee.pdf"],
+  "photography": ["SadOak.jpg", "GeeseWater.jpg", "WaterfallGhana.jpg", "RomanRuins.jpg","SunsetOcean.jpg"],
+  "Photography": ["WaterfallGhana.jpg", "RomanRuins.jpg"],
+  "6.813 Materials": ["Lecture15.ppt", "Lecture17.ppt", "Lecture18.ppt","CourseSyllabus.doc"],
+  "Fintech Project": ["BitcoinTrendsGraph.png", "AdoptionOfBlockChain.jpg", "ManagementInTech.pdf"],
+  "Bees and Tech"  : ["DamageFromPollutants.docx"],
+  "Karger Lab"     : ["MartelDesignPaper.pdf"],
+  "6.813 Staff"    : ["CourseSyllabus.doc"],
+  "Photogaphy Club": ["SunsetOcean.jpg"]
+}
+
 var blockchainTitles = [
   "AdoptionOfBlockChain.jpg",
   "CurrencyOnline.jpeg",
@@ -209,6 +224,7 @@ function loadFiles () {
 
     var parent = document.getElementById("results-files");
     mainFiles.add(child);
+
     parent.appendChild(child);
   }
 }
@@ -341,4 +357,14 @@ function renderSpecialFiles(titleArray){
 
   return newChild
 
+}
+
+function fillFilteringMap() {
+  for (var k in classifiersToTitles) {
+    for (var i = 0; i < classifiersToTitles[k].length; i++) {
+      var filter = k;
+      var entry  = getFileEltFromName(classifiersToTitles[k][i]);
+      updateFilterMap(filter, entry);
+    }
+  }
 }

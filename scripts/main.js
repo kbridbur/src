@@ -5,6 +5,8 @@ dom = {};
 tagToggles = {};
 fileToggles = {};
 
+classifierToFiles = {};
+
 var selectedFiles = new Set();
 var starredFiles  = new Set();
 var trashedFiles  = new Set();
@@ -35,6 +37,7 @@ Util.events(document, {
 
         // addClassifiers.js
         addFormClassifierKeydownListeners();
+        addNewFileFormSubmitListener();
 
         // preloadFiles.js
         loadFiles();
@@ -42,6 +45,7 @@ Util.events(document, {
         for (var i=0; i<dom.optionBoxes.children.length; i++){
             dom.optionBoxes.children[i].disabled = true;
         }
+        fillFilteringMap();
 
         // classifierColumn.js
         addAccordionListeners();
@@ -74,6 +78,10 @@ Util.events(document, {
 
         //views.js
         addViewsListener();
+
+        //realClassifierFiltering.js
+        addFilteringListeners();
+
     }
 });
 
