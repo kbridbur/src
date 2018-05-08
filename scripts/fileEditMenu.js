@@ -69,6 +69,8 @@ function starItemsHandler() {
 }
 
 function trashItem(file) {
+    fileToggles[file] = false;
+    file.children[0].src = "images/checkbox.png";
     mainFiles.delete(file);
     console.log(file);
     var fileParent = file.parentNode;

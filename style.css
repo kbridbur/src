@@ -554,11 +554,11 @@ h1 {
 }
 
 #file-name {
-    grid-column: 2 / 4;
+    width: 99%;
 }
 
 #file-author {
-    grid-column: 2 / 4;
+    width: 99%;
 }
 
 #publish-date {
@@ -567,58 +567,57 @@ h1 {
 
 #add-date {
     width: 40%;
-
 }
 
 #form-grid {
     width: 100%;
     height: 40%;
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: 33% 34% 33%;
     border: 1px solid black;
 }
 
 #form-tags {
-	margin-top: 15px;
+    margin-top: 2px;
 	margin-bottom: 15px;
 	border: 1px solid black;
 	border-top-left-radius: 4px;
 	border-bottom-left-radius: 4px;
 	height: 150px;
-	grid-row: 5;
+	grid-row: 2;
 }
 
 #form-projects {
-	margin-top: 15px;
+    margin-top: 2px;
 	margin-bottom: 15px;
 	border-top: 1px solid black;
 	border-bottom: 1px solid black;
 	height: 150px;
-	grid-row: 5;
+	grid-row: 2;
     /* box-sizing: border-box;
     border-left: 1px solid black;
     border-right: 1px solid black; */
 }
 
 #form-groups {
-	margin-top: 15px;
+    margin-top: 2px;
 	margin-bottom: 15px;
 	height: 150px;
 	border: 1px solid black;
 	border-top-right-radius: 4px;
 	border-bottom-right-radius: 4px;
-	grid-row: 5;
+	grid-row: 2;
 }
 
 #notes-form-label {
-	grid-row: 6;
+	grid-row: 3;
 }
 
 #file-notes {
-	grid-column: 2 / 4;
+	grid-column: 1 / 4;
 	height: auto;
 	resize: vertical;
-	grid-row: 6;
+	grid-row: 4;
 }
 
 #save-file {
