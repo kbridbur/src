@@ -460,9 +460,9 @@ h1 {
 
 
 #results-headers {
-    line-height: 2em;
+  line-height: 2em;
 	display: grid;
-	grid-template-columns:  1fr repeat(3, 7fr) 2fr;
+	grid-template-columns:  1fr repeat(3, 7fr) 62px;
 }
 
 #control-icons {

@@ -48,35 +48,109 @@ function saveFile(e){
     dom.default.style.display="block";
     dom.upload.style.display="none";
 
-    var checkbox = document.createElement("input")
-    checkbox.setAttribute("type", "checkbox")
+
+    var checkbox = document.createElement("img")
+    checkbox.setAttribute("src", "images/checkbox.png")
     checkbox.setAttribute("class", "result-file-checkbox")
 
     var filename = document.createElement("span")
     filename.setAttribute("class", "result-filename")
     filename.innerHTML = "BankingInATechWorld.pdf"
-    filename.prepend(checkbox)
+    // filename.prepend(checkbox)
 
     var date = document.createElement("span")
     date.setAttribute("class", "result-date-uploaded")
-    date.innerHTML = "04/20/18"
-
-
+    date.innerHTML = "05/09/2018"
 
     var uploader = document.createElement("span")
     uploader.setAttribute("class", "result-uploaded-by")
-    uploader.innerHTML = "Me"
+    uploader.innerHTML = "Ben Bitdiddle (Me)"
+
+    var dots = document.createElement("i");
+    dots.className = "fas fa-ellipsis-v file-dots";
+
+    var menu = createMenu();
 
     var child = document.createElement("div")
-    child.setAttribute("id", "sample-result-4")
+    child.setAttribute("id", "sample-result-add")
     child.setAttribute("class", "result-file")
 
+    child.appendChild(checkbox)
     child.appendChild(filename)
     child.appendChild(date)
     child.appendChild(uploader)
+    child.appendChild(dots)
+    child.appendChild(menu)
+
+    dots.addEventListener('click', openFileMenu)
 
     var parent = document.getElementById("results-files");
-    parent.prepend(child)
+    // parent.add(child);
+
+    parent.prepend(child);
+
+
+
+
+    //
+    //
+    // var child = document.createElement("div")
+    // child.setAttribute("id", "sample-result-4")
+    // child.setAttribute("class", "result-file")
+    //
+    // child.appendChild(filename)
+    // child.appendChild(date)
+    // child.appendChild(uploader)
+    //
+    // var parent = document.getElementById("results-files");
+    // parent.prepend(child)
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    // var randomIndex = Math.floor(Math.random() * 5)
+    //
+    // var checkbox = document.createElement("img")
+    // checkbox.setAttribute("src", "images/checkbox.png")
+    // checkbox.setAttribute("class", "result-file-checkbox")
+    //
+    // var filename = document.createElement("span")
+    // filename.setAttribute("class", "result-filename")
+    // filename.innerHTML = titles[i]
+    //
+    // var date = document.createElement("span")
+    // date.setAttribute("class", "result-date-uploaded")
+    // date.innerHTML = dates[i]
+    //
+    // var uploader = document.createElement("span")
+    // uploader.setAttribute("class", "result-uploaded-by")
+    // uploader.innerHTML = contributors[randomIndex]
+    //
+    // var dots = document.createElement("i");
+    // dots.className = "fas fa-ellipsis-v file-dots";
+    //
+    // var menu = createMenu();
+    //
+    // var child = document.createElement("div")
+    // child.setAttribute("id", "sample-result-"+i)
+    // child.setAttribute("class", "result-file")
+    //
+    // child.appendChild(checkbox)
+    // child.appendChild(filename)
+    // child.appendChild(date)
+    // child.appendChild(uploader)
+    // child.appendChild(dots)
+    // child.appendChild(menu)
+    //
+    // dots.addEventListener('click', openFileMenu)
+    //
+    // var parent = document.getElementById("results-files");
+    // mainFiles.add(child);
+    //
+    // parent.appendChild(child);
 
 }
 
