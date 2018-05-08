@@ -5,8 +5,6 @@ function handleDrop(e, info){
         e.preventDefault();
         e.stopPropagation();
     }
-    dom.default.style.display="none";
-    dom.upload.style.display="block";
 
     if (!info) {
         if (e.dataTransfer != undefined) {
@@ -43,12 +41,6 @@ function handleDragleave(e) {
 }
 
 function saveFile(e){
-    e.preventDefault();
-    e.stopPropagation();
-    dom.default.style.display="block";
-    dom.upload.style.display="none";
-
-
     var checkbox = document.createElement("img")
     checkbox.setAttribute("src", "images/checkbox.png")
     checkbox.setAttribute("class", "result-file-checkbox")
@@ -89,7 +81,7 @@ function saveFile(e){
 
     parent.prepend(child);
 
-
+    $('#upload-modal').modal('hide');
 
 
     //
@@ -152,11 +144,4 @@ function saveFile(e){
     //
     // parent.appendChild(child);
 
-}
-
-function cancelFile(e){
-    e.preventDefault();
-    e.stopPropagation();
-    dom.default.style.display="block";
-    dom.upload.style.display="none";
 }
