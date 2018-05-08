@@ -27,7 +27,7 @@ function checkForChecks() {
     var prevCol = document.getElementById("preview-col");
 
     if (Object.values(fileToggles).filter(item => item == true).length > 1) {
-        dom.lower.style.gridTemplateColumns = "18vw 60vw 22vw";
+        // dom.lower.style.gridTemplateColumns = "18vw 60vw 22vw";
         img.src = "";
         description.innerHTML = "Multiple files selected";
         imgPlacehold.innerHTML = "";
@@ -39,7 +39,7 @@ function checkForChecks() {
         // var lower = Util.one("#lower");
         // lower.style.gridTemplateColumns = "18vw 60vw 22vw";
     } else if (Object.values(fileToggles).indexOf(true) > -1) {
-        dom.lower.style.gridTemplateColumns = "18vw 60vw 22vw";
+        // dom.lower.style.gridTemplateColumns = "18vw 60vw 22vw";
         img.src = "graphics/sadoak.jpg";
         description.innerHTML = "A sad oak tree I found in my backyard. Reminds me of myself";
         filename.innerHTML = "SadOak.jpg";
@@ -51,7 +51,7 @@ function checkForChecks() {
         // var lower = Util.one("#lower");
         // lower.style.gridTemplateColumns = "18vw 60vw 22vw";
     } else {
-        dom.lower.style.gridTemplateColumns = "18vw 82vw";
+        // dom.lower.style.gridTemplateColumns = "18vw 82vw";
         mainCol.style.width = "82vw";
         setTimeout(function() {
             prevCol.style.backgroundColor = "white";
