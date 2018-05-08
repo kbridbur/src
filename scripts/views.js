@@ -1,7 +1,7 @@
 
 function addViewsListener() {
     var views  = dom.views;
-    var parent = dom.filesContainer; 
+    var parent = dom.filesContainer;
 
     views.addEventListener('change', function(e) {
         var val = e.target.value;
@@ -10,12 +10,15 @@ function addViewsListener() {
         switch (val) {
             case "main":
                 matches = getMain();
+                console.log("main")
                 break;
             case "starred":
                 matches = getStarred();
+                console.log("starred")
                 break;
             case "trash":
                 matches = getTrash();
+                console.log("trash")
                 break;
         }
 

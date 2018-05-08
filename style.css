@@ -333,8 +333,8 @@ h1 {
     position: relative;
 	display: grid;
 	/*grid-template-columns: 2fr repeat(2, 1fr);*/
-    grid-template-columns: 1fr repeat(3, 7fr) 2fr;
-	height: 45px;
+    grid-template-columns: 1fr 7fr 4fr 4fr 62px;
+		height: 45px;
     line-height: 30px;
     align-items: center;
     user-drag: none;
@@ -396,7 +396,7 @@ h1 {
 .file-star {
     width: 15px;
     vertical-align: middle;
-    margin-left: 15px;
+    margin-left: 8px;
 }
 
 .file-menu {
@@ -462,7 +462,7 @@ h1 {
 #results-headers {
   line-height: 2em;
 	display: grid;
-	grid-template-columns:  1fr repeat(3, 7fr) 62px;
+	grid-template-columns:  1fr 7fr 4fr 4fr 62px;
 }
 
 #control-icons {
