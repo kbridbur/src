@@ -1,6 +1,7 @@
 :root {
 	--color-blue: #4ABDAC;
 	--color-blue-fade: rgba(74, 189, 172, 0.2);
+	--color-blue-fade-hover: rgba(74, 189, 172, 0.6);
 	--color-red: #E6896D;
 	--color-red-fade: rgba(250, 107, 63, 0.2);
 	--color-yellow: #F7B226;
@@ -21,6 +22,7 @@
 	--color-pale-fade: rgb(249,253,255);
 	--color-black: rgba(22, 22, 22, 1);
 	--color-pink: rgb(255,228,226);
+	--color-pink-hover: rgb(255, 184, 179);
 
 	--color-bg-hover: #485788;
 	--color-light-purple: #C7C9E8;
@@ -658,16 +660,18 @@ h1 {
 
 #save-file {
     float: right;
+    background-color: var(--color-blue-fade);
 }
 #save-file:hover {
-    background-color: var(--color-search-btn-hover);
+    background-color: var(--color-blue-fade-hover);
 }
 
 #cancel-file {
     float: right;
+    background-color: var(--color-pink);
 }
 #cancel-file:hover {
-    background-color: var(--color-disabled-gray);
+    background-color: var(--color-pink-hover);
 }
 
 
