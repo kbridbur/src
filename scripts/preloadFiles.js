@@ -269,48 +269,63 @@ function loadFiles () {
 }
 
 function showSpecialFiles(element, listName) {
-  var list = titleDict[listName]
+  var list = titleDict[listName];
+  parent = Util.one("#results-files");
+  desiredFiles = dom.files;
 
   // if classifier being selected
   if (tagToggles[element.id]){
+    console.log("here");
       if (checkNum == 1 && !checkSpecial){
-        checkNum += 1
-        var parent= document.getElementById("results-files")
-        var children = parent.children
-        if (children.length > 2){
-          for (var i = 0; i < 2; i++){
-            // console.log(children[i].id)
-            parent.removeChild(children[i])
-          }
-        }
+        filtered = getMatchingFiles(desiredFiles, "ar");
+        addFilesToParent(parent, filtered);
+        // console.log("case 1");
+        // checkNum += 1
+        // var parent= document.getElementById("results-files")
+        // var children = parent.children
+        // if (children.length > 2){
+        //   for (var i = 0; i < 2; i++){
+        //     // console.log(children[i].id)
+        //     parent.removeChild(children[i])
+        //   }
+        // }
       }
 
       else if ((checkNum == 1 && checkSpecial) && (element.id == "finance" || element.id == "bitcoin")){
-        checkNum += 1
-        var parent = document.getElementById("main-results");
-        var child = document.getElementById("results-files")
-        parent.removeChild(child)
+        filtered = getMatchingFiles(desiredFiles, "finance");
+        addFilesToParent(parent, filtered);
+        // console.log("case 2");
+        // checkNum += 1
+        // var parent = document.getElementById("main-results");
+        // var child = document.getElementById("results-files")
+        // parent.removeChild(child)
 
-        var newChild = renderSpecialFiles(financeBitcoinTitles)
+        // var newChild = renderSpecialFiles(financeBitcoinTitles)
 
-        parent.appendChild(newChild)
+        // parent.appendChild(newChild)
 
       }
 
       else if (checkNum == 0) {
-        checkNum += 1
-        checkName = list
+        filtered = getMatchingFiles(desiredFiles, "there");
+        addFilesToParent(parent, filtered);
+        // console.log("case 3");
+        // checkNum += 1
+        // checkName = list
 
-        var parent = document.getElementById("main-results");
-        var child = document.getElementById("results-files")
-        parent.removeChild(child)
+        // var parent = document.getElementById("main-results");
+        // var child = document.getElementById("results-files")
+        // parent.removeChild(child)
 
-        var newChild = renderSpecialFiles(list)
+        // var newChild = renderSpecialFiles(list)
 
-        parent.appendChild(newChild)
+        // parent.appendChild(newChild)
       }
       else {
-        checkNum += 1
+        filtered = getMatchingFiles(desiredFiles, "sara");
+        addFilesToParent(parent, filtered);
+        // console.log("case 4");
+        // checkNum += 1
       }
   }
 
@@ -318,33 +333,39 @@ function showSpecialFiles(element, listName) {
   // if classifier is being deselected
   else {
     if (checkNum == 1){
-      checkNum = 0
-      checkName = ''
+      filtered = desiredFiles;
+      addFilesToParent(parent, desiredFiles);
+      // checkNum = 0
+      // checkName = ''
 
-      var parent = document.getElementById("main-results");
-      var child = document.getElementById("results-files")
-      parent.removeChild(child)
+      // var parent = document.getElementById("main-results");
+      // var child = document.getElementById("results-files")
+      // parent.removeChild(child)
 
-      var newChild = renderSpecialFiles(titles)
+      // var newChild = renderSpecialFiles(titles)
 
-      parent.appendChild(newChild)
+      // parent.appendChild(newChild)
     }
 
     else if (checkNum == 2) {
-      checkNum = 1
-      list = checkName
+      filtered = desiredFiles;
+      addFilesToParent(parent, desiredFiles);
+      // checkNum = 1
+      // list = checkName
 
-      var parent = document.getElementById("main-results");
-      var child = document.getElementById("results-files")
-      parent.removeChild(child)
+      // var parent = document.getElementById("main-results");
+      // var child = document.getElementById("results-files")
+      // parent.removeChild(child)
 
-      var newChild = renderSpecialFiles(list)
+      // var newChild = renderSpecialFiles(list)
 
-      parent.appendChild(newChild)
+      // parent.appendChild(newChild)
 
     }
     else {
+      filtered = desiredFiles;
       checkNum -= 1
+      addFilesToParent(parent, filtered);
     }
   }
 }

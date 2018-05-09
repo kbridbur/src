@@ -13,6 +13,7 @@ function checkForToggles(){
     }
     for (var i=0; i<dom.optionBoxes.children.length; i++){
         dom.optionBoxes.children[i].disabled = true;
+        console.log("disabled checks");
     }
 }
 
