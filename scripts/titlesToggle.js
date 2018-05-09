@@ -77,7 +77,6 @@ function sortUploaded(filesHolder, direction) {
 
 function filterByActiveTitle(id) {
     var activeTitle = document.getElementById(id);
-    console.log(activeTitle);
     filterByMe(activeTitle, activeDirection);
 }
 

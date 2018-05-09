@@ -2,7 +2,7 @@
 function addViewsListener() {
     var views  = dom.views;
     var parent = dom.filesContainer;
-
+    //TODO: fix view getters so menu items function and top buttons change 
     views.addEventListener('change', function(e) {
         var val = e.target.value;
         var matches;
@@ -10,16 +10,16 @@ function addViewsListener() {
         switch (val) {
             case "main":
                 matches = getMain();
-                getMainView();
+                //getMainView();
                 break;
             case "starred":
                 matches = getStarred();
-                getMainView();
+                //getMainView();
                 break;
             case "trash":
                 matches = getTrash();
                 //need to add change of buttons here for restoring files
-                getTrashView();
+                //getTrashView();
                 break;
         }
 
@@ -29,6 +29,7 @@ function addViewsListener() {
 
 function getTrashView() {
     trashedFiles.forEach(giveTrashMenu);
+    addMenuItemListeners();
 
     
     //replace buttons here!
@@ -41,14 +42,14 @@ function giveTrashMenu(file) {
 }
 
 function getMainView() {
-    var menu = createMenu();
-    //replace menu here
-    //replace buttons here
+    mainFiles.forEach(giveMainMenu);
+    addMenuItemListeners();
+    //replace buttons here!
 }
 
 function giveMainMenu(file) {
     var menu = createMenu();
-    file.removeChild(lastChild);
+    file.removeChild(file.lastChild);
     file.appendChild(menu);
 }
 
