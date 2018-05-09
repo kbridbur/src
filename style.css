@@ -537,9 +537,14 @@ h1 {
 
 .form-button {
     color: var(--color-side-bg);
-    border-radius: 3px;
-    height: 2em;
+    border-radius: 5px;
+    font-size: 1em;
     margin: 5px;
+    padding: 7px;
+}
+
+.form-button:hover {
+    cursor: pointer;
 }
 
 .form-label {
