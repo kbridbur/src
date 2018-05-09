@@ -16,6 +16,8 @@ fileRecentClick = {};
 numRecentClicks = {};
 var toggler = true;
 
+var activeTitle = "date";
+
 Util.events(document, {
     "DOMContentLoaded": function() {
 
@@ -55,8 +57,11 @@ Util.events(document, {
         document.body.addEventListener("dragleave", handleDragleave, false);
         dom.fileUpload.addEventListener("drop", handleDrop, false);
         dom.submit.addEventListener("click", function(event){saveFile(event);}, false);
+        dom.cancel.addEventListener("click", function(event){cancelFile(event);}, false);
         dom.uploadButton.addEventListener("click", function(){
             dom.uploadElt.click();
+            dom.upload.style.display = "block";
+            dom.default.style.display = "none";
         });
 
         // titlesToggle.js
@@ -79,7 +84,7 @@ Util.events(document, {
         addViewsListener();
 
         //realClassifierFiltering.js
-        addFilteringListeners();
+        //addFilteringListeners();
 
     }
 });
@@ -104,6 +109,7 @@ function populateDom() {
     dom.upload              = Util.one("#upload");
     dom.uploadButton        = Util.one("#upload-button");
     dom.submit              = Util.one("#save-file");
+    dom.cancel              = Util.one("#cancel-file");
     dom.uploadElt           = Util.one("#hidden-file-upload");
 
     dom.starItemsButton     = Util.one("#star-items");

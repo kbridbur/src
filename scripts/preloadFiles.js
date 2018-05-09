@@ -354,9 +354,7 @@ function renderSpecialFiles(titleArray){
     newChild.appendChild(child)
 
   }
-
   return newChild
-
 }
 
 function fillFilteringMap() {

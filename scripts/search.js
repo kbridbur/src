@@ -8,11 +8,11 @@ function addSearchListeners() {
         var parent;
         var desiredFiles;
 
-        
+
         parent = Util.one("#results-files");
         desiredFiles = dom.files;
-       
-        if (cText.trim().length > 0) { 
+
+        if (cText.trim().length > 0) {
             filtered = getMatchingFiles(desiredFiles, cText);
         } else {
             filtered = desiredFiles;
@@ -31,7 +31,7 @@ function getMatchingFiles(files, text) {
             }
         }
         return filtered;
-    })(files, text); 
+    })(files, text);
     f.join();
     return f.reverse();
 }
@@ -44,4 +44,5 @@ function addFilesToParent(parent, files) {
     for(var i = 0; i < files.length; i++) {
         parent.appendChild(files[i]);
     }
+    filterByActiveTitle(activeTitle);
 }
