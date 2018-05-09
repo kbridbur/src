@@ -41,6 +41,53 @@ function handleDragleave(e) {
     dom.fileUpload.style.border = "none";
 }
 
+function addEventListeners(file, dots){
+    dom.files.push(file);
+    fileToggles[file.id] = false;
+    fileRecentClick[file.id] = false;
+    numRecentClicks[file.id] = 0;
+
+    //add click and double click event
+    file.addEventListener( 'click', function() {
+        // console.log(openMenu);
+        if (!(openMenu == null)) {
+            console.log("ther is menu open");
+            return;
+        }
+        var a = this;
+        numRecentClicks[file.id]++;
+        // console.log(numRecentClicks[file.id]);
+        if (numRecentClicks[file.id] == 1){
+            singleClickTimer = setTimeout(function(){
+                numRecentClicks[file.id] = 0;
+
+                toggleCheck(a);
+
+                var check = Object.keys(fileToggles).filter(i => fileToggles[i] == false);
+                if (check.length > 0){
+                    dom.selectAll.src = emptyCheck;
+                }
+                else {
+                    dom.selectAll.src = filledCheck;
+                }
+                checkForChecks();
+                checkForToggles();
+            }, 150, a);
+        }
+        if (numRecentClicks[file.id] == 2){
+            clearTimeout(singleClickTimer);
+            numRecentClicks[file.id] = 0;
+            window.open('resources/chicken.pdf');
+        }
+    });
+    console.log(dots);
+    for (var i = 0; i < dots.children.length; i++) {
+        console.log(dots.children[i]);
+        var b = dots.children[i];
+        b.addEventListener("click", menuItemClickHandler);
+    }
+}
+
 function saveFile(e){
     e.preventDefault();
     e.stopPropagation();
@@ -84,6 +131,8 @@ function saveFile(e){
     // parent.add(child);
 
     parent.prepend(child);
+
+    addEventListeners(child, menu);
 
     dom.upload.style.display = "none";
 
