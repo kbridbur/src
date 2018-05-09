@@ -73,7 +73,12 @@ function trashItem(file) {
     file.children[0].src = "images/checkbox.png";
     mainFiles.delete(file);
     var child = file.children[1].getElementsByClassName("file-star")[0]
-    file.childNodes[1].removeChild(child)
+    if (child != null){
+      file.childNodes[1].removeChild(child)
+    }
+    // console.log(file.children[1].getElementsByClassName("file-star")[0])
+    // console.log(file.children[1])
+    // console.log(file)
     var fileParent = file.parentNode;
     fileParent.removeChild(file);
     fileToggles[file.id] = false;
@@ -84,7 +89,7 @@ function trashItem(file) {
 }
 
 function starItem(file) {
-    console.log(file);
+    // console.log(file);
     var menu = file.children[5].children[2];
     if (!starredFiles.has(file)) {
         var star = document.createElement("img");
