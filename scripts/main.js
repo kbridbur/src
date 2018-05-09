@@ -60,6 +60,9 @@ Util.events(document, {
         dom.submit.addEventListener("click", function(event){saveFile(event);}, false);
         dom.cancel.addEventListener("click", function(event){cancelFile(event);}, false);
         dom.uploadButton.addEventListener("click", function(){
+            Util.one("#file-name").value    = "";
+            Util.one("#file-author").value  = "";
+            Util.one("#publish-date").value = "";
             dom.uploadElt.click();
             dom.upload.style.display = "block";
         });
