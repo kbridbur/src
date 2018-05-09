@@ -28,11 +28,28 @@ function addViewsListener() {
 }
 
 function getTrashView() {
+    trashedFiles.forEach(giveTrashMenu);
 
+    
+    //replace buttons here!
+}
+
+function giveTrashMenu(file) {
+    var menu = createTrashViewMenu();
+    file.removeChild(file.lastChild);
+    file.appendChild(menu);
 }
 
 function getMainView() {
+    var menu = createMenu();
+    //replace menu here
+    //replace buttons here
+}
 
+function giveMainMenu(file) {
+    var menu = createMenu();
+    file.removeChild(lastChild);
+    file.appendChild(menu);
 }
 
 function getTrash() {

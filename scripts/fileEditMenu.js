@@ -1,6 +1,7 @@
 var openMenu = null;
 
 function openFileMenu(e) {
+    console.log("hello");
     e.stopPropagation();
     var menu = this.parentNode.children[5];
     if (!(menu == openMenu)) {

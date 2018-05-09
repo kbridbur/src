@@ -211,6 +211,11 @@ function createTrashViewMenu() {
   menu.className = "file-menu";
 
   var restoreButton = createRestoreButton();
+  var arrow = document.createElement("div");
+  arrow.classList.add("file-menu-arrow");
+  menu.appendChild(arrow);
+  menu.appendChild(restoreButton);
+  return menu;
 }
 
 function loadFiles () {
