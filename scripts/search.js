@@ -44,4 +44,5 @@ function addFilesToParent(parent, files) {
     for(var i = 0; i < files.length; i++) {
         parent.appendChild(files[i]);
     }
+    filterByActiveTitle(activeTitle);
 }

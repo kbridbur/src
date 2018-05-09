@@ -16,6 +16,8 @@ fileRecentClick = {};
 numRecentClicks = {};
 var toggler = true;
 
+var activeTitle = "date";
+
 Util.events(document, {
     "DOMContentLoaded": function() {
 
@@ -82,7 +84,7 @@ Util.events(document, {
         addViewsListener();
 
         //realClassifierFiltering.js
-        addFilteringListeners();
+        //addFilteringListeners();
 
     }
 });

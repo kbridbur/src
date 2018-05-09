@@ -25,6 +25,7 @@ function addSortListeners() {
 }
 
 function sortDates(filesHolder, direction) {
+    activeTitle = "date-title";
     filesHolder.sort(function(a, b){
         //update this
         bDateString = b.children[2].textContent;
@@ -49,6 +50,7 @@ function sortDates(filesHolder, direction) {
 }
 
 function sortNames(filesHolder, direction) {
+    activeTitle = "file-title"
     filesHolder.sort(function(a, b){
         return a.children[1].textContent.localeCompare(b.children[1].textContent);
     });
@@ -60,6 +62,7 @@ function sortNames(filesHolder, direction) {
 }
 
 function sortUploaded(filesHolder, direction) {
+    activeTitle = "upload-title";
     filesHolder.sort(function(a, b){
         return a.children[3].textContent.localeCompare(b.children[3].textContent);
     });
@@ -68,6 +71,11 @@ function sortUploaded(filesHolder, direction) {
     } else {
         return filesHolder.reverse()
     }
+}
+
+function filterByActiveTitle(id) {
+    var activeTitle = document.getElementById(id);
+    filterByMe(activeTitle, "down");
 }
 
 function filterByMe(o, direction) {
