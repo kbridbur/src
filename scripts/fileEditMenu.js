@@ -50,6 +50,7 @@ function menuItemClickHandler(e) {
             trashItem(file);
             break;
         case "restore":
+            console.log("y");
             restoreItem(file);
             break;
     }

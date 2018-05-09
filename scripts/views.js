@@ -19,7 +19,7 @@ function addViewsListener() {
             case "trash":
                 matches = getTrash();
                 //need to add change of buttons here for restoring files
-                //getTrashView();
+                getTrashView();
                 break;
         }
 
@@ -30,7 +30,6 @@ function addViewsListener() {
 function getTrashView() {
     trashedFiles.forEach(giveTrashMenu);
     addMenuItemListeners();
-
     
     //replace buttons here!
 }
