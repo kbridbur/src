@@ -135,36 +135,6 @@
 					<div id="results-files"></div>
 				</div>
 			</div>
-            <div id="upload">
-                <div class="form-label">File Name</div>
-                <input type="text" class="edit-field" id="file-name">
-                <div class="form-label">Author</div>
-                <input type="text" class="edit-field" id="file-author">
-                <div class="form-label">Publish Date</div>
-                <input type="text" class="edit-field" id="publish-date">
-                <div></div>
-                <div class="edit-grid">
-                    <div class="form-label" id="tags-form-label">Tags</div>
-                    <div class="form-label" id="projects-form-label">Projects</div>
-                    <div class="form-label" id="groups-form-label">Groups</div>
-                    <div id="form-tags">
-                        <input type="text" class="form-classifier-input" id="tags-form-input" placeholder="Enter tags...">
-                        <div class="classifier-form-box" id="tags-form-box"></div>
-                    </div>
-                    <div id="form-projects">
-                        <input type="text" class="form-classifier-input" id="projects-form-input" placeholder="Enter projects...">
-                        <div class="classifier-form-box" id="projects-form-box"></div>
-                    </div>
-                    <div id="form-groups">
-                        <input type="text" class="form-classifier-input" id="groups-form-input" placeholder="Enter groups...">
-                        <div class="classifier-form-box" id="groups-form-box"></div>
-                    </div>
-                    <div class="form-label" id="notes-form-label">Notes</div>
-                    <textarea class="edit-field" id="file-notes" rows="4"></textarea>
-                </div>
-                <button type-"button" class="form-button" id="cancel-file"> Cancel </button>
-                <button type="button" class="form-button" id="save-file"> Save </button>
-            </div>
         </div>
 
 	<!-- =========== PREVIEW UPLOAD COLUMN =========== -->
@@ -187,6 +157,38 @@
                 </div>
             </div>
     	</div>
+    </div>
+    <div class="modal" id="upload-modal">
+        <div class="modal-content">
+            <div class="form-label">File Name</div>
+            <input type="text" class="edit-field" id="file-name">
+            <div class="form-label">Author</div>
+            <input type="text" class="edit-field" id="file-author">
+            <div class="form-label">Publish Date</div>
+            <input type="text" class="edit-field" id="publish-date">
+            <div></div>
+            <div class="edit-grid">
+                <div class="form-label" id="tags-form-label">Tags</div>
+                <div class="form-label" id="projects-form-label">Projects</div>
+                <div class="form-label" id="groups-form-label">Groups</div>
+                <div id="form-tags">
+                    <input type="text" class="form-classifier-input" id="tags-form-input" placeholder="Enter tags...">
+                    <div class="classifier-form-box" id="tags-form-box"></div>
+                </div>
+                <div id="form-projects">
+                    <input type="text" class="form-classifier-input" id="projects-form-input" placeholder="Enter projects...">
+                    <div class="classifier-form-box" id="projects-form-box"></div>
+                </div>
+                <div id="form-groups">
+                    <input type="text" class="form-classifier-input" id="groups-form-input" placeholder="Enter groups...">
+                    <div class="classifier-form-box" id="groups-form-box"></div>
+                </div>
+                <div class="form-label" id="notes-form-label">Notes</div>
+                <textarea class="edit-field" id="file-notes" rows="4"></textarea>
+            </div>
+            <button type-"button" class="form-button" id="cancel-file"> Cancel </button>
+            <button type="button" class="form-button" id="save-file"> Save </button>
+        </div>
     </div>
 </body>
 

@@ -85,7 +85,6 @@ function saveFile(e){
     parent.prepend(child);
 
     dom.upload.style.display = "none";
-    dom.default.style.display = "block";
     //
     //
     // var child = document.createElement("div")
@@ -151,5 +150,4 @@ function cancelFile(e){
         e.stopPropagation();
 
         dom.upload.style.display = "none";
-        dom.default.style.display = "block";
 }
