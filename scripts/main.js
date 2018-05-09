@@ -83,6 +83,7 @@ Util.events(document, {
 
         //views.js
         addViewsListener();
+        dom.homeBtn.addEventListener("click", homeButtonListener);
 
         //realClassifierFiltering.js
         //addFilteringListeners();
@@ -137,6 +138,7 @@ function populateDom() {
     dom.files               = Array.prototype.slice.call(dom.filesContainer.children);
 
     dom.views               = Util.one("#dropdown");
+    dom.homeBtn             = Util.one("#src-home-link");
 
     dom.upper               = Util.one("#header");
     dom.lower               = Util.one("#lower");

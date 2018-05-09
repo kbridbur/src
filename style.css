@@ -128,6 +128,7 @@ h1 {
 }
 #src-home-link:hover {
     opacity: 0.6;
+    cursor: pointer;
 }
 
 .title-font {

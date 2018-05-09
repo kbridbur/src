@@ -33,6 +33,14 @@ function addViewsListener() {
     });
 }
 
+function homeButtonListener() {
+    matches = getMain();
+    swapMenus(matches, false);
+    swapIconButtons(false);
+    dom.views.value = "main";
+    displayMatches(dom.filesContainer, matches);
+}
+
 function swapIconButtons(trash) {
     var normalDisplay   = trash ? "none" : "inline-block";
     var trashDisplay    = trash ? "inline-block" : "none";
