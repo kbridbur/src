@@ -61,7 +61,7 @@ function addNewFileFormSubmitListener() {
         var allFilters = [];
         allFilters.concat(extractFormboxText(dom.tags));
         allFilters.concat(extractFormboxText(dom.projects));
-        allFilters.concat(extractFormboxText(dom.children));
+        allFilters.concat(extractFormboxText(dom.groups));
 
         var filename = Util.one("#file-name").value;
 

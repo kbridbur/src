@@ -55,7 +55,6 @@ Util.events(document, {
         document.body.addEventListener("dragleave", handleDragleave, false);
         dom.fileUpload.addEventListener("drop", handleDrop, false);
         dom.submit.addEventListener("click", function(event){saveFile(event);}, false);
-        dom.cancel.addEventListener("click", function(event){cancelFile(event);}, false);
         dom.uploadButton.addEventListener("click", function(){
             dom.uploadElt.click();
         });
@@ -105,7 +104,6 @@ function populateDom() {
     dom.upload              = Util.one("#upload");
     dom.uploadButton        = Util.one("#upload-button");
     dom.submit              = Util.one("#save-file");
-    dom.cancel              = Util.one("#cancel-file");
     dom.uploadElt           = Util.one("#hidden-file-upload");
 
     dom.starItemsButton     = Util.one("#star-items");
@@ -131,4 +129,7 @@ function populateDom() {
     dom.files               = Array.prototype.slice.call(dom.filesContainer.children);
 
     dom.views               = Util.one("#dropdown");
+
+    dom.upper               = Util.one("#header");
+    dom.lower               = Util.one("#lower");
 }

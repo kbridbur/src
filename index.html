@@ -7,6 +7,10 @@
 <meta name="google" content="notranslate">
 <meta http-equiv="Content-Language" content="en">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.11/css/all.css" integrity="sha384-p2jx59pefphTFIpeqCcISO9MdVfIm4pNnsL08A6v5vaQc4owkQqxMV8kg4Yvhaw/" crossorigin="anonymous">
+<link rel="stylesheet" href="css/bootstrap-theme.css">
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css?family=Lato|Lora" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -25,6 +29,9 @@
 <script src="scripts/search.js"></script>
 <script src="scripts/views.js"></script>
 <script src="scripts/realClassifierFiltering.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -45,7 +52,7 @@
         </div>
         <div id="header-right">
         	 <div id="file-drag-drop" ondrop="handleDrop(event)">
-            	<button id="upload-button"> + </button>
+            	<button id="upload-button" data-toggle="modal" data-target="#upload-modal"> + </button>
             	<input type="file" id="hidden-file-upload" onchange="handleDrop(event)"/>
         	</div>
 
@@ -137,58 +144,73 @@
 			</div>
 
             <!-- file upload display -->
-            <div id="upload">
-                    <div class="form-label">File Name</div>
-                    <input type="text" class="edit-field" id="file-name">
-                    <div class="form-label">Author</div>
-                    <input type="text" class="edit-field" id="file-author">
-                    <div class="form-label">Publish Date</div>
-                    <input type="text" class="edit-field" id="publish-date">
-					<div></div>
-                    <div class="edit-grid">
-                    <div class="form-label" id="tags-form-label">Tags</div>
-                    <div class="form-label" id="projects-form-label">Projects</div>
-                    <div class="form-label" id="groups-form-label">Groups</div>
-                    <div id="form-tags">
-                        <input type="text" class="form-classifier-input" id="tags-form-input" placeholder="Enter tags...">
-                        <div class="classifier-form-box" id="tags-form-box"></div>
-                    </div>
-                    <div id="form-projects">
-                        <input type="text" class="form-classifier-input" id="projects-form-input" placeholder="Enter projects...">
-                        <div class="classifier-form-box" id="projects-form-box"></div>
-                    </div>
-                    <div id="form-groups">
-                        <input type="text" class="form-classifier-input" id="groups-form-input" placeholder="Enter groups...">
-                        <div class="classifier-form-box" id="groups-form-box"></div>
-                    </div>
-                    <div class="form-label" id="notes-form-label">Notes</div>
-                    <textarea class="edit-field" id="file-notes" rows="4"></textarea>
-                </div>
-                <button class="form-button icon-buttons" id="cancel-file">Cancel</button>
-                <button class="form-button icon-buttons" id="save-file">Save</button>
-            </div>
 		</div>
 
 	<!-- =========== PREVIEW UPLOAD COLUMN =========== -->
 
-	<div class="col" id="preview-col">
-        <div class="row" id="file-preview">
-            <h3>File Preview</h3>
-            <div id="preview-content">
-                <div id="preview-image-container">
-                    <span id="img-placeholder">No file selected</span>
-                    <img src="" id="preview-image"/>
-                </div>
-                <br>
-                <h3 id="preview-filename"></h3>
-                <span id="preview-author"></span>
-                <span id="preview-date"></span>
-                <br><br>
-                <div id="preview-description">
+    	<div class="col" id="preview-col">
+            <div class="row" id="file-preview">
+                <h3>File Preview</h3>
+                <div id="preview-content">
+                    <div id="preview-image-container">
+                        <span id="img-placeholder">No file selected</span>
+                        <img src="" id="preview-image"/>
+                    </div>
+                    <br>
+                    <h3 id="preview-filename"></h3>
+                    <span id="preview-author"></span>
+                    <span id="preview-date"></span>
+                    <br><br>
+                    <div id="preview-description">
+                    </div>
                 </div>
             </div>
+    	</div>
+    </div>
+    <div class="modal fade" id="upload-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Upload File</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <div class="form-label">File Name</div>
+              <input type="text" class="edit-field" id="file-name">
+              <div class="form-label">Author</div>
+              <input type="text" class="edit-field" id="file-author">
+              <div class="form-label">Publish Date</div>
+              <input type="text" class="edit-field" id="publish-date">
+              <div></div>
+              <div class="edit-grid">
+              <div class="form-label" id="tags-form-label">Tags</div>
+              <div class="form-label" id="projects-form-label">Projects</div>
+              <div class="form-label" id="groups-form-label">Groups</div>
+              <div id="form-tags">
+                  <input type="text" class="form-classifier-input" id="tags-form-input" placeholder="Enter tags...">
+                  <div class="classifier-form-box" id="tags-form-box"></div>
+              </div>
+              <div id="form-projects">
+                  <input type="text" class="form-classifier-input" id="projects-form-input" placeholder="Enter projects...">
+                  <div class="classifier-form-box" id="projects-form-box"></div>
+              </div>
+              <div id="form-groups">
+                  <input type="text" class="form-classifier-input" id="groups-form-input" placeholder="Enter groups...">
+                  <div class="classifier-form-box" id="groups-form-box"></div>
+              </div>
+              <div class="form-label" id="notes-form-label">Notes</div>
+              <textarea class="edit-field" id="file-notes" rows="4"></textarea>
+          </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="save-file">Save changes</button>
+          </div>
         </div>
-	</div>
+      </div>
+    </div>
 </body>
 
 </html>

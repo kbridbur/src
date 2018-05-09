@@ -482,6 +482,11 @@ h1 {
 /*                file edit column                        */
 /**********************************************************/
 
+.upload-form {
+    grid-row: 1/2;
+    grid-column: 1/4;
+}
+
 .edit-grid {
 	display: grid;
 	grid-template-columns: 33% 33% 33%;
