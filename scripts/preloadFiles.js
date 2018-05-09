@@ -195,6 +195,9 @@ function createMenu() {
     var editButton  = createEditButton();
     var starButton  = createStarButton();
     var trashButton = createTrashButton();
+    var restoreButton = createRestoreButton();
+
+    restoreButton.style.display = "none";
 
     var arrow = document.createElement("div");
     arrow.classList.add("file-menu-arrow");
@@ -203,6 +206,7 @@ function createMenu() {
     menu.appendChild(editButton);
     menu.appendChild(starButton);
     menu.appendChild(trashButton);
+    menu.appendChild(restoreButton);
     return menu;
 }
 

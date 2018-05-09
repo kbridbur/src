@@ -311,6 +311,10 @@ h1 {
     color: var(--color-disabled-text-gray);
 }
 
+#restore-items {
+    display: none;
+}
+
 #selectAll {
     margin: 0px;
     align-self: center;
@@ -325,7 +329,7 @@ h1 {
 	height: 100%;
 }
  #results-files{
-    max-height: 82vh;
+    height: 82vh;
 	overflow: scroll;
 }
 

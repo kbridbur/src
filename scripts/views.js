@@ -10,16 +10,22 @@ function addViewsListener() {
         switch (val) {
             case "main":
                 matches = getMain();
+                swapMenus(matches, false);
+                swapIconButtons(false);
                 //getMainView();
                 break;
             case "starred":
                 matches = getStarred();
+                swapMenus(matches, false);
+                swapIconButtons(false);
                 //getMainView();
                 break;
             case "trash":
                 matches = getTrash();
                 //need to add change of buttons here for restoring files
-                getTrashView();
+                swapMenus(matches, true);
+                swapIconButtons(true);
+                // getTrashView();
                 break;
         }
 
@@ -27,30 +33,60 @@ function addViewsListener() {
     });
 }
 
-function getTrashView() {
-    trashedFiles.forEach(giveTrashMenu);
-    addMenuItemListeners();
+function swapIconButtons(trash) {
+    var normalDisplay   = trash ? "none" : "inline-block";
+    var trashDisplay    = trash ? "inline-block" : "none";
+
+    dom.starItemsButton.style.display  = normalDisplay;
+    dom.trashItemsButton.style.display = normalDisplay;
+
+    dom.restoreItemsButton.style.display = trashDisplay;
+}
+
+function swapMenus(files, trash) {
+    for (var i = 0; i < files.length; i++) {
+        var file                    = files[i];
+        var menu                    = file.children[5];
+        var editButton              = menu.children[1];
+        var starButton              = menu.children[2];
+        var trashButton             = menu.children[3];
+        var restoreButton           = menu.children[4];
+
+        var normalDisplay           = trash ? "none" : "block";
+        var trashDisplay            = trash ? "block" : "none";
+
+        editButton.style.display    = normalDisplay;
+        starButton.style.display    = normalDisplay;
+        trashButton.style.display   = normalDisplay;
+
+        restoreButton.style.display = trashDisplay;
+    }
+}
+
+// function getTrashView() {
+//     trashedFiles.forEach(giveTrashMenu);
+//     addMenuItemListeners();
     
-    //replace buttons here!
-}
+//     //replace buttons here!
+// }
 
-function giveTrashMenu(file) {
-    var menu = createTrashViewMenu();
-    file.removeChild(file.lastChild);
-    file.appendChild(menu);
-}
+// function giveTrashMenu(file) {
+//     var menu = createTrashViewMenu();
+//     file.removeChild(file.lastChild);
+//     file.appendChild(menu);
+// }
 
-function getMainView() {
-    mainFiles.forEach(giveMainMenu);
-    addMenuItemListeners();
-    //replace buttons here!
-}
+// function getMainView() {
+//     mainFiles.forEach(giveMainMenu);
+//     addMenuItemListeners();
+//     //replace buttons here!
+// }
 
-function giveMainMenu(file) {
-    var menu = createMenu();
-    file.removeChild(file.lastChild);
-    file.appendChild(menu);
-}
+// function giveMainMenu(file) {
+//     var menu = createMenu();
+//     file.removeChild(file.lastChild);
+//     file.appendChild(menu);
+// }
 
 function getTrash() {
     return Array.from(trashedFiles);

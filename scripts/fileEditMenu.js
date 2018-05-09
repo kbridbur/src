@@ -1,7 +1,6 @@
 var openMenu = null;
 
 function openFileMenu(e) {
-    console.log("hello");
     e.stopPropagation();
     var menu = this.parentNode.children[5];
     if (!(menu == openMenu)) {
@@ -78,7 +77,7 @@ function restoreItemsHandler() {
 }
 
 function trashItem(file) {
-    fileToggles[file] = false;
+    // fileToggles[file] = false;
     file.children[0].src = "images/checkbox.png";
     mainFiles.delete(file);
     var child = file.children[1].getElementsByClassName("file-star")[0]
@@ -98,13 +97,12 @@ function trashItem(file) {
 }
 
 function restoreItem(file) {
-    fileToggles[file] = true;
+    // fileToggles[file] = false;
     file.children[0].src = "images/checkbox.png";
     trashedFiles.delete(file);
-    console.log(file);
     var fileParent = file.parentNode;
     fileParent.removeChild(file);
-    fileToggles[file.id] = true;
+    fileToggles[file.id] = false;
     selectedFiles.delete(file);
     mainFiles.add(file);
     checkForChecks();

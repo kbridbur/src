@@ -73,6 +73,7 @@ Util.events(document, {
         Util.one("#dropdown").style.borderRadius = "8px";
         dom.starItemsButton.addEventListener('click', starItemsHandler);
         dom.trashItemsButton.addEventListener('click', trashItemsHandler);
+        dom.restoreItemsButton.addEventListener('click', restoreItemsHandler);
 
         // classifierSearch.js
         addClassifierSearchListeners();
@@ -114,6 +115,7 @@ function populateDom() {
 
     dom.starItemsButton     = Util.one("#star-items");
     dom.trashItemsButton    = Util.one("#trash-items");
+    dom.restoreItemsButton  = Util.one("#restore-items");
 
     dom.fileTitle           = Util.one("#file-title");
     dom.dateTitle           = Util.one("#date-title");
