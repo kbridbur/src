@@ -94,6 +94,7 @@ function trashItem(file) {
     selectedFiles.delete(file);
     trashedFiles.add(file);
     checkForChecks();
+    checkForToggles();
 }
 
 function restoreItem(file) {
@@ -106,6 +107,7 @@ function restoreItem(file) {
     selectedFiles.delete(file);
     mainFiles.add(file);
     checkForChecks();
+    checkForToggles();
 }
 
 function starItem(file) {
