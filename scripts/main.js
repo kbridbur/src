@@ -16,7 +16,8 @@ fileRecentClick = {};
 numRecentClicks = {};
 var toggler = true;
 
-var activeTitle = "date";
+var activeTitle = "date-title";
+var activeDirection = "down";
 
 Util.events(document, {
     "DOMContentLoaded": function() {

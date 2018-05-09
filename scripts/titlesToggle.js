@@ -12,11 +12,13 @@ function addSortListeners() {
             if (active == this) {
                 //filter by flipped direction
                 afterDisplay = flipDirection[afterDisplay];
+                activeDirection = afterDisplay;
                 addDirection(this, afterDisplay);
                 filterByMe(this, afterDisplay);
             } else {
                 active = this;
                 //filter by default direction
+                activeDirection = "down";
                 addDirection(this, "down");
                 filterByMe(this, "down");
             }
@@ -75,7 +77,8 @@ function sortUploaded(filesHolder, direction) {
 
 function filterByActiveTitle(id) {
     var activeTitle = document.getElementById(id);
-    filterByMe(activeTitle, "down");
+    console.log(activeTitle);
+    filterByMe(activeTitle, activeDirection);
 }
 
 function filterByMe(o, direction) {
