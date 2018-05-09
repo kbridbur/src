@@ -10,15 +10,12 @@ function addViewsListener() {
         switch (val) {
             case "main":
                 matches = getMain();
-                console.log("main")
                 break;
             case "starred":
                 matches = getStarred();
-                console.log("starred")
                 break;
             case "trash":
                 matches = getTrash();
-                console.log("trash")
                 break;
         }
 

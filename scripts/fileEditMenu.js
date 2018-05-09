@@ -72,7 +72,8 @@ function trashItem(file) {
     fileToggles[file] = false;
     file.children[0].src = "images/checkbox.png";
     mainFiles.delete(file);
-    console.log(file);
+    var child = file.children[1].getElementsByClassName("file-star")[0]
+    file.childNodes[1].removeChild(child)
     var fileParent = file.parentNode;
     fileParent.removeChild(file);
     fileToggles[file.id] = false;
