@@ -16,6 +16,7 @@ function handleDrop(e, info){
     } else {
         autofill(info.name, info.author, info.date);
     }
+    dom.upload.style.display = "block";
 }
 
 function autofill(name, author, date) {
