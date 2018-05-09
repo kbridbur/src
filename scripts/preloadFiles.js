@@ -156,22 +156,45 @@ var titleDict = {
   "karger": kargerTitles
 }
 
+function createTrashButton() {
+  var trashButton = document.createElement("button");
+  trashButton.innerHTML = "Trash";
+  trashButton.classList.add("file-menu-item");
+  trashButton.setAttribute("button-type", "trash");
+  return trashButton;
+}
+
+function createStarButton() {
+  var starButton = document.createElement("button");
+  starButton.innerHTML = "Star";
+  starButton.classList.add("file-menu-item");
+  starButton.setAttribute("button-type", "star");
+  return starButton;
+}
+
+function createEditButton() {
+  var editButton = document.createElement("button");
+  editButton.innerHTML = "Edit";
+  editButton.classList.add("file-menu-item");
+  editButton.setAttribute("button-type", "edit");
+  return editButton;
+}
+
+function createRestoreButton() {
+  var restoreButton = document.createElement("button");
+  restoreButton.innerHTML = "Restore";
+  restoreButton.classList.add("file-menu-item");
+  restoreButton.setAttribute("button-type", "restore");
+  return restoreButton;
+}
+
 function createMenu() {
     var menu = document.createElement("div");
     menu.className = "file-menu";
 
-    var editButton = document.createElement("button");
-    editButton.innerHTML = "Edit";
-    editButton.classList.add("file-menu-item");
-    editButton.setAttribute("button-type", "edit");
-    var starButton = document.createElement("button");
-    starButton.innerHTML = "Star";
-    starButton.classList.add("file-menu-item");
-    starButton.setAttribute("button-type", "star");
-    var trashButton = document.createElement("button");
-    trashButton.innerHTML = "Trash";
-    trashButton.classList.add("file-menu-item");
-    trashButton.setAttribute("button-type", "trash");
+    var editButton  = createEditButton();
+    var starButton  = createStarButton();
+    var trashButton = createTrashButton();
 
     var arrow = document.createElement("div");
     arrow.classList.add("file-menu-arrow");
@@ -181,6 +204,13 @@ function createMenu() {
     menu.appendChild(starButton);
     menu.appendChild(trashButton);
     return menu;
+}
+
+function createTrashViewMenu() {
+  var menu = document.createElement("div");
+  menu.className = "file-menu";
+
+  var restoreButton = createRestoreButton();
 }
 
 function loadFiles () {

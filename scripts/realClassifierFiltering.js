@@ -13,6 +13,7 @@ function addFilteringListeners() {
             if (checked.length == 0) {
                 matches = allFiles;
             } else {
+              console.log(checked)
                 matches = filteredFiles(checked);
             }
 
@@ -52,11 +53,20 @@ function deleteFromMap (entry) {
 
 // returns an array of all the filters that are checked
 function getCheckedFilters() {
+    // 
+    // for (var i = 0; i < tagToggles.length; i++){
+    //   var item = tagToggles[i]
+    //   if (item == true){
+    //
+    //   }
+    // }
     var ids = Object.values(tagToggles).filter(item => item == true);
+    console.log(Object.values(tagToggles))
     var c = [];
     for (var i = 0; i < ids.length; i++) {
         c.push(Util.one("#" + ids[i]));
     }
+    console.log(c)
     return c;
 }
 
@@ -65,6 +75,8 @@ function filteredFiles(filters) {
     //TODO: update this I got all matches instead of all files with at least these filters
     var matches = new Set()
     for (var i = 0; i < filters.length; i++) {
+      console.log(classifierToFiles)
+      console.log(filters)
         matches.forEach(classifierToFiles[filters[i]].add, classifierToFiles[filters[i]]);
     }
     return Array.from(matches);

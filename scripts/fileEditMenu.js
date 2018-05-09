@@ -48,6 +48,9 @@ function menuItemClickHandler(e) {
         case "trash":
             trashItem(file);
             break;
+        case "restore":
+            restoreItem(file);
+            break;
     }
     e.stopPropagation();
 }
@@ -68,11 +71,21 @@ function starItemsHandler() {
     selectedFiles.forEach(starItem);
 }
 
+function restoreItemsHandler() {
+    selectedFiles.forEach(restoreItem);
+}
+
 function trashItem(file) {
     fileToggles[file] = false;
     file.children[0].src = "images/checkbox.png";
     mainFiles.delete(file);
-    console.log(file);
+    var child = file.children[1].getElementsByClassName("file-star")[0]
+    if (child != null){
+      file.childNodes[1].removeChild(child)
+    }
+    // console.log(file.children[1].getElementsByClassName("file-star")[0])
+    // console.log(file.children[1])
+    // console.log(file)
     var fileParent = file.parentNode;
     fileParent.removeChild(file);
     fileToggles[file.id] = false;
@@ -82,8 +95,21 @@ function trashItem(file) {
     checkForChecks();
 }
 
-function starItem(file) {
+function restoreItem(file) {
+    fileToggles[file] = true;
+    file.children[0].src = "images/checkbox.png";
+    trashedFiles.delete(file);
     console.log(file);
+    var fileParent = file.parentNode;
+    fileParent.removeChild(file);
+    fileToggles[file.id] = true;
+    selectedFiles.delete(file);
+    mainFiles.add(file);
+    checkForChecks();
+}
+
+function starItem(file) {
+    // console.log(file);
     var menu = file.children[5].children[2];
     if (!starredFiles.has(file)) {
         var star = document.createElement("img");

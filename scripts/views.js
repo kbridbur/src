@@ -1,7 +1,7 @@
 
 function addViewsListener() {
     var views  = dom.views;
-    var parent = dom.filesContainer; 
+    var parent = dom.filesContainer;
 
     views.addEventListener('change', function(e) {
         var val = e.target.value;
@@ -10,17 +10,29 @@ function addViewsListener() {
         switch (val) {
             case "main":
                 matches = getMain();
+                getMainView();
                 break;
             case "starred":
                 matches = getStarred();
+                getMainView();
                 break;
             case "trash":
                 matches = getTrash();
+                //need to add change of buttons here for restoring files
+                getTrashView();
                 break;
         }
 
         displayMatches(parent, matches);
     });
+}
+
+function getTrashView() {
+
+}
+
+function getMainView() {
+
 }
 
 function getTrash() {
@@ -43,4 +55,5 @@ function displayMatches(parent, matches) {
     for (var i = 0; i < matches.length; i++) {
         parent.appendChild(matches[i]);
     }
+    filterByActiveTitle(activeTitle);
 }
