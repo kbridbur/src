@@ -61,7 +61,6 @@ Util.events(document, {
         dom.uploadButton.addEventListener("click", function(){
             dom.uploadElt.click();
             dom.upload.style.display = "block";
-            dom.default.style.display = "none";
         });
 
         // titlesToggle.js
@@ -106,7 +105,7 @@ function populateDom() {
     dom.fileDate            = Util.one("#publish-date");
 
     dom.default             = Util.one("#default");
-    dom.upload              = Util.one("#upload");
+    dom.upload              = Util.one("#upload-modal");
     dom.uploadButton        = Util.one("#upload-button");
     dom.submit              = Util.one("#save-file");
     dom.cancel              = Util.one("#cancel-file");
