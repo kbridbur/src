@@ -86,6 +86,8 @@ function saveFile(e){
     parent.prepend(child);
 
     dom.upload.style.display = "none";
+
+    autofill("", "", "");
     //
     //
     // var child = document.createElement("div")
@@ -151,4 +153,6 @@ function cancelFile(e){
         e.stopPropagation();
 
         dom.upload.style.display = "none";
+
+        autofill("","","");
 }
