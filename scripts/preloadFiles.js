@@ -1,15 +1,14 @@
 var checkNum = 0;
-var checkName = '';
-var checkSpecial = false;
+var globalFiltered = null;
 
 var titles = [
-  "AdoptionOfBlockChain.jpg",
-  "BitcoinAndBanking.pdf",
-  "BitcoinBasics.doc",
-  "CurrencyOnline.jpeg",
-  "BitcoinTrendsGraph.png",
-  "ManagementInTech.pdf",
-  "DamageFromPollutants.docx",
+  "AdoptionOfBlockChain.pdf",
+  "BitcoinAndBanking.doc",
+  "BitcoinBasics.pdf",
+  "CurrencyOnline.doc",
+  "BitcoinTrendsGraph.doc",
+  "ManagementInTech.doc",
+  "BeeDamageFromPollutants.pdf",
   "TheDeclineOfBees.mp3",
   "BeesAndTheHoneyIndustry.mov",
   "BeeAnatomyDiagram.jpg",
@@ -17,14 +16,14 @@ var titles = [
   "Lecture15.ppt",
   "Lecture17.ppt",
   "Lecture18.ppt",
-  "CourseSyllabus.doc",
-  "MartelDesignPaper.pdf",
+  "CourseSyllabus.ppt",
+  "MartelDesign.ppt",
   "SadOak.jpg",
   "WaterfallGhana.jpg",
   "RomanRuins.jpg",
   "SunsetOcean.jpg",
   "GeeseWater.jpg",
-  "BlockChainAndBitcoin"
+  "BlockChainAndBitcoin.pdf"
 ]
 
 var classifiersToTitles = {
@@ -146,14 +145,18 @@ var dates = [
 ]
 
 var titleDict = {
-  "blockchain": blockchainTitles,
-  "bitcoin": bitcoinTitles,
-  "finance": financeTitles,
-  "bees": beesTitles,
-  "photography": photographyTitles,
-  "lecture": lectureTitles,
-  "fintech": fintechTitles,
-  "karger": kargerTitles
+  "blockchain": "blockchain",
+  "bitcoin": "bitcoin",
+  "finance": ".doc",
+  "bee": "bee",
+  "photography": ".jpg",
+  "lecture": ".ppt",
+  "fintech": ".doc",
+  "karger": "lecture",
+  "photography-project": ".jpg",
+  "bee-project": "bee",
+  "lecture-group": "lecture",
+  "photography-group": ".jpg"
 }
 
 function createTrashButton() {
@@ -275,97 +278,39 @@ function showSpecialFiles(element, listName) {
 
   // if classifier being selected
   if (tagToggles[element.id]){
-    console.log("here");
-      if (checkNum == 1 && !checkSpecial){
-        filtered = getMatchingFiles(desiredFiles, "ar");
+    if (checkNum == 0){
+        filtered = getMatchingFiles(desiredFiles, titleDict[element.id]);
         addFilesToParent(parent, filtered);
-        // console.log("case 1");
-        // checkNum += 1
-        // var parent= document.getElementById("results-files")
-        // var children = parent.children
-        // if (children.length > 2){
-        //   for (var i = 0; i < 2; i++){
-        //     // console.log(children[i].id)
-        //     parent.removeChild(children[i])
-        //   }
-        // }
-      }
+        checkNum += 1
+        globalFiltered = filtered
+    }
 
-      else if ((checkNum == 1 && checkSpecial) && (element.id == "finance" || element.id == "bitcoin")){
-        filtered = getMatchingFiles(desiredFiles, "finance");
+    else if (checkNum == 1){
+        filtered = getMatchingFiles(globalFiltered, titleDict[element.id]);
         addFilesToParent(parent, filtered);
-        // console.log("case 2");
-        // checkNum += 1
-        // var parent = document.getElementById("main-results");
-        // var child = document.getElementById("results-files")
-        // parent.removeChild(child)
-
-        // var newChild = renderSpecialFiles(financeBitcoinTitles)
-
-        // parent.appendChild(newChild)
-
-      }
-
-      else if (checkNum == 0) {
-        filtered = getMatchingFiles(desiredFiles, "there");
-        addFilesToParent(parent, filtered);
-        // console.log("case 3");
-        // checkNum += 1
-        // checkName = list
-
-        // var parent = document.getElementById("main-results");
-        // var child = document.getElementById("results-files")
-        // parent.removeChild(child)
-
-        // var newChild = renderSpecialFiles(list)
-
-        // parent.appendChild(newChild)
-      }
-      else {
-        filtered = getMatchingFiles(desiredFiles, "sara");
-        addFilesToParent(parent, filtered);
-        // console.log("case 4");
-        // checkNum += 1
-      }
+        checkNum += 1
+    }
+    else {
+      checkNum += 1
+    }
   }
 
 
   // if classifier is being deselected
   else {
     if (checkNum == 1){
-      filtered = desiredFiles;
-      addFilesToParent(parent, desiredFiles);
-      // checkNum = 0
-      // checkName = ''
-
-      // var parent = document.getElementById("main-results");
-      // var child = document.getElementById("results-files")
-      // parent.removeChild(child)
-
-      // var newChild = renderSpecialFiles(titles)
-
-      // parent.appendChild(newChild)
+      filtered = desiredFiles
+      addFilesToParent(parent, filtered)
+      globalFiltered = desiredFiles
+      checkNum = 0
     }
-
-    else if (checkNum == 2) {
-      filtered = desiredFiles;
-      addFilesToParent(parent, desiredFiles);
-      // checkNum = 1
-      // list = checkName
-
-      // var parent = document.getElementById("main-results");
-      // var child = document.getElementById("results-files")
-      // parent.removeChild(child)
-
-      // var newChild = renderSpecialFiles(list)
-
-      // parent.appendChild(newChild)
-
+    else if (checkNum == 2){
+      filtered = globalFiltered
+      addFilesToParent(parent, filtered)
+      checkNum = 1
     }
     else {
-      filtered = desiredFiles;
       checkNum -= 1
-      addFilesToParent(parent, filtered);
     }
   }
 }
