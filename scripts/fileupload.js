@@ -82,13 +82,16 @@ function addEventListeners(file, dots){
     });
     console.log(dots);
     for (var i = 0; i < dots.children.length; i++) {
-        console.log(dots.children[i]);
         var b = dots.children[i];
         b.addEventListener("click", menuItemClickHandler);
     }
 }
 
 function saveFile(e){
+    var fileNameText = dom.fileName.value;
+    var fileDateText = dom.fileDate.value;
+    var fileAuthorText = dom.fileAuthor.value;
+
     e.preventDefault();
     e.stopPropagation();
 
@@ -98,16 +101,16 @@ function saveFile(e){
 
     var filename = document.createElement("span")
     filename.setAttribute("class", "result-filename")
-    filename.innerHTML = "BankingInATechWorld.pdf"
+    filename.innerHTML = fileNameText;
     // filename.prepend(checkbox)
 
     var date = document.createElement("span")
     date.setAttribute("class", "result-date-uploaded")
-    date.innerHTML = "05/09/2018"
+    date.innerHTML = fileDateText;
 
     var uploader = document.createElement("span")
     uploader.setAttribute("class", "result-uploaded-by")
-    uploader.innerHTML = "Ben Bitdiddle (Me)"
+    uploader.innerHTML = fileAuthorText + " (Me)";
 
     var dots = document.createElement("i");
     dots.className = "fas fa-ellipsis-v file-dots";

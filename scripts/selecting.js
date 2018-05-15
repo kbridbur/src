@@ -17,7 +17,12 @@ function checkForToggles(){
     }
 }
 
+function openFile() {
+    window.open('resources/chicken.pdf');
+}
+
 function checkForChecks() {
+    var openButton = document.getElementById("preview-open-file");
     var img = document.getElementById("preview-image");
     var filename = document.getElementById("preview-filename");
     var uploader = document.getElementById("preview-author");
@@ -35,20 +40,44 @@ function checkForChecks() {
         filename.innerHTML = "";
         uploader.innerHTML = "";
         date.innerHTML = "";
+        openButton.style.display = "none";
         mainCol.style.width = "60vw";
         prevCol.style.backgroundColor = "#585858";
         // var lower = Util.one("#lower");
         // lower.style.gridTemplateColumns = "18vw 60vw 22vw";
     } else if (Object.values(fileToggles).indexOf(true) > -1) {
         // dom.lower.style.gridTemplateColumns = "18vw 60vw 22vw";
-        img.src = "graphics/sadoak.jpg";
-        description.innerHTML = "A sad oak tree I found in my backyard. Reminds me of myself";
-        filename.innerHTML = "SadOak.jpg";
-        uploader.innerHTML = "Uploaded by Ben Bitdiddle (Me)";
-        date.innerHTML = " on 04/20/18";
+        var it = selectedFiles.values();
+        var file = it.next().value;
+        var extension = file.children[1].innerHTML.substring(file.children[1].innerHTML.length - 3);
+        description.innerHTML = "File description goes here. Can include notes about the file or anything you want tbh.";
+        filename.innerHTML = file.children[1].innerHTML;
+        uploader.innerHTML = "Uploaded by " + file.children[3].innerHTML;
+        date.innerHTML = " on "+file.children[2].innerHTML;
+        openButton.style.display = "block";
         imgPlacehold.innerHTML = "";
         mainCol.style.width = "60vw";
         prevCol.style.backgroundColor = "#585858";
+            switch (extension) {
+                case "doc":
+                case "pdf":
+                    img.src = "images/pdf.png";
+                    break;
+                case "ppt":
+                    img.src = "images/ppt.png";
+                    break;
+                case "png":
+                case "jpg":
+                    img.src = "images/jpg.png";
+                    break;
+                case "mp3":
+                    img.src = "images/mp3.png";
+                    break;
+                default:
+                    img.src = "images/pdf.png";
+
+            }
+
         // var lower = Util.one("#lower");
         // lower.style.gridTemplateColumns = "18vw 60vw 22vw";
     } else {

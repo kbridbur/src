@@ -691,7 +691,7 @@ h1 {
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content:space-between;
-    padding: 2%;
+    padding: 15px;
     box-sizing: border-box;
 }
 
@@ -704,7 +704,7 @@ h1 {
 
 #preview-image{
     /*background-image: url("graphics/sadoak.jpg");*/
-    max-width: 21vw;
+    width: 20vw;
     background-repeat: round;
     box-sizing: border-box;
     display: block;
@@ -724,6 +724,21 @@ h1 {
     border: dashed 5px #B4E58B;
 }
 */
+
+#preview-open-file {
+    margin:auto;
+    margin-top:15px;
+    padding:10px;
+    font-size: 1em;
+    border-radius: 7px;
+    border:none;
+}
+
+#preview-open-file:hover {
+    cursor: pointer;
+    background-color: var(--color-search-btn-hover);
+}
+
 #hidden-file-upload {
 	display: none;
 }
